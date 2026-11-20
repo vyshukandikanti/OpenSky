@@ -3,79 +3,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://lh3.googleusercontent.com data:; connect-src 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://lh3.googleusercontent.com data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';"/>
 <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="X-Frame-Options" content="DENY"/>
 <meta name="referrer" content="strict-origin-when-cross-origin"/>
-<meta name="description" content="OpenSky: Maternal-first atmospheric smog defense assistant for families navigating severe winter inversions in Delhi-NCR."/>
-<title>OpenSky Smog Safety App — AI Smog Defense System</title>
+<meta name="description" content="OpenSky: Maternal-first atmospheric smog defense assistant for families and communities in Delhi-NCR."/>
+<title>OpenSky — GenAI Smog Defense Assistant</title>
 <link href="/fonts/google-fonts.css" rel="stylesheet"/>
-<style>
-/* WCAG 2.2 Accessible Skip Link */
-.skip-link {
-  position: absolute;
-  top: -999px;
-  left: 1rem;
-  z-index: 1000;
-  padding: 0.75rem 1.25rem;
-  background: #004349;
-  color: #ffffff;
-  font-weight: 700;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-  transition: top 0.2s ease-in-out;
-}
-.skip-link:focus {
-  top: 1rem;
-  outline: 3px solid #ABEBF6;
-}
-
-/* Local Instant-Loading Font */
-@font-face {
-  font-family: 'Material Symbols Outlined';
-  font-style: normal;
-  font-weight: 100 700;
-  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
-  font-display: block;
-}
-
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined' !important;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 22px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: 'liga' 1;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Prevent text code flashing before font is active */
-html:not(.fonts-loaded) .material-symbols-outlined {
-  visibility: hidden;
-  width: 1.2em;
-  height: 1.2em;
-}
-
-@layer base {
-  html, body { margin: 0; padding: 0; }
-  body { overscroll-behavior: none; }
-}
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-thumb { background: rgba(13,92,99,0.25); border-radius: 9999px; }
-.tab-pane { animation: fadeIn 0.2s ease-in-out; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-</style>
+<link href="/css/style.css" rel="stylesheet"/>
 <script>
   if (document.fonts) {
     document.fonts.ready.then(function() {
@@ -90,7 +25,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
 
-<!-- WCAG 2.2 Keyboard Skip Navigation Link -->
+<!-- WCAG 2.2 Accessible Skip Navigation Link -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Top Master Navigation Bar with Accessible Tabs -->
@@ -115,6 +50,12 @@ html:not(.fonts-loaded) .material-symbols-outlined {
         <span class="w-2 h-2 rounded-full bg-secondary animate-ping" aria-hidden="true"></span>
         <span id="live-status-text">NCR • AQI 312 Severe</span>
       </div>
+
+      <!-- GenAI Advisor Trigger Button -->
+      <button id="ai-advisor-toggle" class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary font-bold text-xs shadow-sm hover:bg-primary transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Open AI Smog Advisor">
+        <span class="material-symbols-outlined text-[16px]">smart_toy</span>
+        <span class="hidden sm:inline">Ask AI Advisor</span>
+      </button>
 
       <!-- Accessible Language Toggle -->
       <div class="flex items-center bg-surface-container-low rounded-full p-0.5 border border-primary/10 text-xs font-bold" role="group" aria-label="Language Selector">
@@ -517,10 +458,10 @@ html:not(.fonts-loaded) .material-symbols-outlined {
       detectBtn.addEventListener('click', () => {
         detectBtn.disabled = true;
         const origContent = detectBtn.innerHTML;
-        detectBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Locating...';
+        detectBtn.textContent = "Locating...";
         setTimeout(() => {
           input.value = "Hauz Khas Enclave, New Delhi (GPS Accurate)";
-          detectBtn.innerHTML = origContent;
+          detectBtn.textContent = "Detect location";
           detectBtn.disabled = false;
         }, 650);
       });
@@ -1546,7 +1487,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
 
       if (tagEl) tagEl.textContent = data.tag;
       if (titleEl) titleEl.textContent = data.title;
-      if (descEl) descEl.innerHTML = data.desc;
+      if (descEl) descEl.textContent = data.desc.replace(/<[^>]+>/g, "");
       if (statusEl) {
         statusEl.textContent = data.status;
         statusEl.className = 'px-space-xs py-0.5 rounded font-label-sm text-label-sm font-bold ' + data.statusClass;
@@ -2107,14 +2048,14 @@ html:not(.fonts-loaded) .material-symbols-outlined {
 
       applyBtn.addEventListener('click', () => {
         const originalText = applyBtn.innerHTML;
-        applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Configuring Daily Schedule...</span>';
+        applyBtn.textContent = "Saved to Plan!";
         applyBtn.classList.add('opacity-90');
         setTimeout(() => {
-          applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Saved to Today\'s Plan!</span>';
+          applyBtn.textContent = "Saved to Plan!";
           applyBtn.classList.remove('bg-primary');
           applyBtn.classList.add('bg-tertiary');
           setTimeout(() => {
-            applyBtn.innerHTML = originalText;
+            applyBtn.textContent = "Apply Interventions";
             applyBtn.classList.remove('bg-tertiary', 'opacity-90');
             applyBtn.classList.add('bg-primary');
           }, 2400);
@@ -2692,7 +2633,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
 
         // Update Big Dynamic Impact Card
         if (impactStatement) {
-          impactStatement.innerHTML = `If <span class="text-tertiary-fixed underline decoration-secondary decoration-wavy underline-offset-4">${homes} homes</span> skip burning garden waste and reduce diesel generator usage today, ambient PM2.5 in our 1-km radius drops by ~${dropPercent}%!`;
+          impactStatement.textContent = `If ${homes} homes skip burning garden waste and reduce diesel generator usage today, ambient PM2.5 in our 1-km radius drops by ~${dropPercent}%!`;
         }
         if (statCo2) statCo2.textContent = `${co2Avoided.toLocaleString()} kg`;
         if (statWindow) statWindow.textContent = `+${windowExtension} hrs`;
@@ -2753,11 +2694,11 @@ html:not(.fonts-loaded) .material-symbols-outlined {
       if (shareBtn) {
         shareBtn.addEventListener('click', function() {
           const original = shareBtn.innerHTML;
-          shareBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span><span>Invitation Link Copied!</span>';
+          shareBtn.textContent = "Invitation Link Copied!";
           shareBtn.classList.remove('bg-primary');
           shareBtn.classList.add('bg-tertiary-container');
           setTimeout(() => {
-            shareBtn.innerHTML = original;
+            shareBtn.textContent = "Share Shield Link";
             shareBtn.classList.remove('bg-tertiary-container');
             shareBtn.classList.add('bg-primary');
           }, 2400);
@@ -2768,11 +2709,11 @@ html:not(.fonts-loaded) .material-symbols-outlined {
       if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
           const original = downloadBtn.innerHTML;
-          downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Generating PDF...</span>';
+          downloadBtn.textContent = "PDF Saved";
           setTimeout(() => {
-            downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Sector-4-Advisory.pdf Saved</span>';
+            downloadBtn.textContent = "PDF Saved";
             setTimeout(() => {
-              downloadBtn.innerHTML = original;
+              downloadBtn.textContent = "Download Advisory";
             }, 2000);
           }, 1200);
         });
@@ -4226,6 +4167,51 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     
 </main>
 
+<!-- GenAI Smog Advisor Interactive Modal / Drawer -->
+<div id="ai-advisor-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+  <div class="bg-surface-container-lowest max-w-xl w-full rounded-2xl shadow-2xl border border-primary/20 overflow-hidden flex flex-col max-h-[90vh]" role="dialog" aria-modal="true" aria-labelledby="ai-modal-title">
+    
+    <!-- Modal Header -->
+    <div class="p-4 bg-primary text-white flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[24px]">psychology</span>
+        <div>
+          <h2 id="ai-modal-title" class="font-headline-sm text-base font-bold">OpenSky GenAI Smog Advisor</h2>
+          <p class="text-xs opacity-90">Real-time domestic routines, indoor air hacks & clean navigation</p>
+        </div>
+      </div>
+      <button id="ai-advisor-close" class="p-1 rounded-full hover:bg-white/20 transition-colors" aria-label="Close AI Advisor Dialog">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Suggested Question Prompts -->
+    <div class="p-3 bg-surface-container-low border-b border-primary/10 flex flex-wrap gap-1.5 text-xs">
+      <span class="font-bold text-outline text-[11px] self-center mr-1">Suggestions:</span>
+      <button class="ai-prompt-chip px-2.5 py-1 rounded-full bg-surface-container hover:bg-primary-container hover:text-white transition-all text-on-surface" data-prompt="low-emission daily routine">Low-Emission Routine</button>
+      <button class="ai-prompt-chip px-2.5 py-1 rounded-full bg-surface-container hover:bg-primary-container hover:text-white transition-all text-on-surface" data-prompt="indoor air hacks">Indoor Air Hacks</button>
+      <button class="ai-prompt-chip px-2.5 py-1 rounded-full bg-surface-container hover:bg-primary-container hover:text-white transition-all text-on-surface" data-prompt="clean commute navigation">Clean Commute Navigation</button>
+      <button class="ai-prompt-chip px-2.5 py-1 rounded-full bg-surface-container hover:bg-primary-container hover:text-white transition-all text-on-surface" data-prompt="stadium crowd management">Stadium & Crowd Operations</button>
+      <button class="ai-prompt-chip px-2.5 py-1 rounded-full bg-surface-container hover:bg-primary-container hover:text-white transition-all text-on-surface" data-prompt="community volunteers">Volunteer Network</button>
+    </div>
+
+    <!-- AI Response Container -->
+    <div id="ai-response-box" class="p-4 flex-1 overflow-y-auto text-sm bg-surface">
+      <p class="text-on-surface-variant">Hello! I am your OpenSky GenAI Smog Advisor. Ask me anything about navigating severe winter smog, optimizing purifiers, planning safe school commutes, or coordinating community shields.</p>
+    </div>
+
+    <!-- Query Input Form -->
+    <form id="ai-query-form" class="p-3 bg-surface-container-low border-t border-primary/10 flex items-center gap-2">
+      <label for="ai-query-input" class="sr-only">Ask OpenSky AI a question</label>
+      <input id="ai-query-input" type="text" maxlength="250" placeholder="Ask about daily routines, air hacks, or stadium safety..." class="flex-1 bg-surface-container-lowest px-3 py-2 rounded-xl text-sm border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary"/>
+      <button type="submit" class="px-4 py-2 rounded-xl bg-primary text-white font-bold text-xs hover:bg-primary/90 transition-all flex items-center gap-1">
+        <span>Send</span>
+        <span class="material-symbols-outlined text-[16px]">send</span>
+      </button>
+    </form>
+  </div>
+</div>
+
 <!-- Accessible Floating Tab Switcher at Bottom -->
 <aside aria-label="Screen Navigation Controls" class="fixed bottom-4 right-4 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg border border-primary/15 flex items-center gap-2 text-xs">
   <span class="text-on-surface-variant font-medium">Tabs:</span>
@@ -4234,1095 +4220,8 @@ html:not(.fonts-loaded) .material-symbols-outlined {
   <button id="next-tab" aria-label="Go to next tab" class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-primary hover:text-white font-bold transition-all focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">Next ▶</button>
 </aside>
 
-<!-- Tab Router Script with Full W3C ARIA Keyboard Navigation -->
-<script>
-(function() {
-  const tabs = [{'id': 'home', 'file': 'home.html', 'title': 'Home', 'icon': 'home', 'badge': 'AQI 312', 'aria_label': 'Home Screen - Real-Time Air Quality Sanctuary Dashboard'}, {'id': 'family-setup', 'file': 'family-setup.html', 'title': 'Family Setup', 'icon': 'family_restroom', 'badge': 'Profile', 'aria_label': 'Family Setup Screen - Respiratory Sensitivity Profiles'}, {'id': 'todays-plan', 'file': 'todays-plan.html', 'title': "Today's Plan", 'icon': 'checklist', 'badge': 'Playbook', 'aria_label': "Today's Plan - 4-Step Domestic Defense Actions"}, {'id': 'what-if', 'file': 'what-if.html', 'title': 'What If', 'icon': 'tune', 'badge': 'Simulator', 'aria_label': 'What If Simulator - Indoor Exposure Microclimate Physics'}, {'id': 'community', 'file': 'community.html', 'title': 'Community', 'icon': 'groups', 'badge': 'Network', 'aria_label': 'Community Shield - Neighborhood Collective Reduction'}, {'id': 'celebration', 'file': 'celebration.html', 'title': 'Celebration', 'icon': 'sunny', 'badge': 'Open Sky', 'aria_label': 'Celebration Screen - Atmospheric Inversion Dispersal'}, {'id': 'action-impact', 'file': 'action-impact.html', 'title': 'Action Impact', 'icon': 'analytics', 'badge': 'Science', 'aria_label': 'Action Impact Screen - Environmental Modeling & Pulmonary Citations'}, {'id': 'settings', 'file': 'settings.html', 'title': 'Settings', 'icon': 'settings', 'badge': 'Config', 'aria_label': 'Settings Screen - Hardware Calibration & Regional Preferences'}, {'id': 'air-data-unavailable', 'file': 'air-data-unavailable.html', 'title': 'Data Unavailable', 'icon': 'cloud_off', 'badge': 'Fallback', 'aria_label': 'Edge Case - Sensor Dropout Fallback Heuristics'}, {'id': 'offline-state', 'file': 'offline-state.html', 'title': 'Offline (Mobile)', 'icon': 'smartphone', 'badge': 'Mobile', 'aria_label': 'Mobile Mode - Low-Bandwidth Commuter Shield'}];
-  let activeIndex = 0;
-
-  function activateTab(tabId, updateHash = true, focusTab = false) {
-    const idx = tabs.findIndex(t => t.id === tabId);
-    if (idx !== -1) {
-      activeIndex = idx;
-    }
-
-    // Hide all tab panes
-    document.querySelectorAll('.tab-pane').forEach(pane => {
-      pane.classList.add('hidden');
-    });
-
-    // Show target pane
-    const targetPane = document.getElementById('tab-pane-' + tabId);
-    if (targetPane) {
-      targetPane.classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }
-
-    // Update tab button styles and ARIA states
-    document.querySelectorAll('.tab-button').forEach(btn => {
-      const bTab = btn.getAttribute('data-tab');
-      if (bTab === tabId) {
-        btn.setAttribute('aria-selected', 'true');
-        btn.setAttribute('tabindex', '0');
-        btn.className = "tab-button tab-active bg-primary text-white shadow-md font-bold flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary";
-        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        if (focusTab) btn.focus();
-      } else {
-        btn.setAttribute('aria-selected', 'false');
-        btn.setAttribute('tabindex', '-1');
-        btn.className = "tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary";
-      }
-    });
-
-    // Update counter
-    const counter = document.getElementById('tab-counter');
-    if (counter) {
-      counter.textContent = (activeIndex + 1) + ' / ' + tabs.length;
-    }
-
-    if (updateHash) {
-      history.pushState(null, '', '#' + tabId);
-    }
-  }
-
-  // Tab click handlers
-  document.querySelectorAll('.tab-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tabId = btn.getAttribute('data-tab');
-      activateTab(tabId, true, true);
-    });
-  });
-
-  // W3C ARIA Keyboard Navigation (Left, Right, Home, End)
-  const tablist = document.querySelector('[role="tablist"]');
-  if (tablist) {
-    tablist.addEventListener('keydown', (e) => {
-      let newIndex = activeIndex;
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        newIndex = (activeIndex + 1) % tabs.length;
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        newIndex = (activeIndex - 1 + tabs.length) % tabs.length;
-      } else if (e.key === 'Home') {
-        e.preventDefault();
-        newIndex = 0;
-      } else if (e.key === 'End') {
-        e.preventDefault();
-        newIndex = tabs.length - 1;
-      } else {
-        return;
-      }
-      activateTab(tabs[newIndex].id, true, true);
-    });
-  }
-
-  // Internal link delegation (data-path clicks inside screens switch tabs!)
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-path]');
-    if (trigger) {
-      e.preventDefault();
-      const path = trigger.getAttribute('data-path');
-      activateTab(path, true, true);
-    }
-  });
-
-  // Prev / Next button handlers
-  const prevBtn = document.getElementById('prev-tab');
-  const nextBtn = document.getElementById('next-tab');
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      activeIndex = (activeIndex - 1 + tabs.length) % tabs.length;
-      activateTab(tabs[activeIndex].id, true, false);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      activeIndex = (activeIndex + 1) % tabs.length;
-      activateTab(tabs[activeIndex].id, true, false);
-    });
-  }
-
-  // Dynamic Bilingual Engine (EN / HI)
-  const enBtn = document.getElementById('lang-btn-en');
-  const hiBtn = document.getElementById('lang-btn-hi');
-  const translations = {
-    en: {
-      tagline: '• Smog Defense System',
-      status: 'NCR • AQI 312 Severe',
-      hero_h1: 'Clear air starts <br class="hidden sm:inline"/><span class="italic text-primary">at home.</span>',
-      hero_p: 'Personalized winter smog defense and actionable family protection forecasts for your neighborhood, children, and elderly loved ones.',
-      action_h: 'Immediate Action for Families',
-      action_p: 'Keep children indoors until 11 AM. Run HEPA air purifier on medium and seal north-facing balcony doors.',
-      plan_btn: 'Get my plan'
-    },
-    hi: {
-      tagline: '• शीतकालीन स्मॉग सुरक्षा प्रणाली',
-      status: 'दिल्ली NCR • AQI 312 गंभीर स्तर',
-      hero_h1: 'स्वच्छ हवा की शुरुआत <br class="hidden sm:inline"/><span class="italic text-primary">घर से होती है।</span>',
-      hero_p: 'आपके पड़ोस, बच्चों और बुज़ुर्गों के लिए व्यक्तिगत शीतकालीन स्मॉग सुरक्षा और व्यावहारिक पूर्वानुमान।',
-      action_h: 'परिवारों के लिए त्वरित सुरक्षा निर्देश',
-      action_p: 'सुबह 11 बजे तक बच्चों को घर के अंदर रखें। हेपा (HEPA) एयर प्यूरीफायर चलाएं और उत्तर दिशा की बालकनी के दरवाजे बंद रखें।',
-      plan_btn: 'मेरी योजना देखें'
-    }
-  };
-
-  function setLanguage(lang) {
-    const t = translations[lang] || translations.en;
-    if (enBtn && hiBtn) {
-      if (lang === 'hi') {
-        hiBtn.className = 'px-2.5 py-1 rounded-full bg-primary text-on-primary transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
-        hiBtn.setAttribute('aria-pressed', 'true');
-        enBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
-        enBtn.setAttribute('aria-pressed', 'false');
-      } else {
-        enBtn.className = 'px-2.5 py-1 rounded-full bg-primary text-on-primary transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
-        enBtn.setAttribute('aria-pressed', 'true');
-        hiBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
-        hiBtn.setAttribute('aria-pressed', 'false');
-      }
-    }
-
-    const tagEl = document.getElementById('app-tagline');
-    if (tagEl) tagEl.textContent = t.tagline;
-
-    const statEl = document.getElementById('live-status-text');
-    if (statEl) statEl.textContent = t.status;
-
-    // Localize Hero elements on Home tab if present
-    const h1 = document.querySelector('#tab-pane-home h1');
-    if (h1) h1.innerHTML = t.hero_h1;
-
-    const heroP = document.querySelector('#tab-pane-home .font-body-lg');
-    if (heroP) heroP.textContent = t.hero_p;
-
-    const actH = document.querySelector('#tab-pane-home .font-label-sm.text-secondary');
-    if (actH) actH.textContent = t.action_h;
-
-    const actP = document.querySelector('#tab-pane-home p.font-semibold');
-    if (actP) actP.textContent = t.action_p;
-  }
-
-  if (enBtn) enBtn.addEventListener('click', () => setLanguage('en'));
-  if (hiBtn) hiBtn.addEventListener('click', () => setLanguage('hi'));
-
-  // Hash-based routing
-  function checkHash() {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && tabs.some(t => t.id === hash)) {
-      activateTab(hash, false, false);
-    } else {
-      activateTab('home', false, false);
-    }
-  }
-
-  window.addEventListener('load', checkHash);
-  window.addEventListener('hashchange', checkHash);
-})();
-</script>
-
-<!-- Embedded Interactive Logic from All Screens -->
-<script>
-// Script for home
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in home script:', e); }
-// Script for home
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in home script:', e); }
-// Script for home
-try {
-
-  (function initHomeScreen() {
-    // Quick search chip population
-    const chips = document.querySelectorAll('.quick-chip');
-    const input = document.getElementById('loc-input');
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        if (input) {
-          if(input && chip) { input.value = chip.textContent.trim(); }
-          input.focus();
-        }
-      });
-    });
-
-    // Detect GPS Button micro-action
-    const detectBtn = document.getElementById('btn-detect-loc');
-    if (detectBtn && input) {
-      detectBtn.addEventListener('click', () => {
-        detectBtn.disabled = true;
-        const origContent = detectBtn.innerHTML;
-        detectBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Locating...';
-        setTimeout(() => {
-          input.value = "Hauz Khas Enclave, New Delhi (GPS Accurate)";
-          detectBtn.innerHTML = origContent;
-          detectBtn.disabled = false;
-        }, 650);
-      });
-    }
-
-    // Language Toggle visual switcher
-    const btnEn = document.getElementById('lang-en');
-    const btnHi = document.getElementById('lang-hi');
-    if (btnEn && btnHi) {
-      btnEn.addEventListener('click', () => {
-        btnEn.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container shadow-sm transition-all";
-        btnHi.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all";
-      });
-      btnHi.addEventListener('click', () => {
-        btnHi.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container shadow-sm transition-all";
-        btnEn.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all";
-      });
-    }
-
-    // Form search navigation intercept
-    const form = document.getElementById('aqi-search-form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const target = document.querySelector('[data-path="todays-plan"]');
-        if (target) {
-          target.click();
-        }
-      });
-    }
-  })();
-
-} catch(e) { console.warn('Error in home script:', e); }
-// Script for family-setup
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in family-setup script:', e); }
-// Script for family-setup
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in family-setup script:', e); }
-// Script for family-setup
-try {
-
-    (function initFamilyProfile() {
-      const chips = document.querySelectorAll('.family-chip');
-      const bubble = document.getElementById('clean-air-bubble');
-      const petFigure = document.getElementById('figure-pet');
-      const purifierYes = document.getElementById('purifier-yes');
-      const purifierNo = document.getElementById('purifier-no');
-      const purifierUnit = document.getElementById('purifier-unit');
-
-      // Selection state toggling for household members
-      chips.forEach(chip => {
-        chip.addEventListener('click', () => {
-          const type = chip.getAttribute('data-chip');
-          const isSelected = chip.classList.contains('ring-2');
-          const statusIcon = chip.querySelector('.chip-status span');
-
-          if (isSelected) {
-            chip.classList.remove('ring-2', 'ring-primary-container', 'ring-secondary', 'bg-primary-container/10', 'bg-secondary-container/20');
-            chip.classList.add('bg-surface-container-low');
-            if (statusIcon) statusIcon.textContent = 'add';
-            
-            // Cross section visual reacts
-            if (type === 'pets' && petFigure) petFigure.style.opacity = '0.3';
-            if (type === 'child' && bubble) bubble.style.opacity = '0.2';
-          } else {
-            chip.classList.remove('bg-surface-container-low');
-            if (type === 'asthma') {
-              chip.classList.add('ring-2', 'ring-secondary', 'bg-secondary-container/20');
-            } else {
-              chip.classList.add('ring-2', 'ring-primary-container', 'bg-primary-container/10');
-            }
-            if (statusIcon) statusIcon.textContent = 'check';
-
-            // Cross section visual reacts
-            if (type === 'pets' && petFigure) petFigure.style.opacity = '1';
-            if (type === 'child' && bubble) bubble.style.opacity = '1';
-          }
-        });
-      });
-
-      // Purifier quick toggles
-      if (purifierYes && purifierNo && purifierUnit) {
-        purifierYes.addEventListener('click', () => {
-          purifierYes.className = 'flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm transition-all';
-          purifierNo.className = 'flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all';
-          purifierUnit.style.display = 'block';
-          if (bubble) bubble.style.opacity = '1';
-        });
-
-        purifierNo.addEventListener('click', () => {
-          purifierNo.className = 'flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm transition-all';
-          purifierYes.className = 'flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all';
-          purifierUnit.style.display = 'none';
-          if (bubble) bubble.style.opacity = '0.15';
-        });
-      }
-    })();
-  
-} catch(e) { console.warn('Error in family-setup script:', e); }
-// Script for todays-plan
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in todays-plan script:', e); }
-// Script for todays-plan
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in todays-plan script:', e); }
-// Script for todays-plan
-try {
-
-    const hotspotData = {
-      1: {
-        tag: "Hotspot 1 • External Exposure Point",
-        title: "Balcony Window",
-        status: "Keep Sealed Until 1:30 PM",
-        statusClass: "bg-secondary/15 text-secondary",
-        desc: "Morning north-easterly drift carries smog plume directly into balconies. Keep perimeter gaskets pressed tight until the 1:30 PM solar inversion clears the street pocket."
-      },
-      2: {
-        tag: "Hotspot 2 • Indoor Source Mitigation",
-        title: "Kitchen Stove",
-        status: "Simmer Lids Closed, Exhaust on High",
-        statusClass: "bg-on-secondary-container/15 text-secondary",
-        desc: "Frying oil aerosols create acute PM2.5 spikes up to 400 µg/m³. Always cover vessels with tight lids and maintain exhaust velocity above 450 m³/h until 10 minutes post-cooking."
-      },
-      3: {
-        tag: "Hotspot 3 • Pulmonary Sleep Haven",
-        title: "Bedroom Air Purifier",
-        status: "Run at CADR 250 m³/h",
-        statusClass: "bg-tertiary/15 text-tertiary",
-        desc: "Activate at 7:00 PM before bedtime to establish a stable clean-air microclimate (&lt;30 AQI). Gives asthmatic bronchial tissue 8 hours of critical nocturnal rest and recovery."
-      }
-    };
-
-    function selectHotspot(id) {
-      const data = hotspotData[id];
-      if (!data) return;
-      
-      const tagEl = document.getElementById('hotspot-tag');
-      const titleEl = document.getElementById('hotspot-title');
-      const statusEl = document.getElementById('hotspot-status');
-      const descEl = document.getElementById('hotspot-desc');
-
-      if (tagEl) tagEl.textContent = data.tag;
-      if (titleEl) titleEl.textContent = data.title;
-      if (descEl) descEl.innerHTML = data.desc;
-      if (statusEl) {
-        statusEl.textContent = data.status;
-        statusEl.className = 'px-space-xs py-0.5 rounded font-label-sm text-label-sm font-bold ' + data.statusClass;
-      }
-    }
-
-    function switchPlanTab(tabKey) {
-      const tabs = ['indoor', 'routine', 'sustainable', 'protect'];
-      tabs.forEach(t => {
-        const btn = document.getElementById('tab-btn-' + t);
-        if (btn) {
-          if (t === tabKey) {
-            btn.className = 'tab-pill active flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg whitespace-nowrap shadow-sm transition-all';
-          } else {
-            btn.className = 'tab-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-all';
-          }
-        }
-      });
-    }
-
-    function askAssistant(promptText) {
-      const toast = document.getElementById('assistant-toast');
-      const toastBody = document.getElementById('assistant-toast-body');
-      if (toast && toastBody) {
-        toastBody.textContent = 'Analyzing: "' + promptText + '" based on NCR PM2.5 readings & pediatrician pediatric guidelines...';
-        toast.classList.remove('hidden');
-        setTimeout(() => {
-          if (promptText.includes('children')) {
-            toastBody.textContent = 'For Aanvi & Kabir: Certified child-sized KF94 or N95 with soft silicone inner gaskets avoid leakage across developing nasal bridges.';
-          } else if (promptText.includes('4 PM')) {
-            toastBody.textContent = 'Avoid outdoor sports after 4:00 PM today. Smog inversion rapidly collapses down from 4:30 PM onwards, spiking AQI past 280.';
-          } else {
-            toastBody.textContent = 'DIY Tip: Place a MERV 13 / HEPA furnace pad taped over the rear intake of a standard 20-inch box fan for emergency living room filtering.';
-          }
-        }, 800);
-      }
-    }
-
-    function closeToast() {
-      const toast = document.getElementById('assistant-toast');
-      if (toast) toast.classList.add('hidden');
-    }
-
-    function toggleChatSheet() {
-      askAssistant('Today\'s Asthma Defense Briefing');
-    }
-  
-} catch(e) { console.warn('Error in todays-plan script:', e); }
-// Script for what-if
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in what-if script:', e); }
-// Script for what-if
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in what-if script:', e); }
-// Script for what-if
-try {
-
-    (function initSimulator() {
-      const BASELINE_AQI = 312;
-      const toggles = document.querySelectorAll('.sim-toggle');
-      const projectedAqiEl = document.getElementById('projected-aqi');
-      const reductionPill = document.getElementById('reduction-pill');
-      const projectedStatus = document.getElementById('projected-status');
-      const shieldBadge = document.getElementById('shield-badge');
-      const timeSavedText = document.getElementById('time-saved-text');
-      const protectionPct = document.getElementById('protection-pct');
-      const protectionBar = document.getElementById('protection-bar');
-      const sanctuaryBubble = document.getElementById('sanctuary-bubble');
-      const purifierHalo = document.getElementById('purifier-halo');
-      const extraParticles = document.getElementById('extra-indoor-particles');
-      const riskWarning = document.getElementById('risk-warning-overlay');
-      const resetBtn = document.getElementById('reset-defaults-btn');
-      const applyBtn = document.getElementById('apply-plan-btn');
-
-      function calculateSimulation() {
-        let totalReductionPercent = 0;
-        let hepaActive = false;
-
-        toggles.forEach(toggle => {
-          const isChecked = toggle.getAttribute('aria-checked') === 'true';
-          const impact = parseFloat(toggle.getAttribute('data-impact') || 0);
-          if (isChecked) {
-            totalReductionPercent += impact;
-            if (impact === 38) hepaActive = true;
-          }
-        });
-
-        // Cap maximum combined mitigation physically at 88%
-        totalReductionPercent = Math.min(88, totalReductionPercent);
-        
-        // Calculate new projected AQI
-        const projectedAQI = Math.max(32, Math.round(BASELINE_AQI * (1 - (totalReductionPercent / 100))));
-        
-        // UI Updates
-        projectedAqiEl.textContent = projectedAQI;
-        reductionPill.textContent = `-${totalReductionPercent}% Inhalation`;
-        protectionPct.textContent = `${totalReductionPercent}% Active Shield`;
-        protectionBar.style.width = `${totalReductionPercent}%`;
-
-        // Hours protected estimation
-        const hoursProtected = Math.round((totalReductionPercent / 100) * 16.5);
-        timeSavedText.textContent = `Saved ~${hoursProtected} hours of toxic PM2.5 lung exposure for children and asthmatic members today.`;
-
-        // Visual State adjustments
-        if (totalReductionPercent >= 65) {
-          shieldBadge.className = 'px-space-md py-space-xs rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm shadow-sm transition-all';
-          shieldBadge.textContent = 'Safe Haven Active';
-          projectedStatus.textContent = 'Optimal Protective Microclimate • Clean Air Sphere';
-          projectedStatus.className = 'font-label-lg text-label-lg text-tertiary font-medium';
-          sanctuaryBubble.setAttribute('opacity', '0.9');
-          sanctuaryBubble.setAttribute('transform', 'scale(1)');
-          extraParticles.classList.add('opacity-0');
-          riskWarning.classList.add('hidden');
-          riskWarning.classList.remove('flex');
-        } else if (totalReductionPercent >= 35) {
-          shieldBadge.className = 'px-space-md py-space-xs rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm shadow-sm transition-all';
-          shieldBadge.textContent = 'Moderate Shelter';
-          projectedStatus.textContent = 'Partial Defense • Elevated Infiltration Detected';
-          projectedStatus.className = 'font-label-lg text-label-lg text-primary font-medium';
-          sanctuaryBubble.setAttribute('opacity', '0.5');
-          sanctuaryBubble.setAttribute('transform', 'scale(0.85)');
-          extraParticles.classList.remove('opacity-0');
-          riskWarning.classList.add('hidden');
-          riskWarning.classList.remove('flex');
-        } else {
-          shieldBadge.className = 'px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm transition-all';
-          shieldBadge.textContent = 'High Exposure Zone';
-          projectedStatus.textContent = 'Critical Infiltration • Immediate Sealing Advised';
-          projectedStatus.className = 'font-label-lg text-label-lg text-secondary font-medium';
-          sanctuaryBubble.setAttribute('opacity', '0.15');
-          sanctuaryBubble.setAttribute('transform', 'scale(0.7)');
-          extraParticles.classList.remove('opacity-0');
-          riskWarning.classList.remove('hidden');
-          riskWarning.classList.add('flex');
-        }
-
-        // Purifier graphic state
-        if (hepaActive) {
-          purifierHalo.style.opacity = '1';
-        } else {
-          purifierHalo.style.opacity = '0';
-        }
-      }
-
-      toggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const currentState = toggle.getAttribute('aria-checked') === 'true';
-          const newState = !currentState;
-          toggle.setAttribute('aria-checked', newState ? 'true' : 'false');
-
-          const knob = toggle.querySelector('span');
-          if (newState) {
-            toggle.classList.remove('bg-outline-variant');
-            toggle.classList.add('bg-primary');
-            knob.classList.remove('translate-x-1');
-            knob.classList.add('translate-x-6');
-          } else {
-            toggle.classList.remove('bg-primary');
-            toggle.classList.add('bg-outline-variant');
-            knob.classList.remove('translate-x-6');
-            knob.classList.add('translate-x-1');
-          }
-          calculateSimulation();
-        });
-      });
-
-      resetBtn.addEventListener('click', () => {
-        const defaults = [true, true, true, false, true];
-        toggles.forEach((toggle, idx) => {
-          const state = defaults[idx];
-          toggle.setAttribute('aria-checked', state ? 'true' : 'false');
-          const knob = toggle.querySelector('span');
-          if (state) {
-            toggle.classList.remove('bg-outline-variant');
-            toggle.classList.add('bg-primary');
-            knob.classList.remove('translate-x-1');
-            knob.classList.add('translate-x-6');
-          } else {
-            toggle.classList.remove('bg-primary');
-            toggle.classList.add('bg-outline-variant');
-            knob.classList.remove('translate-x-6');
-            knob.classList.add('translate-x-1');
-          }
-        });
-        calculateSimulation();
-      });
-
-      applyBtn.addEventListener('click', () => {
-        const originalText = applyBtn.innerHTML;
-        applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Configuring Daily Schedule...</span>';
-        applyBtn.classList.add('opacity-90');
-        setTimeout(() => {
-          applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Saved to Today\'s Plan!</span>';
-          applyBtn.classList.remove('bg-primary');
-          applyBtn.classList.add('bg-tertiary');
-          setTimeout(() => {
-            applyBtn.innerHTML = originalText;
-            applyBtn.classList.remove('bg-tertiary', 'opacity-90');
-            applyBtn.classList.add('bg-primary');
-          }, 2400);
-        }, 900);
-      });
-
-      // Initial calculation run
-      calculateSimulation();
-    })();
-  
-} catch(e) { console.warn('Error in what-if script:', e); }
-// Script for community
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in community script:', e); }
-// Script for community
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in community script:', e); }
-// Script for community
-try {
-
-    (function initCommunityDefense() {
-      const slider = document.getElementById('community-slider');
-      const counter = document.getElementById('households-counter');
-      const impactStatement = document.getElementById('impact-statement');
-      const statCo2 = document.getElementById('stat-co2');
-      const statWindow = document.getElementById('stat-window');
-      const statPediatric = document.getElementById('stat-pediatric');
-      const legendClean = document.getElementById('legend-clean');
-      const legendPending = document.getElementById('legend-pending');
-
-      // Dynamic houses that transform based on participation
-      const dynamicHouseIds = [
-        'dynamic-house-1', 'dynamic-house-2', 'dynamic-house-3', 'dynamic-house-4',
-        'dynamic-house-5', 'dynamic-house-6', 'dynamic-house-7', 'dynamic-house-8',
-        'dynamic-house-9', 'dynamic-house-10', 'dynamic-house-11', 'dynamic-house-12', 'dynamic-house-13'
-      ];
-
-      function updateSimulation(homes) {
-        if (!counter || !slider) return;
-
-        counter.textContent = homes;
-        
-        // Calculate compound metrics
-        const dropPercent = Math.min(68, Math.round(12 + (homes / 1000) * 56));
-        const co2Avoided = Math.round(homes * 7.1);
-        const windowExtension = (1.0 + (homes / 1000) * 3.8).toFixed(1);
-        const pediatricDrop = Math.min(84, Math.round(18 + (homes / 1000) * 58));
-
-        // Update Big Dynamic Impact Card
-        if (impactStatement) {
-          impactStatement.innerHTML = `If <span class="text-tertiary-fixed underline decoration-secondary decoration-wavy underline-offset-4">${homes} homes</span> skip burning garden waste and reduce diesel generator usage today, ambient PM2.5 in our 1-km radius drops by ~${dropPercent}%!`;
-        }
-        if (statCo2) statCo2.textContent = `${co2Avoided.toLocaleString()} kg`;
-        if (statWindow) statWindow.textContent = `+${windowExtension} hrs`;
-        if (statPediatric) statPediatric.textContent = `-${pediatricDrop}%`;
-
-        // Update Legend
-        if (legendClean) legendClean.textContent = homes;
-        if (legendPending) {
-          const pending = Math.max(10, 350 - Math.round(homes * 0.35));
-          legendPending.textContent = pending;
-        }
-
-        // Transform Isometric Houses based on ratio
-        const cleanCount = Math.round((homes / 1000) * dynamicHouseIds.length);
-        dynamicHouseIds.forEach((id, index) => {
-          const el = document.getElementById(id);
-          if (!el) return;
-          const roof = el.querySelector('.roof');
-          const solar = el.querySelector('.roof-solar');
-          
-          if (index < cleanCount) {
-            // Turn Green / Clean
-            if (roof) {
-              roof.classList.remove('bg-outline/40');
-              roof.classList.add('bg-tertiary-container');
-            }
-            if (solar) {
-              solar.classList.remove('bg-outline-variant/60');
-              solar.classList.add('bg-tertiary-fixed');
-            }
-            // Remove smog indicator puff if present
-            const puff = roof ? roof.querySelector('span') : null;
-            if (puff) puff.style.display = 'none';
-          } else {
-            // Muted smog grey
-            if (roof) {
-              roof.classList.add('bg-outline/40');
-              roof.classList.remove('bg-tertiary-container');
-            }
-            if (solar) {
-              solar.classList.add('bg-outline-variant/60');
-              solar.classList.remove('bg-tertiary-fixed');
-            }
-            const puff = roof ? roof.querySelector('span') : null;
-            if (puff) puff.style.display = 'block';
-          }
-        });
-      }
-
-      if (slider) {
-        slider.addEventListener('input', function(e) {
-          updateSimulation(parseInt(e.target.value, 10));
-        });
-      }
-
-      // Action Button Feedback Micro-interactions
-      const shareBtn = document.getElementById('share-whatsapp-btn');
-      if (shareBtn) {
-        shareBtn.addEventListener('click', function() {
-          const original = shareBtn.innerHTML;
-          shareBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span><span>Invitation Link Copied!</span>';
-          shareBtn.classList.remove('bg-primary');
-          shareBtn.classList.add('bg-tertiary-container');
-          setTimeout(() => {
-            shareBtn.innerHTML = original;
-            shareBtn.classList.remove('bg-tertiary-container');
-            shareBtn.classList.add('bg-primary');
-          }, 2400);
-        });
-      }
-
-      const downloadBtn = document.getElementById('download-pdf-btn');
-      if (downloadBtn) {
-        downloadBtn.addEventListener('click', function() {
-          const original = downloadBtn.innerHTML;
-          downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Generating PDF...</span>';
-          setTimeout(() => {
-            downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Sector-4-Advisory.pdf Saved</span>';
-            setTimeout(() => {
-              downloadBtn.innerHTML = original;
-            }, 2000);
-          }, 1200);
-        });
-      }
-    })();
-  
-} catch(e) { console.warn('Error in community script:', e); }
-// Script for celebration
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in celebration script:', e); }
-// Script for celebration
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in celebration script:', e); }
-// Script for action-impact
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in action-impact script:', e); }
-// Script for action-impact
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in action-impact script:', e); }
-// Script for action-impact
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in action-impact script:', e); }
-// Script for settings
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in settings script:', e); }
-// Script for settings
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in settings script:', e); }
-// Script for settings
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in settings script:', e); }
-// Script for settings
-try {
-
-  (function setupSettingsInteractions() {
-    function setupToggle(toggleId, initialChecked) {
-      const toggle = document.getElementById(toggleId);
-      if (!toggle) return;
-      
-      let isChecked = initialChecked;
-      
-      toggle.addEventListener('click', () => {
-        isChecked = !isChecked;
-        toggle.setAttribute('aria-pressed', isChecked ? 'true' : 'false');
-        
-        const knob = toggle.querySelector('span');
-        if (isChecked) {
-          toggle.classList.remove('bg-surface-container-highest');
-          toggle.classList.add('bg-primary-container', 'shadow-inner');
-          if (knob) {
-            knob.classList.add('translate-x-5');
-            knob.classList.remove('translate-x-0');
-            if (!knob.querySelector('.material-symbols-outlined')) {
-              const icon = document.createElement('span');
-              icon.className = 'material-symbols-outlined text-primary text-[12px]';
-              icon.innerText = 'check';
-              knob.appendChild(icon);
-            }
-          }
-        } else {
-          toggle.classList.remove('bg-primary-container', 'shadow-inner');
-          toggle.classList.add('bg-surface-container-highest');
-          if (knob) {
-            knob.classList.remove('translate-x-5');
-            knob.classList.add('translate-x-0');
-            const icon = knob.querySelector('.material-symbols-outlined');
-            if (icon) icon.remove();
-          }
-        }
-      });
-    }
-
-    setupToggle('toggle-simple-view', true);
-    setupToggle('toggle-reduce-motion', false);
-    setupToggle('toggle-high-contrast', true);
-    setupToggle('toggle-sos', false);
-  })();
-
-} catch(e) { console.warn('Error in settings script:', e); }
-// Script for air-data-unavailable
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in air-data-unavailable script:', e); }
-// Script for air-data-unavailable
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in air-data-unavailable script:', e); }
-// Script for air-data-unavailable
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in air-data-unavailable script:', e); }
-// Script for air-data-unavailable
-try {
-
-    // Countdown simulation for auto-retry
-    let timeLeft = 45;
-    const countdownEl = document.getElementById('countdown-timer');
-    const retryBtn = document.getElementById('retry-btn');
-    const retryIcon = document.getElementById('retry-icon');
-    const retryText = document.getElementById('retry-text');
-
-    const timer = setInterval(() => {
-      timeLeft--;
-      if (countdownEl) {
-        countdownEl.textContent = timeLeft;
-      }
-      if (timeLeft <= 0) {
-        triggerRefresh();
-        timeLeft = 45;
-      }
-    }, 1000);
-
-    function triggerRefresh() {
-      if (!retryIcon || !retryText) return;
-      retryIcon.classList.add('animate-spin');
-      retryText.textContent = "Connecting to telemetry server...";
-      setTimeout(() => {
-        retryIcon.classList.remove('animate-spin');
-        retryText.textContent = "Sensor still unavailable. Re-trying soon";
-        setTimeout(() => {
-          retryText.textContent = "Try reconnecting now";
-        }, 2500);
-      }, 1800);
-    }
-
-    if (retryBtn) {
-      retryBtn.addEventListener('click', () => {
-        timeLeft = 45;
-        triggerRefresh();
-      });
-    }
-
-    function promptManualEntry() {
-      const userAQI = window.prompt("Enter current indoor or local handheld AQI reading (e.g., 220):", "265");
-      if (userAQI) {
-        window.alert("Manual reading of " + userAQI + " AQI registered for this session. Safe exposure timers calibrated.");
-      }
-    }
-  
-} catch(e) { console.warn('Error in air-data-unavailable script:', e); }
-// Script for offline-state
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in offline-state script:', e); }
-// Script for offline-state
-try {
-
-if (document.fonts) {
-  document.fonts.ready.then(function() {
-    document.documentElement.classList.add('fonts-loaded');
-  });
-} else {
-  document.documentElement.classList.add('fonts-loaded');
-}
-
-} catch(e) { console.warn('Error in offline-state script:', e); }
-// Script for offline-state
-try {
-
-  // Dynamic countdown timer micro-interaction
-  let timeLeft = 41;
-  const timerEl = document.getElementById('retry-timer');
-  const reconnectBtn = document.getElementById('reconnect-btn');
-  const refreshIcon = document.getElementById('refresh-icon');
-
-  const countdown = setInterval(() => {
-    timeLeft--;
-    if (timeLeft > 0) {
-      if (timerEl) timerEl.textContent = `Auto-retry in ${timeLeft}s`;
-    } else {
-      timeLeft = 45;
-      if (timerEl) timerEl.textContent = `Retrying connection...`;
-      triggerReconnectSimulation();
-    }
-  }, 1000);
-
-  function triggerReconnectSimulation() {
-    if (!refreshIcon || !reconnectBtn) return;
-    refreshIcon.classList.add('animate-spin');
-    reconnectBtn.disabled = true;
-    reconnectBtn.querySelector('span:last-child').textContent = 'Pinging station telemetry...';
-    
-    setTimeout(() => {
-      refreshIcon.classList.remove('animate-spin');
-      reconnectBtn.disabled = false;
-      reconnectBtn.querySelector('span:last-child').textContent = 'Try reconnecting now';
-      if (timerEl) timerEl.textContent = `Auto-retry in 45s`;
-    }, 2200);
-  }
-
-  if (reconnectBtn) {
-    reconnectBtn.addEventListener('click', () => {
-      timeLeft = 45;
-      triggerReconnectSimulation();
-    });
-  }
-
-} catch(e) { console.warn('Error in offline-state script:', e); }
-</script>
+<!-- Modular Application Architecture -->
+<script type="module" src="/js/app.js"></script>
 
 </body>
 </html>

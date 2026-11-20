@@ -587,14 +587,14 @@ if (document.fonts) {
 
       applyBtn.addEventListener('click', () => {
         const originalText = applyBtn.innerHTML;
-        applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Configuring Daily Schedule...</span>';
+        applyBtn.textContent = "Saved to Plan!";
         applyBtn.classList.add('opacity-90');
         setTimeout(() => {
-          applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Saved to Today\'s Plan!</span>';
+          applyBtn.textContent = "Saved to Plan!";
           applyBtn.classList.remove('bg-primary');
           applyBtn.classList.add('bg-tertiary');
           setTimeout(() => {
-            applyBtn.innerHTML = originalText;
+            applyBtn.textContent = "Apply Interventions";
             applyBtn.classList.remove('bg-tertiary', 'opacity-90');
             applyBtn.classList.add('bg-primary');
           }, 2400);

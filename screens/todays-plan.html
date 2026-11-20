@@ -537,7 +537,7 @@ if (document.fonts) {
 
       if (tagEl) tagEl.textContent = data.tag;
       if (titleEl) titleEl.textContent = data.title;
-      if (descEl) descEl.innerHTML = data.desc;
+      if (descEl) descEl.textContent = data.desc.replace(/<[^>]+>/g, "");
       if (statusEl) {
         statusEl.textContent = data.status;
         statusEl.className = 'px-space-xs py-0.5 rounded font-label-sm text-label-sm font-bold ' + data.statusClass;

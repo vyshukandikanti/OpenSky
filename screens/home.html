@@ -391,10 +391,10 @@ if (document.fonts) {
       detectBtn.addEventListener('click', () => {
         detectBtn.disabled = true;
         const origContent = detectBtn.innerHTML;
-        detectBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Locating...';
+        detectBtn.textContent = "Locating...";
         setTimeout(() => {
           input.value = "Hauz Khas Enclave, New Delhi (GPS Accurate)";
-          detectBtn.innerHTML = origContent;
+          detectBtn.textContent = "Detect location";
           detectBtn.disabled = false;
         }, 650);
       });

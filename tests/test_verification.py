@@ -1,5 +1,5 @@
 """
-OpenSky Hack2Skill Automated Verification & Regression Test Suite
+OpenSky Hack2Skill Automated Master Verification & Regression Suite
 Evaluates Code Quality, Security, Accessibility (WCAG 2.2), Efficiency, and Problem Alignment.
 """
 
@@ -14,9 +14,15 @@ class TestHackathonSubmission(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.index_path = os.path.join(BASE_DIR, "index.html")
-        cls.preview_path = os.path.join(BASE_DIR, "preview.html")
+        cls.app_js_path = os.path.join(BASE_DIR, "js", "app.js")
+        cls.bilingual_js_path = os.path.join(BASE_DIR, "js", "bilingual.js")
+        
         with open(cls.index_path, "r", encoding="utf-8") as f:
             cls.index_content = f.read()
+        with open(cls.app_js_path, "r", encoding="utf-8") as f:
+            cls.app_js_content = f.read()
+        with open(cls.bilingual_js_path, "r", encoding="utf-8") as f:
+            cls.bilingual_content = f.read()
 
     # =========================================================================
     # 1. EFFICIENCY & REPOSITORY CONSTRAINTS (Target: 100/100)
@@ -46,7 +52,7 @@ class TestHackathonSubmission(unittest.TestCase):
                 self.assertLess(sz, 100 * 1024, f"Screen {f} exceeds 100KB budget: {sz} bytes")
 
     # =========================================================================
-    # 2. SECURITY AUDIT (Target: 99+/100)
+    # 2. SECURITY AUDIT (Target: 100/100)
     # =========================================================================
     def test_content_security_policy_enforced(self):
         """Verifies strict Content Security Policy (CSP) meta tag exists."""
@@ -76,7 +82,7 @@ class TestHackathonSubmission(unittest.TestCase):
         self.assertNotIn("new Function(", self.index_content, "Forbidden new Function() detected")
 
     # =========================================================================
-    # 3. ACCESSIBILITY AUDIT (WCAG 2.2 AA / APG Compliant - Target: 99+/100)
+    # 3. ACCESSIBILITY AUDIT (WCAG 2.2 AA / APG Compliant - Target: 100/100)
     # =========================================================================
     def test_wcag_skip_link_present(self):
         """Verifies presence of keyboard accessible Skip to Main Content link."""
@@ -101,9 +107,9 @@ class TestHackathonSubmission(unittest.TestCase):
             self.assertIn(f'aria-labelledby="tab-btn-{tab}"', self.index_content, f"Pane {tab} missing aria-labelledby")
 
     def test_keyboard_arrow_navigation_script(self):
-        """Verifies keyboard event listeners for ArrowRight, ArrowLeft, Home, and End."""
-        self.assertIn("ArrowRight", self.index_content, "Missing ArrowRight keyboard navigation handler")
-        self.assertIn("ArrowLeft", self.index_content, "Missing ArrowLeft keyboard navigation handler")
+        """Verifies keyboard event listeners for ArrowRight, ArrowLeft, Home, and End in modular app.js."""
+        self.assertIn("ArrowRight", self.app_js_content, "Missing ArrowRight keyboard navigation handler")
+        self.assertIn("ArrowLeft", self.app_js_content, "Missing ArrowLeft keyboard navigation handler")
 
     def test_semantic_landmarks(self):
         """Verifies semantic HTML landmarks: <header role='banner'>, <main role='main'>, <nav>, <aside>."""
@@ -113,7 +119,7 @@ class TestHackathonSubmission(unittest.TestCase):
         self.assertIn('<aside', self.index_content)
 
     # =========================================================================
-    # 4. CODE QUALITY & ARCHITECTURE (Target: 99+/100)
+    # 4. CODE QUALITY & ARCHITECTURE (Target: 100/100)
     # =========================================================================
     def test_all_10_screens_exist_and_valid(self):
         """Ensures all 10 core screens are present in screens/ directory with valid markup."""
@@ -145,7 +151,13 @@ class TestHackathonSubmission(unittest.TestCase):
         """Verifies dynamic English & Hindi bilingual engine logic."""
         self.assertIn("id=\"lang-btn-en\"", self.index_content, "Missing English language button")
         self.assertIn("id=\"lang-btn-hi\"", self.index_content, "Missing Hindi language button")
-        self.assertIn("translations", self.index_content, "Missing client-side translation dictionary")
+        self.assertIn("translations", self.bilingual_content, "Missing client-side translation dictionary")
+
+    def test_genai_advisor_integration(self):
+        """Verifies GenAI Smog Advisor trigger button, suggestions, and dialog in index.html."""
+        self.assertIn("id=\"ai-advisor-toggle\"", self.index_content, "Missing GenAI Advisor button")
+        self.assertIn("id=\"ai-advisor-modal\"", self.index_content, "Missing GenAI Advisor dialog")
+        self.assertIn("ai-prompt-chip", self.index_content, "Missing GenAI prompt suggestions")
 
     def test_aqi_safety_dual_encoding(self):
         """Verifies color-blind accessible dual-encoding (numeric value, status text, and icon badge)."""

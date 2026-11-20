@@ -641,7 +641,7 @@ if (document.fonts) {
 
         // Update Big Dynamic Impact Card
         if (impactStatement) {
-          impactStatement.innerHTML = `If <span class="text-tertiary-fixed underline decoration-secondary decoration-wavy underline-offset-4">${homes} homes</span> skip burning garden waste and reduce diesel generator usage today, ambient PM2.5 in our 1-km radius drops by ~${dropPercent}%!`;
+          impactStatement.textContent = `If ${homes} homes skip burning garden waste and reduce diesel generator usage today, ambient PM2.5 in our 1-km radius drops by ~${dropPercent}%!`;
         }
         if (statCo2) statCo2.textContent = `${co2Avoided.toLocaleString()} kg`;
         if (statWindow) statWindow.textContent = `+${windowExtension} hrs`;
@@ -702,11 +702,11 @@ if (document.fonts) {
       if (shareBtn) {
         shareBtn.addEventListener('click', function() {
           const original = shareBtn.innerHTML;
-          shareBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span><span>Invitation Link Copied!</span>';
+          shareBtn.textContent = "Invitation Link Copied!";
           shareBtn.classList.remove('bg-primary');
           shareBtn.classList.add('bg-tertiary-container');
           setTimeout(() => {
-            shareBtn.innerHTML = original;
+            shareBtn.textContent = "Share Shield Link";
             shareBtn.classList.remove('bg-tertiary-container');
             shareBtn.classList.add('bg-primary');
           }, 2400);
@@ -717,11 +717,11 @@ if (document.fonts) {
       if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
           const original = downloadBtn.innerHTML;
-          downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Generating PDF...</span>';
+          downloadBtn.textContent = "PDF Saved";
           setTimeout(() => {
-            downloadBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Sector-4-Advisory.pdf Saved</span>';
+            downloadBtn.textContent = "PDF Saved";
             setTimeout(() => {
-              downloadBtn.innerHTML = original;
+              downloadBtn.textContent = "Download Advisory";
             }, 2000);
           }, 1200);
         });
