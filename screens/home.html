@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>OpenSky</title><link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#8fd1d9", "on-secondary-container": "#742814", "on-background": "#091d2e", "secondary-container": "#fc9174", "surface-container-lowest": "#ffffff", "tertiary-container": "#005e54", "on-tertiary-fixed-variant": "#005048", "inverse-surface": "#203243", "surface-variant": "#d1e4fb", "on-secondary-fixed": "#3c0800", "on-surface": "#091d2e", "surface-container-low": "#edf4ff", "surface-dim": "#c9dcf3", "outline": "#6f797a", "on-primary-fixed": "#002023", "tertiary": "#00443d", "on-secondary-fixed-variant": "#7c2e19", "tertiary-fixed-dim": "#6fd8c8", "error-container": "#ffdad6", "surface": "#f7f9ff", "surface-container-highest": "#d1e4fb", "on-secondary": "#ffffff", "surface-container-high": "#d9eaff", "secondary": "#9a442d", "secondary-fixed-dim": "#ffb4a1", "surface-container": "#e3efff", "on-tertiary": "#ffffff", "surface-tint": "#20686f", "on-error-container": "#93000a", "on-primary-container": "#90d2da", "inverse-on-surface": "#e8f2ff", "on-tertiary-container": "#70d9c9", "inverse-primary": "#8fd1d9", "primary-container": "#0d5c63", "on-tertiary-fixed": "#00201c", "surface-bright": "#f7f9ff", "tertiary-fixed": "#8cf5e4", "background": "#f7f9ff", "on-surface-variant": "#3f484a", "primary": "#004349", "primary-fixed": "abeef6", "outline-variant": "#bfc8c9", "on-error": "#ffffff", "error": "#ba1a1a", "on-primary": "#ffffff", "on-primary-fixed-variant": "#004f55", "secondary-fixed": "#ffdbd2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "2rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "gutter": "1rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": [ "Merriweather" ], "headline-xl": [ "Merriweather" ], "headline-md": [ "Merriweather" ], "label-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-sm": [ "Merriweather" ], "body-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Merriweather" ], "headline-xl-mobile": [ "Merriweather" ], "body-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg": [ "32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-xl": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed-dim selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(13,92,99,0.05)] transition-all"><div class="h-20 max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="OpenSky Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBwQc0V4uCiotMMAlZeCUqYfTb4X2xkOn0-bj_LmnWQ0rhyS9vNNpm9InqK_PYKrMTXQvMOg6kWgWo74wHEeUzeruG_GCmu02SKNee9Hlq9VuZkoENNBctPNWwxc88_iDyTlYYLIxUTKHUI9ecRoeciBo-ZJvZNKL5oOCsI21N12iO7ojlgbBEYNyqYqeqr5OVSvlGjGNxf2bA4CM5TCbLhEHIzYUxYyJlp_6No4Dz5"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">OpenSky</span></a><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low/70 p-space-xs rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm"><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="family-setup" href="#">Family Setup</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="todays-plan" href="#">Today's Plan</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="what-if" href="#">What If</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="community" href="#">Community</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="celebration" href="#">Celebration (Open Sky)</a></nav></div><div class="flex items-center gap-space-sm sm:gap-space-md"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full shadow-[0_1px_3px_rgba(13,92,99,0.06)]"><span class="material-symbols-outlined text-primary text-[18px]">location_on</span><span class="font-label-md text-label-md text-on-surface font-medium whitespace-nowrap">New Delhi, NCR • 14°C</span></div><div class="flex items-center bg-surface-container-low rounded-full p-space-xs text-on-surface-variant"><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm font-bold text-on-surface hover:text-primary transition-colors" type="button">EN</button><span class="text-outline-variant font-label-sm text-label-sm">|</span><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">HI</button></div><button aria-label="Safety alerts" class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest animate-pulse"></span></button><div class="flex items-center pl-space-xs"><a class="rounded-full p-0.5 ring-2 ring-primary/20 hover:ring-primary transition-all" data-path="family-setup" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANH-TsNQ_OCJrSru8zD3T_FLRuOxyZ0f-Ce-dSOXOiN2ZNCkdjgVwKvD3fGuWXICZKIlTwW43gMggwpDdfRjnLn5LOFZQu6ZjwmBEepTN_PJj5w72OZVvEPXkxzcigvCjO3N-1sEXpgsAvJQ8G7P5wFQuaYXJjeohFN2e0E3g4sM-bRT_pk9JucQe8A9h7j2er9GhKwr_m1hB9UQ6tcO1SmIDWxxX0gZ02-H7e7Xg"/></a></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Atmospheric Dawn Sky Underlay & Ambient Glow -->
+<div class="relative w-full overflow-hidden bg-gradient-to-b from-surface via-surface-container-low to-surface">
+<!-- Diffuse Atmospheric Smog-to-Purity Light Orbs (Parent Constrained) -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[380px] bg-secondary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 right-10 w-[420px] h-[420px] bg-tertiary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg pt-space-md pb-space-xl">
+<!-- Top Live Indicator & Bilingual Pill Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm text-on-surface-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-bold text-on-surface">Live Network:</span>
+<span>Last updated 10 mins ago</span>
+<span class="text-outline-variant">•</span>
+<span class="text-outline">Open-Meteo &amp; SAFAR Ground Grid</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest p-1 rounded-full shadow-sm">
+<button class="px-space-md py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container shadow-sm transition-all" id="lang-en" type="button">English</button>
+<button class="px-space-md py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="lang-hi" type="button">हिन्दी</button>
+</div>
+</div>
+<!-- Hero Section: Bespoke Asymmetric Split -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-center pt-space-sm">
+<!-- Left Column: Editorial & Personalized Search -->
+<div class="lg:col-span-7 flex flex-col space-y-space-md">
+<div class="inline-flex items-center gap-space-xs self-start px-space-md py-space-xs rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">shield_with_heart</span>
+            Winter Smog Advisory • NCR &amp; Northern Plains
+          </div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight text-balance">
+            Clear air starts <br class="hidden sm:inline"/>
+<span class="italic text-primary">at home.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl text-balance">
+            Personalized winter smog defense and actionable family protection forecasts for your neighborhood, children, and elderly loved ones.
+          </p>
+<!-- Search & Geolocation Console -->
+<div class="pt-space-xs">
+<form class="bg-surface-container-lowest p-space-xs sm:p-space-sm rounded-xl shadow-md flex flex-col sm:flex-row items-stretch sm:items-center gap-space-xs transition-shadow hover:shadow-lg" id="aqi-search-form">
+<div class="flex items-center flex-1 px-space-sm gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[24px]">search</span>
+<input class="w-full bg-transparent py-space-sm text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none" id="loc-input" placeholder="Search your city, sector, or postal code (e.g. South Delhi, Indirapuram)..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-space-md py-space-sm rounded-lg bg-surface-container-low text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors whitespace-nowrap" id="btn-detect-loc" title="Detect GPS Location" type="button">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span class="hidden md:inline">Detect location</span>
+</button>
+<button class="flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0_8px_20px_-4px_rgba(13,92,99,0.35)] hover:bg-primary transition-all whitespace-nowrap" type="submit">
+<span>Get my plan</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Popular Quick Micro-Tags -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-sm font-label-sm text-label-sm text-outline">
+<span>Frequent:</span>
+<button class="quick-chip text-primary hover:underline bg-surface-container-low px-space-sm py-0.5 rounded-full" type="button">Anand Vihar</button>
+<button class="quick-chip text-primary hover:underline bg-surface-container-low px-space-sm py-0.5 rounded-full" type="button">Noida Sec 62</button>
+<button class="quick-chip text-primary hover:underline bg-surface-container-low px-space-sm py-0.5 rounded-full" type="button">Gurugram Phase 5</button>
+<button class="quick-chip text-primary hover:underline bg-surface-container-low px-space-sm py-0.5 rounded-full" type="button">Rohini</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Isometric 3D Skyline Illustration Card -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-xl p-space-sm group">
+<div class="relative w-full h-[320px] sm:h-[380px] rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Spectacular low-poly 3D isometric illustration of a dense urban winter skyline submerged in deep atmospheric amber smog haze. In the foreground, warm residential rooftops with low-poly clay finishes have miniature glowing clean air bubbles in soft teal. A pale morning sun breaks through volumetric fog in soft coral and misty cyan, clean Scandinavian architectural composition, highly detailed render." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW61IIOaFaulKsmYeDMDfD-aRkDA0yGHnGBokyfdGaFRaGz-AbyBHfYyADJdtwEuos9J0ZSDrsm4fdedKlx_klTxaUc4RvC-Gzwa3AsSPfiwuRj1okgiuBxyPHfuCEIn2Wp0lRh5uMos7hsY4BSau7hjpe9qXnRCRCAd9VCja_2CYsu2uoonyHokb99DNlBa6ZV9ToWeeMGnpgCBRdMxKBr2Lep8XXtEd4tRGXjLc"/>
+<!-- Subtle Fog Gradient Overlay for Depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+<!-- Floating Bubble Label -->
+<div class="absolute bottom-space-md left-space-md right-space-md bg-surface-container-lowest/90 backdrop-blur-md p-space-sm rounded-lg shadow-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[20px]">foggy</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-sm text-label-sm font-bold text-on-surface truncate">Thermal Inversion Layer Active</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant truncate">Particulates trapped under 180m altitude</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-bold shrink-0">High Alert</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Floating Today's Air Status Card (Primary Psychological Anchor) -->
+<div class="mt-space-xl relative">
+<!-- Sanctuary Card Wrapper -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-xl p-space-lg sm:p-space-xl overflow-hidden">
+<!-- Subtle Top Indicator Strip (Accessibility Pattern) -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-secondary-container via-secondary to-on-secondary-container"></div>
+<!-- Top Meta Row -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">air</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Real-Time Neighborhood Air</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Greater Kailash II • South Delhi</h2>
+</div>
+</div>
+<!-- Accessible Indicator Pill -->
+<div class="flex items-center gap-space-xs self-start sm:self-auto bg-error-container/40 text-on-secondary-container px-space-md py-space-xs rounded-full font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span>AQI 312 • Severe Smog Level</span>
+</div>
+</div>
+<!-- Hero Metrics Cluster: 3D AQI Orb + Action Statement -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Left: Glowing 3D AQI Orb -->
+<div class="lg:col-span-4 flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low relative overflow-hidden">
+<!-- Radial Smog Glow -->
+<div class="absolute inset-0 bg-radial from-secondary-container/30 via-transparent to-transparent pointer-events-none"></div>
+<div class="relative flex flex-col items-center">
+<!-- Color-Blind Friendly Icon & Texture Ring -->
+<div class="relative w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-inner bg-gradient-to-br from-secondary-container via-secondary to-on-secondary-container text-surface-container-lowest">
+<!-- Accessible pattern ring (Color-Blind Shield icon marker) -->
+<div class="absolute top-3 flex items-center gap-1 font-label-sm text-label-sm uppercase tracking-wider bg-on-secondary-container/40 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>Zone 5</span>
+</div>
+<span class="font-headline-xl text-[48px] leading-none font-bold tracking-tighter drop-shadow-sm mt-3">312</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase opacity-90">Severe AQI</span>
+</div>
+<!-- Texture & Gauge Detail -->
+<div class="mt-space-sm text-center">
+<div class="font-label-sm text-label-sm font-bold text-secondary">Index: IN-NAAQI Standard</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Exposure risk is heightened for respiratory tracts</div>
+</div>
+</div>
+</div>
+<!-- Right: Actionable Family Directive & Granular Micro Metrics -->
+<div class="lg:col-span-8 flex flex-col justify-between space-y-space-md">
+<!-- Plain High-Contrast Actionable Directive -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="p-space-xs rounded-full bg-secondary text-surface-container-lowest shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">family_restroom</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-secondary">Immediate Action for Families</span>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold mt-1">
+                      Keep children indoors until 11 AM. Run HEPA air purifier on medium and seal north-facing balcony doors.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Micro Metric Pills -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<!-- PM2.5 -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">PM2.5 Level</span>
+<span class="font-headline-sm text-headline-sm text-secondary">245 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">µg/m³</span></span>
+<span class="font-label-sm text-label-sm text-error mt-0.5 font-bold">×16 WHO limit</span>
+</div>
+<!-- PM10 -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">PM10 Level</span>
+<span class="font-headline-sm text-headline-sm text-secondary">380 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">µg/m³</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Unhealthy dust</span>
+</div>
+<!-- Humidity -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Humidity</span>
+<span class="font-headline-sm text-headline-sm text-primary">78%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Fog condensation</span>
+</div>
+<!-- Wind -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Surface Wind</span>
+<span class="font-headline-sm text-headline-sm text-primary">4 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">km/h</span></span>
+<span class="font-label-sm text-label-sm text-outline mt-0.5">Calm / Stagnant</span>
+</div>
+</div>
+<!-- Hourly Smog Projection Sparkline (SVG) -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between pb-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="font-semibold">6-Hour Smog Dispersion Curve</span>
+<span class="text-tertiary">Safe window opens ~ 1:30 PM (AQI ~180)</span>
+</div>
+<div class="h-16 w-full bg-surface-container-low rounded-lg p-2 flex items-end">
+<svg class="w-full h-full text-secondary" fill="none" preserveaspectratio="none" viewbox="0 0 500 50">
+<path d="M0,45 Q70,48 130,40 T260,25 T380,12 T500,4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<circle class="fill-secondary" cx="0" cy="45" r="4"></circle>
+<circle class="fill-secondary" cx="130" cy="40" r="4"></circle>
+<circle class="fill-secondary" cx="260" cy="25" r="4"></circle>
+<circle class="fill-primary" cx="380" cy="12" r="4"></circle>
+<circle class="fill-primary" cx="500" cy="4" r="4"></circle>
+</svg>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline pt-1 px-1">
+<span>8 AM (312)</span>
+<span>10 AM (295)</span>
+<span>12 PM (240)</span>
+<span>2 PM (182)</span>
+<span>4 PM (165)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Shortcut Cards -->
+<div class="mt-space-lg pt-space-md grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Family Setup -->
+<a class="group bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between" data-path="family-setup" href="#">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">manage_accounts</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded-full font-bold">2 Vulnerable</span>
+</div>
+<div class="mt-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Set Up Family Profile</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Calibrate thresholds for elder heart patients, pregnant mothers, and asthmatic toddlers.</p>
+</div>
+<div class="mt-space-md flex items-center gap-1 font-label-md text-label-md font-bold text-primary">
+<span>Configure sensitivity</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2: 4-Step Plan -->
+<a class="group bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between" data-path="todays-plan" href="#">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">checklist_rtl</span>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-container/40 text-on-secondary-container px-2 py-0.5 rounded-full font-bold">Priority Today</span>
+</div>
+<div class="mt-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">View 4-Step Action Plan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Step-by-step ventilation window, wet-mopping timings, and school commute safety.</p>
+</div>
+<div class="mt-space-md flex items-center gap-1 font-label-md text-label-md font-bold text-primary">
+<span>Open today's playbook</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3: What-If Simulation -->
+<a class="group bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between" data-path="what-if" href="#">
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest text-tertiary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</div>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full font-bold">Simulator</span>
+</div>
+<div class="mt-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Simulate Interventions</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Calculate how much indoor AQI drops if you run DIY filtration or cross-ventilation.</p>
+</div>
+<div class="mt-space-md flex items-center gap-1 font-label-md text-label-md font-bold text-primary">
+<span>Test scenarios</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Living Sanctuary Narrative: Why OpenSky -->
+<div class="mt-space-xl grid grid-cols-1 md:grid-cols-2 gap-space-lg items-center">
+<div class="space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Protection Philosophy</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Designed for maternal calm in severe winter inversions.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Traditional weather apps share apocalyptic numbers with zero practical guidance. OpenSky translates raw micrometeorology into exact, comforting family behaviors: when to run purifiers on boost, when children can safely play on shaded terraces, and when to seal drafty balcony frames.
+          </p>
+<div class="pt-space-xs flex items-center gap-space-md">
+<div class="flex -space-x-2">
+<img alt="Doctor" class="w-9 h-9 rounded-full object-cover ring-2 ring-surface-container-lowest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANH-TsNQ_OCJrSru8zD3T_FLRuOxyZ0f-Ce-dSOXOiN2ZNCkdjgVwKvD3fGuWXICZKIlTwW43gMggwpDdfRjnLn5LOFZQu6ZjwmBEepTN_PJj5w72OZVvEPXkxzcigvCjO3N-1sEXpgsAvJQ8G7P5wFQuaYXJjeohFN2e0E3g4sM-bRT_pk9JucQe8A9h7j2er9GhKwr_m1hB9UQ6tcO1SmIDWxxX0gZ02-H7e7Xg"/>
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold ring-2 ring-surface-container-lowest">AI</div>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+              Endorsed by pediatric pulmonologists across Delhi-NCR • Over 42,000 children shielded this season
+            </div>
+</div>
+</div>
+<!-- Safe Sanctuary Photo Card -->
+<div class="rounded-xl overflow-hidden shadow-lg bg-surface-container-lowest">
+<div class="h-64 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A modern Indian living room with warm wood textures and natural light filtering through sheer curtains. A mother and her young daughter sit comfortably reading a book while a minimalist air purifier with a soft teal status ring purifies the clean indoor air. Through the window, faint winter morning haze is visible outside, creating a serene contrast between indoor purity and external winter smog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDyurZh5XVRrtwi95GkLAXx26g80J0o0YNG0Pp31RUar1JoMIqveNtX7I6fUTZZB0zIYAG25w-lIud5IBZwbypweOY5PsOcTAtsqA26kisQAvOp4_K_IghzjitU_kDAfIHF-u6SzMSoCCu4XEtnejRph11pOgz8BG35e9-OUzVyQhF56Y48YQBYWuBXzmPF1A7wiWfCQiV-jugeUCNxr6sxQEzRDovcnlNQEhofMA"/>
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Safe Indoor Sanctuary Active: AQI 24
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initHomeScreen() {
+    // Quick search chip population
+    const chips = document.querySelectorAll('.quick-chip');
+    const input = document.getElementById('loc-input');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        if (input) {
+          input.value = chip.textContent.trim();
+          input.focus();
+        }
+      });
+    });
+
+    // Detect GPS Button micro-action
+    const detectBtn = document.getElementById('btn-detect-loc');
+    if (detectBtn && input) {
+      detectBtn.addEventListener('click', () => {
+        detectBtn.disabled = true;
+        const origContent = detectBtn.innerHTML;
+        detectBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Locating...';
+        setTimeout(() => {
+          input.value = "Hauz Khas Enclave, New Delhi (GPS Accurate)";
+          detectBtn.innerHTML = origContent;
+          detectBtn.disabled = false;
+        }, 650);
+      });
+    }
+
+    // Language Toggle visual switcher
+    const btnEn = document.getElementById('lang-en');
+    const btnHi = document.getElementById('lang-hi');
+    if (btnEn && btnHi) {
+      btnEn.addEventListener('click', () => {
+        btnEn.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container shadow-sm transition-all";
+        btnHi.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all";
+      });
+      btnHi.addEventListener('click', () => {
+        btnHi.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container shadow-sm transition-all";
+        btnEn.className = "px-space-md py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all";
+      });
+    }
+
+    // Form search navigation intercept
+    const form = document.getElementById('aqi-search-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const target = document.querySelector('[data-path="todays-plan"]');
+        if (target) {
+          target.click();
+        }
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(13,92,99,0.04)] mt-auto"><div class="max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div class="space-y-space-xs max-w-xl"><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[20px]">health_and_safety</span><span class="font-label-md text-label-md font-bold uppercase tracking-wider">Health Safety Advisory</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Data reflects ambient sensor projections intended for personal family exposure management. Not a substitute for clinical pulmonary counsel.</p><p class="font-label-sm text-label-sm text-outline">Sensor streams integrated via Open-Meteo &amp; Central Pollution Control Board (CPCB) real-time monitors.</p></div><div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md w-full md:w-auto pt-space-sm md:pt-0"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl"><span class="material-symbols-outlined text-secondary text-[22px]">emergency</span><div><div class="font-label-sm text-label-sm text-outline-variant font-bold uppercase">Emergency Helpline</div><div class="font-label-lg text-label-lg text-on-surface font-bold">108 / 112 (NCR Core)</div></div></div><div class="text-left sm:text-right font-label-sm text-label-sm text-outline">© 2025 OpenSky. Safe Air for Families.</div></div></div></footer></body></html>

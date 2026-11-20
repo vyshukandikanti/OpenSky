@@ -1,0 +1,16 @@
+# Ignore heavy uncompressed screenshot dumps to keep repo size strictly under 10 MB
+*.png
+!assets/*.webp
+
+# Python cache & temporary build files
+__pycache__/
+*.py[cod]
+*$py.class
+scratch/
+
+# OS and environment metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

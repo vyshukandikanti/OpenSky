@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>OpenSky</title><link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#8fd1d9", "on-secondary-container": "#742814", "on-background": "#091d2e", "secondary-container": "#fc9174", "surface-container-lowest": "#ffffff", "tertiary-container": "#005e54", "on-tertiary-fixed-variant": "#005048", "inverse-surface": "#203243", "surface-variant": "#d1e4fb", "on-secondary-fixed": "#3c0800", "on-surface": "#091d2e", "surface-container-low": "#edf4ff", "surface-dim": "#c9dcf3", "outline": "#6f797a", "on-primary-fixed": "#002023", "tertiary": "#00443d", "on-secondary-fixed-variant": "#7c2e19", "tertiary-fixed-dim": "#6fd8c8", "error-container": "#ffdad6", "surface": "#f7f9ff", "surface-container-highest": "#d1e4fb", "on-secondary": "#ffffff", "surface-container-high": "#d9eaff", "secondary": "#9a442d", "secondary-fixed-dim": "#ffb4a1", "surface-container": "#e3efff", "on-tertiary": "#ffffff", "surface-tint": "#20686f", "on-error-container": "#93000a", "on-primary-container": "#90d2da", "inverse-on-surface": "#e8f2ff", "on-tertiary-container": "#70d9c9", "inverse-primary": "#8fd1d9", "primary-container": "#0d5c63", "on-tertiary-fixed": "#00201c", "surface-bright": "#f7f9ff", "tertiary-fixed": "#8cf5e4", "background": "#f7f9ff", "on-surface-variant": "#3f484a", "primary": "#004349", "primary-fixed": "abeef6", "outline-variant": "#bfc8c9", "on-error": "#ffffff", "error": "#ba1a1a", "on-primary": "#ffffff", "on-primary-fixed-variant": "#004f55", "secondary-fixed": "#ffdbd2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "2rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "gutter": "1rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": [ "Merriweather" ], "headline-xl": [ "Merriweather" ], "headline-md": [ "Merriweather" ], "label-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-sm": [ "Merriweather" ], "body-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Merriweather" ], "headline-xl-mobile": [ "Merriweather" ], "body-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg": [ "32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-xl": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed-dim selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(13,92,99,0.05)] transition-all"><div class="h-20 max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="OpenSky Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBwQc0V4uCiotMMAlZeCUqYfTb4X2xkOn0-bj_LmnWQ0rhyS9vNNpm9InqK_PYKrMTXQvMOg6kWgWo74wHEeUzeruG_GCmu02SKNee9Hlq9VuZkoENNBctPNWwxc88_iDyTlYYLIxUTKHUI9ecRoeciBo-ZJvZNKL5oOCsI21N12iO7ojlgbBEYNyqYqeqr5OVSvlGjGNxf2bA4CM5TCbLhEHIzYUxYyJlp_6No4Dz5"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">OpenSky</span></a><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low/70 p-space-xs rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm"><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="family-setup" href="#">Family Setup</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="todays-plan" href="#">Today's Plan</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="what-if" href="#">What If</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="community" href="#">Community</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="celebration" href="#">Celebration (Open Sky)</a></nav></div><div class="flex items-center gap-space-sm sm:gap-space-md"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full shadow-[0_1px_3px_rgba(13,92,99,0.06)]"><span class="material-symbols-outlined text-primary text-[18px]">location_on</span><span class="font-label-md text-label-md text-on-surface font-medium whitespace-nowrap">New Delhi, NCR • 14°C</span></div><div class="flex items-center bg-surface-container-low rounded-full p-space-xs text-on-surface-variant"><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm font-bold text-on-surface hover:text-primary transition-colors" type="button">EN</button><span class="text-outline-variant font-label-sm text-label-sm">|</span><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">HI</button></div><button aria-label="Safety alerts" class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest animate-pulse"></span></button><div class="flex items-center pl-space-xs"><a class="rounded-full p-0.5 ring-2 ring-primary/20 hover:ring-primary transition-all" data-path="family-setup" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANH-TsNQ_OCJrSru8zD3T_FLRuOxyZ0f-Ce-dSOXOiN2ZNCkdjgVwKvD3fGuWXICZKIlTwW43gMggwpDdfRjnLn5LOFZQu6ZjwmBEepTN_PJj5w72OZVvEPXkxzcigvCjO3N-1sEXpgsAvJQ8G7P5wFQuaYXJjeohFN2e0E3g4sM-bRT_pk9JucQe8A9h7j2er9GhKwr_m1hB9UQ6tcO1SmIDWxxX0gZ02-H7e7Xg"/></a></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-lg space-y-space-lg">
+<!-- Top Strategic Context Banner -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-[0_4px_20px_-4px_rgba(13,92,99,0.06)] flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="inline-flex items-center gap-space-xs bg-secondary/15 text-secondary px-space-sm py-0.5 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span>Severe Peak Today: AQI 312 at 8:30 AM</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Dynamic Protocol #ND-408</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Today's Winter Defense Plan</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Personalized actions based on AQI 312 peak at 8:30 AM and 2 children + asthma profile.
+        </p>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-md rounded-xl shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">shield_with_heart</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase font-bold tracking-wider">Target Daily Reduction</div>
+<div class="font-headline-md text-headline-md font-bold text-primary flex items-baseline gap-space-xs">
+<span>-45%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">inhalation load</span>
+</div>
+<div class="font-label-sm text-label-sm text-tertiary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+<span>Aanvi (6) &amp; Kabir (9) Protected</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Plan Modes Navigation Tabs -->
+<nav aria-label="Defense Plan Views" class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="tab-pill active flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg whitespace-nowrap shadow-sm transition-all" id="tab-btn-indoor" onclick="switchPlanTab('indoor')" type="button">
+<span class="material-symbols-outlined text-[18px]">view_in_ar</span>
+<span>Indoor (Interactive 3D Cutaway)</span>
+</button>
+<button class="tab-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-all" id="tab-btn-routine" onclick="switchPlanTab('routine')" type="button">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Routine</span>
+</button>
+<button class="tab-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-all" id="tab-btn-sustainable" onclick="switchPlanTab('sustainable')" type="button">
+<span class="material-symbols-outlined text-[18px]">eco</span>
+<span>Sustainable Habits</span>
+</button>
+<button class="tab-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-all" id="tab-btn-protect" onclick="switchPlanTab('protect')" type="button">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+<span>Protect</span>
+</button>
+</nav>
+<!-- Main Dynamic Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Action Cards Column (7 Cols on Desktop) -->
+<section class="lg:col-span-7 space-y-space-md order-2 lg:order-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">checklist</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Targeted Atmospheric Interventions</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase font-bold">3 High-Impact Steps</span>
+</div>
+<!-- Action Card 1: Ventilation -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-[0_4px_16px_rgba(13,92,99,0.05)] transition-transform hover:-translate-y-0.5">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0 shadow-sm">
+<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 40 40">
+<path d="M6 32L20 24L34 32L20 39L6 32Z" fill="currentColor" fill-opacity="0.12"></path>
+<path d="M20 7L34 15V32L20 24V7Z" fill="currentColor" fill-opacity="0.2"></path>
+<path d="M6 15L20 7V24L6 32V15Z"></path>
+<path d="M13 18.5V26"></path>
+<path d="M27 18.5V26"></path>
+<circle cx="20" cy="18" fill="currentColor" r="2"></circle>
+</svg>
+</div>
+<div class="flex-1 min-w-0 space-y-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-tertiary bg-tertiary-fixed/30 px-space-xs py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">alarm_on</span>
+                  Optimal Air Window
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-secondary-container bg-secondary-container/30 px-space-xs py-0.5 rounded">
+                  Estimate: Cuts exposure by 20–30%
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Ventilation Window: 1:30 PM - 2:45 PM</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Haze disperses temporarily when solar inversion lifts. Crack South-facing windows for cross-flow without prolonged intake.
+              </p>
+<!-- Why this helps toggle -->
+<details class="group pt-space-xs">
+<summary class="list-none flex items-center gap-space-xs text-primary font-label-md text-label-md cursor-pointer hover:underline">
+<span class="material-symbols-outlined text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+<span>Why this helps &amp; air science breakdown</span>
+</summary>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm space-y-space-xs">
+<p>
+<strong>Thermal Inversion Break:</strong> Surface solar heating between 1:00 PM and 3:00 PM expands the planetary boundary layer from ~250m up to ~950m, dispersing stagnant PM2.5. Flushing stale CO2 during this narrow window reduces respiratory fatigue in asthmatic airways before evening inversion sets in again.
+                  </p>
+<div class="flex items-center gap-space-sm text-outline font-label-sm text-label-sm">
+<span>Forecast ambient PM2.5 at 2:00 PM: ~118 µg/m³ vs 380 µg/m³ peak</span>
+</div>
+</div>
+</details>
+</div>
+</div>
+</article>
+<!-- Action Card 2: Kitchen Exhaust -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-[0_4px_16px_rgba(13,92,99,0.05)] transition-transform hover:-translate-y-0.5">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high text-secondary flex items-center justify-center shrink-0 shadow-sm">
+<svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 40 40">
+<path d="M12 8H28V16L34 26H6L12 16V8Z" fill="currentColor" fill-opacity="0.15"></path>
+<path d="M10 26L7 32H33L30 26"></path>
+<path d="M17 18C17 21 23 21 23 24"></path>
+<path d="M20 12V14"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0 space-y-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-secondary bg-secondary-container/20 px-space-xs py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                  Combustion Spike Prevention
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-secondary-container bg-secondary-container/30 px-space-xs py-0.5 rounded">
+                  Estimate: Cuts exposure by 15–22%
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Pre-filter Kitchen Exhaust during Frying</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Cooking PM2.5 spikes can exceed 400 µg/m³ indoors without active extraction. Close internal corridor doors and set chimney to stage 3.
+              </p>
+<!-- Why this helps toggle -->
+<details class="group pt-space-xs">
+<summary class="list-none flex items-center gap-space-xs text-primary font-label-md text-label-md cursor-pointer hover:underline">
+<span class="material-symbols-outlined text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+<span>Why this helps &amp; air science breakdown</span>
+</summary>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm space-y-space-xs">
+<p>
+<strong>Ultrafine Aerosol Generation:</strong> Mustard and sunflower oil vapourization produces VOCs and sub-micron aerosols (PM0.1) that rapidly diffuse into living rooms within 7 minutes, triggering child bronchial spasms. Sealing the kitchen galley maintains bedrooms at safe baseline readings.
+                  </p>
+</div>
+</details>
+</div>
+</div>
+</article>
+<!-- Action Card 3: Sleep Zones HEPA -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-[0_4px_16px_rgba(13,92,99,0.05)] transition-transform hover:-translate-y-0.5">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high text-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<svg class="w-8 h-8 text-tertiary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 40 40">
+<rect fill="currentColor" fill-opacity="0.15" height="28" rx="4" width="20" x="10" y="6"></rect>
+<path d="M15 12H25"></path>
+<path d="M15 16H25"></path>
+<path d="M15 20H25"></path>
+<circle cx="20" cy="27" fill="currentColor" r="3"></circle>
+</svg>
+</div>
+<div class="flex-1 min-w-0 space-y-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-tertiary bg-tertiary-fixed/30 px-space-xs py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">bedtime</span>
+                  Nocturnal Recovery
+                </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-on-secondary-container bg-secondary-container/30 px-space-xs py-0.5 rounded">
+                  Estimate: Cuts exposure by 35–50%
+                </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Activate HEPA Air Purifier in Sleep Zones at 7 PM</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Creates a sub-30 AQI microclimate before bedtime. Asthmatic airways clear overnight inflammation when air is pure for 8+ continuous hours.
+              </p>
+<!-- Why this helps toggle -->
+<details class="group pt-space-xs">
+<summary class="list-none flex items-center gap-space-xs text-primary font-label-md text-label-md cursor-pointer hover:underline">
+<span class="material-symbols-outlined text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+<span>Why this helps &amp; air science breakdown</span>
+</summary>
+<div class="mt-space-sm p-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm space-y-space-xs">
+<p>
+<strong>Ciliary Clearance Phase:</strong> When children sleep, pulmonary mucous cilia operate unhindered by exertion. Starting CADR clean cycles 90 minutes before sleep ensures ambient PM2.5 plummets to under 12 µg/m³ (WHO target) without sleep-disrupting fan noise.
+                  </p>
+</div>
+</details>
+</div>
+</div>
+</article>
+</section>
+<!-- Interactive 3D Cutaway House Architecture (5 Cols on Desktop) -->
+<section class="lg:col-span-5 space-y-space-md order-1 lg:order-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">home_pin</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Home Microclimate Model</h2>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary/10 px-space-xs py-0.5 rounded-full font-bold">Interactive Sanctuary</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_12px_32px_-6px_rgba(13,92,99,0.08)] relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="font-label-md text-label-md font-bold text-primary flex items-center gap-1">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+              Live Hotspot Guidance
+            </div>
+<div class="font-label-sm text-label-sm text-outline">Tap hotspot to inspect</div>
+</div>
+<!-- Isometric Cutaway Graphic with 3 Interactive Hotspots -->
+<div class="relative w-full aspect-[4/3] bg-gradient-to-b from-surface-container-high/40 via-surface-container/60 to-surface-container-low rounded-xl overflow-hidden flex items-center justify-center p-2">
+<!-- Isometric Architectural Drawing SVG Background -->
+<svg class="w-full h-full text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 460 340">
+<defs>
+<lineargradient id="wallGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0D5C63" stop-opacity="0.14"></stop>
+<stop offset="100%" stop-color="#0D5C63" stop-opacity="0.04"></stop>
+</lineargradient>
+<lineargradient id="floorGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#FC9174" stop-opacity="0.12"></stop>
+<stop offset="100%" stop-color="#8FD1D9" stop-opacity="0.18"></stop>
+</lineargradient>
+</defs>
+<!-- Floor Ground Isometric Slab -->
+<polygon fill="url(#floorGrad)" points="230,60 410,150 230,240 50,150" stroke="currentColor" stroke-opacity="0.3"></polygon>
+<polygon fill="currentColor" fill-opacity="0.15" points="50,150 230,240 230,265 50,175" stroke="currentColor" stroke-opacity="0.4"></polygon>
+<polygon fill="currentColor" fill-opacity="0.25" points="230,240 410,150 410,175 230,265" stroke="currentColor" stroke-opacity="0.4"></polygon>
+<!-- Back Walls -->
+<polygon fill="url(#wallGrad)" points="50,150 230,60 230,0 50,90" stroke="currentColor" stroke-opacity="0.25"></polygon>
+<polygon fill="url(#wallGrad)" points="230,60 410,150 410,90 230,0" stroke="currentColor" stroke-opacity="0.35"></polygon>
+<!-- Room Dividers -->
+<line stroke="currentColor" stroke-dasharray="3 3" stroke-opacity="0.4" x1="230" x2="230" y1="60" y2="240"></line>
+<line stroke="currentColor" stroke-opacity="0.25" x1="140" x2="140" y1="105" y2="195"></line>
+<line stroke="currentColor" stroke-opacity="0.25" x1="320" x2="320" y1="105" y2="195"></line>
+<!-- Isometric Balcony / Window Frame (Left) -->
+<g transform="translate(65, 110)">
+<polygon fill="#FFFFFF" fill-opacity="0.5" points="0,25 45,2 45,55 0,78" stroke="currentColor" stroke-opacity="0.5"></polygon>
+<line stroke="#FC9174" stroke-width="2" x1="22" x2="22" y1="13" y2="66"></line>
+</g>
+<!-- Isometric Kitchen Range Island (Center Right) -->
+<g transform="translate(260, 140)">
+<polygon fill="#E3EFFF" points="30,0 70,20 40,35 0,15" stroke="currentColor" stroke-opacity="0.5"></polygon>
+<polygon fill="currentColor" fill-opacity="0.1" points="0,15 40,35 40,55 0,35" stroke="currentColor" stroke-opacity="0.5"></polygon>
+<polygon fill="currentColor" fill-opacity="0.2" points="40,35 70,20 70,40 40,55" stroke="currentColor" stroke-opacity="0.5"></polygon>
+<circle cx="36" cy="20" fill="#9A442D" fill-opacity="0.6" r="4"></circle>
+</g>
+<!-- Isometric Kids Bedroom & Purifier (Center Left) -->
+<g transform="translate(150, 160)">
+<!-- Bed block -->
+<polygon fill="#D1E4FB" points="10,0 45,18 20,31 -15,13" stroke="currentColor" stroke-opacity="0.4"></polygon>
+<!-- Purifier pillar -->
+<polygon fill="#0D5C63" points="50,15 62,21 62,45 50,39" stroke="currentColor"></polygon>
+<polygon fill="#8FD1D9" points="62,21 74,15 74,39 62,45" stroke="currentColor"></polygon>
+<polygon fill="#FFFFFF" points="50,15 62,9 74,15 62,21" stroke="currentColor"></polygon>
+</g>
+<!-- Ambient clean airflow rings -->
+<ellipse cx="205" cy="180" opacity="0.8" rx="35" ry="15" stroke="#70D9C9" stroke-dasharray="4 4" stroke-width="1.5"></ellipse>
+</svg>
+<!-- Hotspot 1: Balcony Window -->
+<button aria-label="Inspect Balcony Window Hotspot" class="hotspot-trigger absolute left-[22%] top-[38%] group focus:outline-none" id="hotspot-btn-1" onclick="selectHotspot(1)" type="button">
+<span class="relative flex h-8 w-8">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-60"></span>
+<span class="relative inline-flex rounded-full h-8 w-8 bg-secondary text-on-secondary items-center justify-center font-label-sm text-label-sm font-bold shadow-md ring-2 ring-surface-container-lowest">
+                  1
+                </span>
+</span>
+</button>
+<!-- Hotspot 2: Kitchen Stove -->
+<button aria-label="Inspect Kitchen Stove Hotspot" class="hotspot-trigger absolute right-[28%] top-[45%] group focus:outline-none" id="hotspot-btn-2" onclick="selectHotspot(2)" type="button">
+<span class="relative flex h-8 w-8">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-60"></span>
+<span class="relative inline-flex rounded-full h-8 w-8 bg-on-secondary-container text-surface-container-lowest items-center justify-center font-label-sm text-label-sm font-bold shadow-md ring-2 ring-surface-container-lowest">
+                  2
+                </span>
+</span>
+</button>
+<!-- Hotspot 3: Bedroom HEPA Purifier -->
+<button aria-label="Inspect Bedroom Purifier Hotspot" class="hotspot-trigger absolute left-[46%] bottom-[24%] group focus:outline-none" id="hotspot-btn-3" onclick="selectHotspot(3)" type="button">
+<span class="relative flex h-8 w-8">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-70"></span>
+<span class="relative inline-flex rounded-full h-8 w-8 bg-primary text-on-primary items-center justify-center font-label-sm text-label-sm font-bold shadow-md ring-2 ring-surface-container-lowest">
+                  3
+                </span>
+</span>
+</button>
+</div>
+<!-- Dynamic Hotspot Card Details Box -->
+<div class="mt-space-sm p-space-md rounded-xl bg-surface-container-low transition-all" id="hotspot-card">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="space-y-0.5">
+<div class="font-label-sm text-label-sm uppercase font-bold text-secondary" id="hotspot-tag">
+                  Hotspot 1 • External Exposure Point
+                </div>
+<div class="font-headline-sm text-headline-sm text-primary" id="hotspot-title">
+                  Balcony Window
+                </div>
+</div>
+<div class="px-space-xs py-0.5 rounded font-label-sm text-label-sm font-bold bg-secondary/15 text-secondary" id="hotspot-status">
+                Keep Sealed Until 1:30 PM
+              </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs" id="hotspot-desc">
+              Morning north-easterly drift carries smog plume directly into balconies. Keep perimeter gaskets pressed tight until the 1:30 PM solar inversion clears the street pocket.
+            </p>
+</div>
+<!-- Quick Navigation Pill List for Hotspots -->
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs">
+<button class="p-space-xs rounded-lg text-left bg-surface hover:bg-surface-container transition-colors" onclick="selectHotspot(1)" type="button">
+<div class="font-label-sm text-label-sm font-bold text-primary">1. Balcony</div>
+<div class="font-label-sm text-label-sm text-outline truncate">Keep sealed</div>
+</button>
+<button class="p-space-xs rounded-lg text-left bg-surface hover:bg-surface-container transition-colors" onclick="selectHotspot(2)" type="button">
+<div class="font-label-sm text-label-sm font-bold text-primary">2. Kitchen</div>
+<div class="font-label-sm text-label-sm text-outline truncate">Simmer lids on</div>
+</button>
+<button class="p-space-xs rounded-lg text-left bg-surface hover:bg-surface-container transition-colors" onclick="selectHotspot(3)" type="button">
+<div class="font-label-sm text-label-sm font-bold text-primary">3. Bedroom</div>
+<div class="font-label-sm text-label-sm text-outline truncate">CADR 250 m³/h</div>
+</button>
+</div>
+</div>
+<!-- Household Real-Time Differential Stats -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_2px_8px_rgba(13,92,99,0.04)] space-y-space-sm">
+<div class="font-label-sm text-label-sm uppercase font-bold text-outline">Real-Time Atmosphere Differential</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="font-label-sm text-label-sm text-outline">Outdoor NCR Sensor</div>
+<div class="font-headline-md text-headline-md font-bold text-secondary">312 AQI</div>
+<div class="font-label-sm text-label-sm text-secondary font-medium">Hazardous • PM2.5</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high">
+<div class="font-label-sm text-label-sm text-outline">Indoor Living Zone</div>
+<div class="font-headline-md text-headline-md font-bold text-tertiary">42 AQI</div>
+<div class="font-label-sm text-label-sm text-tertiary font-medium">Purified Haven</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sustainable Habits & Routine Context Mini-Shelf -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-[0_4px_16px_rgba(13,92,99,0.04)]">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold tracking-wider">Sustainable Family Habits</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Low-Energy Smog Mitigation Routines</h3>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+<span>Eco-Optimized: Saves 1.8 kWh/day</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">curtains</span>
+</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">Thermal Curtains Drop at 5 PM</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prevents radiant temperature drop at window edges, stopping indoor convection currents from drafting cold particulate inwards.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">cleaning_services</span>
+</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">Microfiber Wet Mop at Midday</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dry sweeping resuspends heavy floor dust directly into toddler breathing zones (0.5m-1m off ground). Damp-cloth cleans traps 94% of settled PM10.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">humidity_mid</span>
+</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">Target 45–50% Relative Humidity</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dry winter air parches nasal mucous barriers. Balanced humidity weights down aerosol clusters, accelerating mechanical HEPA filtration capture.</p>
+</div>
+</div>
+</section>
+<!-- Medical Pulmonary Disclaimer (Required at bottom of Protect/Page) -->
+<section class="p-space-md rounded-xl bg-surface-container-high/60 flex items-start gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">info</span>
+<div class="space-y-0.5">
+<div class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-secondary">Clinical Transparency Notice</div>
+<p class="font-body-sm text-body-sm">
+          This is guidance, not medical advice. See a doctor or pulmonologist if symptoms continue.
+        </p>
+</div>
+</section>
+</div>
+<!-- Floating Clean Air Assistant Chat Button & Prompt Suggestions -->
+<aside class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2 max-w-sm pointer-events-none">
+<!-- Suggested prompt chips (appear above button) -->
+<div class="pointer-events-auto flex flex-col items-end gap-1.5 transition-all" id="assistant-chips">
+<button class="bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_4px_12px_rgba(13,92,99,0.12)] text-primary hover:bg-surface-container-low px-space-md py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 transition-transform hover:-translate-x-1 border-0" onclick="askAssistant('Which N95 mask fits children?')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">face_6</span>
+<span>Which N95 mask fits children?</span>
+</button>
+<button class="bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_4px_12px_rgba(13,92,99,0.12)] text-primary hover:bg-surface-container-low px-space-md py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 transition-transform hover:-translate-x-1 border-0" onclick="askAssistant('Can we play in the park after 4 PM?')" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">park</span>
+<span>Can we play in the park after 4 PM?</span>
+</button>
+<button class="bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_4px_12px_rgba(13,92,99,0.12)] text-primary hover:bg-surface-container-low px-space-md py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1.5 transition-transform hover:-translate-x-1 border-0" onclick="askAssistant('DIY air filter tips')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">build</span>
+<span>DIY air filter tips</span>
+</button>
+</div>
+<!-- Main Assistant Floating Action Button -->
+<div class="pointer-events-auto relative">
+<button aria-label="Open Clean Air Assistant Chat" class="group flex items-center gap-space-sm bg-primary hover:bg-primary-container text-on-primary px-space-md py-space-sm rounded-full shadow-[0_8px_24px_-4px_rgba(13,92,99,0.35)] transition-all" id="assistant-fab" onclick="toggleChatSheet()" type="button">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+<span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+</div>
+<span class="font-label-lg text-label-lg font-bold">Ask Air Assistant</span>
+</button>
+<!-- Notification Toast (Appears briefly when a chip is tapped) -->
+<div class="hidden absolute right-0 bottom-14 w-72 bg-surface-container-lowest p-space-sm rounded-xl shadow-xl space-y-1" id="assistant-toast">
+<div class="flex items-center justify-between text-primary font-label-sm text-label-sm font-bold">
+<span>AI Respiratory Assistant</span>
+<button class="text-outline hover:text-on-surface" onclick="closeToast()" type="button">×</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="assistant-toast-body">Connecting response for child masks...</p>
+</div>
+</div>
+</aside>
+<!-- Interactive Logic Script -->
+<script>
+    const hotspotData = {
+      1: {
+        tag: "Hotspot 1 • External Exposure Point",
+        title: "Balcony Window",
+        status: "Keep Sealed Until 1:30 PM",
+        statusClass: "bg-secondary/15 text-secondary",
+        desc: "Morning north-easterly drift carries smog plume directly into balconies. Keep perimeter gaskets pressed tight until the 1:30 PM solar inversion clears the street pocket."
+      },
+      2: {
+        tag: "Hotspot 2 • Indoor Source Mitigation",
+        title: "Kitchen Stove",
+        status: "Simmer Lids Closed, Exhaust on High",
+        statusClass: "bg-on-secondary-container/15 text-secondary",
+        desc: "Frying oil aerosols create acute PM2.5 spikes up to 400 µg/m³. Always cover vessels with tight lids and maintain exhaust velocity above 450 m³/h until 10 minutes post-cooking."
+      },
+      3: {
+        tag: "Hotspot 3 • Pulmonary Sleep Haven",
+        title: "Bedroom Air Purifier",
+        status: "Run at CADR 250 m³/h",
+        statusClass: "bg-tertiary/15 text-tertiary",
+        desc: "Activate at 7:00 PM before bedtime to establish a stable clean-air microclimate (&lt;30 AQI). Gives asthmatic bronchial tissue 8 hours of critical nocturnal rest and recovery."
+      }
+    };
+
+    function selectHotspot(id) {
+      const data = hotspotData[id];
+      if (!data) return;
+      
+      const tagEl = document.getElementById('hotspot-tag');
+      const titleEl = document.getElementById('hotspot-title');
+      const statusEl = document.getElementById('hotspot-status');
+      const descEl = document.getElementById('hotspot-desc');
+
+      if (tagEl) tagEl.textContent = data.tag;
+      if (titleEl) titleEl.textContent = data.title;
+      if (descEl) descEl.innerHTML = data.desc;
+      if (statusEl) {
+        statusEl.textContent = data.status;
+        statusEl.className = 'px-space-xs py-0.5 rounded font-label-sm text-label-sm font-bold ' + data.statusClass;
+      }
+    }
+
+    function switchPlanTab(tabKey) {
+      const tabs = ['indoor', 'routine', 'sustainable', 'protect'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        if (btn) {
+          if (t === tabKey) {
+            btn.className = 'tab-pill active flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg whitespace-nowrap shadow-sm transition-all';
+          } else {
+            btn.className = 'tab-pill flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg whitespace-nowrap transition-all';
+          }
+        }
+      });
+    }
+
+    function askAssistant(promptText) {
+      const toast = document.getElementById('assistant-toast');
+      const toastBody = document.getElementById('assistant-toast-body');
+      if (toast && toastBody) {
+        toastBody.textContent = 'Analyzing: "' + promptText + '" based on NCR PM2.5 readings & pediatrician pediatric guidelines...';
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          if (promptText.includes('children')) {
+            toastBody.textContent = 'For Aanvi & Kabir: Certified child-sized KF94 or N95 with soft silicone inner gaskets avoid leakage across developing nasal bridges.';
+          } else if (promptText.includes('4 PM')) {
+            toastBody.textContent = 'Avoid outdoor sports after 4:00 PM today. Smog inversion rapidly collapses down from 4:30 PM onwards, spiking AQI past 280.';
+          } else {
+            toastBody.textContent = 'DIY Tip: Place a MERV 13 / HEPA furnace pad taped over the rear intake of a standard 20-inch box fan for emergency living room filtering.';
+          }
+        }, 800);
+      }
+    }
+
+    function closeToast() {
+      const toast = document.getElementById('assistant-toast');
+      if (toast) toast.classList.add('hidden');
+    }
+
+    function toggleChatSheet() {
+      askAssistant('Today\'s Asthma Defense Briefing');
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(13,92,99,0.04)] mt-auto"><div class="max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div class="space-y-space-xs max-w-xl"><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[20px]">health_and_safety</span><span class="font-label-md text-label-md font-bold uppercase tracking-wider">Health Safety Advisory</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Data reflects ambient sensor projections intended for personal family exposure management. Not a substitute for clinical pulmonary counsel.</p><p class="font-label-sm text-label-sm text-outline">Sensor streams integrated via Open-Meteo &amp; Central Pollution Control Board (CPCB) real-time monitors.</p></div><div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md w-full md:w-auto pt-space-sm md:pt-0"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl"><span class="material-symbols-outlined text-secondary text-[22px]">emergency</span><div><div class="font-label-sm text-label-sm text-outline-variant font-bold uppercase">Emergency Helpline</div><div class="font-label-lg text-label-lg text-on-surface font-bold">108 / 112 (NCR Core)</div></div></div><div class="text-left sm:text-right font-label-sm text-label-sm text-outline">© 2025 OpenSky. Safe Air for Families.</div></div></div></footer></body></html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>OpenSky</title><link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script>
+<link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#8fd1d9", "on-secondary-container": "#742814", "on-background": "#091d2e", "secondary-container": "#fc9174", "surface-container-lowest": "#ffffff", "tertiary-container": "#005e54", "on-tertiary-fixed-variant": "#005048", "inverse-surface": "#203243", "surface-variant": "#d1e4fb", "on-secondary-fixed": "#3c0800", "on-surface": "#091d2e", "surface-container-low": "#edf4ff", "surface-dim": "#c9dcf3", "outline": "#6f797a", "on-primary-fixed": "#002023", "tertiary": "#00443d", "on-secondary-fixed-variant": "#7c2e19", "tertiary-fixed-dim": "#6fd8c8", "error-container": "#ffdad6", "surface": "#f7f9ff", "surface-container-highest": "#d1e4fb", "on-secondary": "#ffffff", "surface-container-high": "#d9eaff", "secondary": "#9a442d", "secondary-fixed-dim": "#ffb4a1", "surface-container": "#e3efff", "on-tertiary": "#ffffff", "surface-tint": "#20686f", "on-error-container": "#93000a", "on-primary-container": "#90d2da", "inverse-on-surface": "#e8f2ff", "on-tertiary-container": "#70d9c9", "inverse-primary": "#8fd1d9", "primary-container": "#0d5c63", "on-tertiary-fixed": "#00201c", "surface-bright": "#f7f9ff", "tertiary-fixed": "#8cf5e4", "background": "#f7f9ff", "on-surface-variant": "#3f484a", "primary": "#004349", "primary-fixed": "#abeef6", "outline-variant": "#bfc8c9", "on-error": "#ffffff", "error": "#ba1a1a", "on-primary": "#ffffff", "on-primary-fixed-variant": "#004f55", "secondary-fixed": "#ffdbd2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "2rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "gutter": "1rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": [ "Merriweather" ], "headline-xl": [ "Merriweather" ], "headline-md": [ "Merriweather" ], "label-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-sm": [ "Merriweather" ], "body-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Merriweather" ], "headline-xl-mobile": [ "Merriweather" ], "body-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg": [ "32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-xl": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed-dim selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(13,92,99,0.05)] transition-all"><div class="h-20 max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="OpenSky Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBwQc0V4uCiotMMAlZeCUqYfTb4X2xkOn0-bj_LmnWQ0rhyS9vNNpm9InqK_PYKrMTXQvMOg6kWgWo74wHEeUzeruG_GCmu02SKNee9Hlq9VuZkoENNBctPNWwxc88_iDyTlYYLIxUTKHUI9ecRoeciBo-ZJvZNKL5oOCsI21N12iO7ojlgbBEYNyqYqeqr5OVSvlGjGNxf2bA4CM5TCbLhEHIzYUxYyJlp_6No4Dz5"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">OpenSky</span></a><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low/70 p-space-xs rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm"><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="family-setup" href="#">Family Setup</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="todays-plan" href="#">Today's Plan</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="what-if" href="#">What If</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="community" href="#">Community</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="celebration" href="#">Celebration</a><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm" data-path="settings" href="#">Settings</a></nav></div><div class="flex items-center gap-space-sm sm:gap-space-md"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full shadow-[0_1px_3px_rgba(13,92,99,0.06)]"><span class="material-symbols-outlined text-primary text-[18px]">location_on</span><span class="font-label-md text-label-md text-on-surface font-medium whitespace-nowrap">New Delhi, NCR • 14°C</span></div><div class="flex items-center bg-surface-container-low rounded-full p-space-xs text-on-surface-variant"><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm font-bold text-on-surface hover:text-primary transition-colors" type="button">EN</button><span class="text-outline-variant font-label-sm text-label-sm">|</span><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">HI</button></div><button aria-label="Safety alerts" class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest animate-pulse"></span></button><div class="flex items-center pl-space-xs"><a class="rounded-full p-0.5 ring-2 ring-primary/20 hover:ring-primary transition-all" data-path="settings" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANH-TsNQ_OCJrSru8zD3T_FLRuOxyZ0f-Ce-dSOXOiN2ZNCkdjgVwKvD3fGuWXICZKIlTwW43gMggwpDdfRjnLn5LOFZQu6ZjwmBEepTN_PJj5w72OZVvEPXkxzcigvCjO3N-1sEXpgsAvJQ8G7P5wFQuaYXJjeohFN2e0E3g4sM-bRT_pk9JucQe8A9h7j2er9GhKwr_m1hB9UQ6tcO1SmIDWxxX0gZ02-H7e7Xg"/></a></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Atmospheric Canvas Container -->
+<div class="w-full relative overflow-hidden bg-gradient-to-b from-surface via-surface-container-low/40 to-surface">
+<!-- Ambient Volumetric Blur Accents -->
+<div class="absolute -top-32 right-1/4 w-96 h-96 bg-primary-fixed-dim/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-80 h-80 bg-secondary-fixed/25 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl">
+<!-- Header Section -->
+<section class="mb-space-xl">
+<div class="inline-flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full mb-space-sm shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">tune</span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold">Preferences &amp; Accessibility</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Settings &amp; Experience</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs">Customize interface rendering, accessibility options, notifications, and review your device privacy protections.</p>
+</div>
+<!-- Quick Status Indicator -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-lg py-space-sm rounded-xl shadow-[0_4px_12px_-2px_rgba(13,92,99,0.05)]">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<div class="font-label-md text-label-md text-on-surface">
+<span class="text-on-surface-variant">Profile synced:</span> <span class="font-bold text-primary">Local Storage Only</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Two Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Settings Categories (8 Cols) -->
+<div class="lg:col-span-8 space-y-space-lg">
+<!-- Card Section 1: Display & Performance -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-[0_4px_12px_-2px_rgba(13,92,99,0.04),0_1px_3px_rgba(13,92,99,0.06)] relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-md mb-space-lg bg-gradient-to-r from-transparent via-surface-container/30 to-transparent">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">display_settings</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Display &amp; Performance</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure battery, visual fidelity, and contrast levels</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline bg-surface-container px-space-sm py-1 rounded">Display 01</span>
+</div>
+<!-- Toggle 1: Simple View -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md py-space-md bg-surface-container-low/50 p-space-md rounded-lg mb-space-md transition-all">
+<div class="space-y-1.5 flex-1 pr-space-md">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">Simple View (No 3D Visuals)</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant px-2.5 py-0.5 rounded-full font-bold">
+                    Active • Low Bandwidth Mode
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Replaces interactive WebGL 3D house cutaways and skylines with fast, flat isometric diagrams and high-contrast charts. Recommended for low-power devices or battery saving.
+                </p>
+</div>
+<div class="flex items-center sm:self-center">
+<button aria-pressed="true" class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full bg-primary-container transition-colors duration-200 ease-in-out focus:outline-none shadow-inner" id="toggle-simple-view" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out mt-1 ml-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[12px]">check</span>
+</span>
+</button>
+</div>
+</div>
+<!-- Toggle 2: Reduce Motion -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md py-space-md px-space-md rounded-lg mb-space-md hover:bg-surface-container-low/30 transition-all">
+<div class="space-y-1 flex-1 pr-space-md">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">Reduce Motion</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Disables ambient atmospheric drift, particle animations, and floating transitions across all forecast screens.
+                </p>
+</div>
+<div class="flex items-center sm:self-center">
+<button aria-pressed="false" class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full bg-surface-container-highest transition-colors duration-200 ease-in-out focus:outline-none" id="toggle-reduce-motion" type="button">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out mt-1 ml-1"></span>
+</button>
+</div>
+</div>
+<!-- Toggle 3: High Contrast Mode -->
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md p-space-md rounded-lg bg-surface-container-low/50 transition-all">
+<div class="space-y-2 flex-1 pr-space-md">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">High Contrast Mode</span>
+<!-- Preview Chip -->
+<div class="inline-flex items-center gap-1.5 bg-inverse-surface text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm font-bold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>AQI 342 • Severe (AAA)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Enhances text legibility, card borders, and strengthens color-blind safe AQI indicators to WCAG AAA standards.
+                </p>
+</div>
+<div class="flex items-center sm:self-center">
+<button aria-pressed="true" class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full bg-primary-container transition-colors duration-200 ease-in-out focus:outline-none shadow-inner" id="toggle-high-contrast" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out mt-1 ml-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[12px]">check</span>
+</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Card Section 2: Language & Regional Preferences -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-[0_4px_12px_-2px_rgba(13,92,99,0.04),0_1px_3px_rgba(13,92,99,0.06)]">
+<div class="flex items-center justify-between pb-space-md mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">translate</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Language &amp; Regional Preferences</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Local standards, scripts, and unit benchmarks</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline bg-surface-container px-space-sm py-1 rounded">Locale 02</span>
+</div>
+<!-- Language Cards -->
+<div class="mb-space-lg">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-space-sm font-bold">Display Language</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- English Selected -->
+<div class="relative bg-surface-container-high/60 rounded-xl p-space-md cursor-pointer transition-all hover:bg-surface-container-high shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">English</span>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Default UI system &amp; scientific health nomenclature</p>
+<div class="mt-space-md pt-space-xs text-outline font-label-sm text-label-sm italic">
+                    "Clean air starts at home"
+                  </div>
+</div>
+<!-- Hindi Alternate -->
+<div class="relative bg-surface-container-low/60 rounded-xl p-space-md cursor-pointer transition-all hover:bg-surface-container-high/50 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">हिन्दी (Hindi)</span>
+<span class="w-4 h-4 rounded-full bg-surface-container-highest"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Localized health alerts, family statuses &amp; guides</p>
+<div class="mt-space-md pt-space-xs text-primary font-body-sm font-medium">
+                    "स्वच्छ हवा घर से शुरू होती है"
+                  </div>
+</div>
+</div>
+</div>
+<!-- Regional AQI Standard Selection -->
+<div class="mb-space-lg">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-space-sm font-bold">Pollution Index Standard</label>
+<div class="space-y-space-xs">
+<!-- IN-NAAQI Active -->
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-high text-on-surface cursor-pointer shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">radio_button_checked</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold">IN-NAAQI (India Central Pollution Control Board)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Calibrated for Gangetic Plains winter inversions (0–500 scale, PM2.5 24hr breakpoint: 60 µg/m³)</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider px-2 py-1 bg-surface-container-lowest rounded">Default (NCR)</span>
+</div>
+<!-- US EPA AQI -->
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low/40 hover:bg-surface-container-low transition-all text-on-surface cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">radio_button_unchecked</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold">US EPA AQI</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">US Embassy / NowCast standard formulation for international travelers</div>
+</div>
+</div>
+</div>
+<!-- WHO 24-hr Standard -->
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low/40 hover:bg-surface-container-low transition-all text-on-surface cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px]">radio_button_unchecked</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold">WHO 24-hr Air Quality Guidelines (Strictest)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Global medical baseline (PM2.5 daily safe exposure ceiling: 15 µg/m³)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Units Selection -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-space-sm font-bold">Measurement Units</label>
+<div class="inline-flex bg-surface-container p-1 rounded-xl">
+<button class="px-space-lg py-2 rounded-lg font-label-md text-label-md font-bold bg-surface-container-lowest text-primary shadow-sm" type="button">
+                  Metric (°C, µg/m³, hPa)
+                </button>
+<button class="px-space-lg py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+                  Imperial (°F, ppm, inHg)
+                </button>
+</div>
+</div>
+</section>
+<!-- Card Section 3: Privacy & Sensor Data Protection -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-[0_4px_12px_-2px_rgba(13,92,99,0.04),0_1px_3px_rgba(13,92,99,0.06)]">
+<div class="flex items-center justify-between pb-space-md mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Privacy &amp; Sensor Data Protection</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Encrypted household records and zero-cloud tracking guarantees</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline bg-surface-container px-space-sm py-1 rounded">Security 03</span>
+</div>
+<!-- Guarantee Box -->
+<div class="bg-surface-container-low rounded-xl p-space-lg mb-space-lg relative overflow-hidden">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[24px]">shield_with_heart</span>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-headline-sm text-[16px] text-on-surface font-bold">Your Location &amp; Household Privacy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    OpenSky never stores your exact GPS coordinates or street address on our cloud servers. Microclimate predictions are calculated on-device by matching your neighborhood to localized sensor nodes (SAFAR &amp; CPCB). Household sensitivity profiles remain encrypted in local browser storage.
+                  </p>
+</div>
+</div>
+<!-- Technical Certifications mini bar -->
+<div class="mt-space-md pt-space-sm grid grid-cols-2 sm:grid-cols-3 gap-space-sm">
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-sm text-label-sm font-bold">AES-GCM 256 Enclave</span>
+</div>
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[18px]">cloud_off</span>
+<span class="font-label-sm text-label-sm font-bold">Zero Telemetry Logging</span>
+</div>
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-[18px]">offline_bolt</span>
+<span class="font-label-sm text-label-sm font-bold">Offline First Cache</span>
+</div>
+</div>
+</div>
+<!-- Emergency SOS Location Sharing Toggle -->
+<div class="p-space-md rounded-lg bg-surface-container-low/50 mb-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="space-y-1 pr-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">crisis_alert</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Emergency SOS Location Sharing</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Allow one-tap neighborhood coordinate sharing during Severe+ Smog Red Alerts (AQI &gt; 400) to rapid emergency services.
+                </p>
+</div>
+<div>
+<button aria-pressed="false" class="relative inline-flex h-7 w-12 flex-shrink-0 cursor-pointer rounded-full bg-surface-container-highest transition-colors duration-200 ease-in-out focus:outline-none" id="toggle-sos" type="button">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out mt-1 ml-1"></span>
+</button>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-sm">
+<button class="px-space-lg py-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold rounded-lg transition-colors flex items-center justify-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+<span>Clear Cached Sensor Data</span>
+</button>
+<a class="px-space-md py-space-sm text-primary hover:text-primary-container font-label-md text-label-md font-bold flex items-center justify-center gap-space-xs transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:translate-y-0.5 transition-transform">download</span>
+<span>Download My Environmental Profile (JSON)</span>
+</a>
+</div>
+</section>
+</div>
+<!-- Right Column: Interactive Mode Preview & System Diagnostics (4 Cols) -->
+<div class="lg:col-span-4 space-y-space-lg">
+<!-- Card: Active View Mode Preview -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_18px_36px_-6px_rgba(13,92,99,0.07),0_8px_16px_-4px_rgba(13,92,99,0.04)] sticky top-28">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">View Mode Live Preview</span>
+<span class="material-symbols-outlined text-primary text-[20px]">preview</span>
+</div>
+<!-- Visual Preview Canvas -->
+<div class="bg-surface-container-low rounded-xl p-space-md mb-space-md relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm text-outline">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider">Home Indoor Cutaway</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-2 py-0.5 rounded text-on-surface">Flat Isometric</span>
+</div>
+<!-- High Contrast Crisp Flat SVG Illustration of House Cutaway -->
+<div class="w-full h-44 bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-center shadow-inner relative">
+<svg class="w-full h-full text-on-surface" fill="none" viewbox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+<!-- Rooftop Line -->
+<path d="M40 70 L160 20 L280 70" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Building Bounds -->
+<rect fill="#EDF4FF" height="75" rx="3" stroke="currentColor" stroke-width="2" width="220" x="50" y="70"></rect>
+<!-- Dividing Interior Wall -->
+<line stroke="currentColor" stroke-dasharray="3 3" stroke-width="1.5" x1="160" x2="160" y1="70" y2="145"></line>
+<!-- Nursery Room (Left) -->
+<rect fill="#FFFFFF" height="50" rx="2" stroke="#0D5C63" stroke-width="1.5" width="80" x="65" y="82"></rect>
+<circle cx="80" cy="98" fill="#6FD8C8" r="6"></circle>
+<rect fill="#0D5C63" height="6" rx="2" width="40" x="95" y="94"></rect>
+<rect fill="#6F797A" height="4" rx="2" width="25" x="95" y="105"></rect>
+<text fill="#091D2E" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" x="70" y="125">Nursery: AQI 24</text>
+<!-- Living Room (Right) -->
+<rect fill="#FFFFFF" height="50" rx="2" stroke="#0D5C63" stroke-width="1.5" width="80" x="175" y="82"></rect>
+<rect fill="#FC9174" height="25" rx="2" width="20" x="185" y="95"></rect>
+<rect fill="#D1E4FB" height="15" rx="2" width="30" x="215" y="100"></rect>
+<text fill="#091D2E" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" x="180" y="125">Living: AQI 48</text>
+<!-- Filter Icon on Roof -->
+<circle cx="160" cy="20" fill="#00443D" r="12"></circle>
+<path d="M155 20 L159 24 L167 16" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<div class="absolute bottom-2 right-2 bg-surface-container-high/90 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold text-primary">
+                  100% Client-Rendered
+                </div>
+</div>
+<!-- Status Pill below preview -->
+<div class="mt-space-sm flex items-center gap-space-xs text-primary bg-primary-fixed/40 px-space-sm py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-bold truncate">Simple Flat View + High Contrast Active</span>
+</div>
+</div>
+<!-- Device Diagnostics Cluster -->
+<div class="space-y-space-sm pt-space-xs mb-space-lg">
+<h4 class="font-label-sm text-label-sm uppercase font-bold text-outline tracking-wider">Device Render Profile</h4>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low text-on-surface">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">memory</span>
+                  WebGL Engine
+                </span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">Disabled (User Saved)</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low text-on-surface">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">contrast</span>
+                  Contrast Ratio
+                </span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">7.2:1 (AAA Pass)</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low text-on-surface">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">speed</span>
+                  Ambient Physics FPS
+                </span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">0 FPS (Frozen)</span>
+</div>
+</div>
+<!-- Reassurance Note -->
+<div class="p-space-md rounded-lg bg-surface-container-high/40 mb-space-lg">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0 mt-0.5">battery_charging_full</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                  Your current settings consume ~68% less smartphone battery when tracking ambient smog spikes.
+                </p>
+</div>
+</div>
+<!-- Reset Action -->
+<div class="text-center pt-space-xs">
+<button class="w-full py-space-sm text-outline hover:text-error font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-space-xs rounded-lg hover:bg-error-container/20" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset All Preferences to Defaults</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Helpful Links Ribbon -->
+<section class="mt-space-xl pt-space-lg bg-surface-container-low/60 rounded-2xl p-space-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md text-center md:text-left">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">contact_support</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface font-bold">Have questions regarding localized sensor calibration?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Review our public sensor transparency whitepaper and continuous CPCB station offset formulas.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-md hover:shadow-lg transition-all" type="button">
+              Sensor Methodology
+            </button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold transition-colors" type="button">
+              Support Hub
+            </button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  (function setupSettingsInteractions() {
+    function setupToggle(toggleId, initialChecked) {
+      const toggle = document.getElementById(toggleId);
+      if (!toggle) return;
+      
+      let isChecked = initialChecked;
+      
+      toggle.addEventListener('click', () => {
+        isChecked = !isChecked;
+        toggle.setAttribute('aria-pressed', isChecked ? 'true' : 'false');
+        
+        const knob = toggle.querySelector('span');
+        if (isChecked) {
+          toggle.classList.remove('bg-surface-container-highest');
+          toggle.classList.add('bg-primary-container', 'shadow-inner');
+          if (knob) {
+            knob.classList.add('translate-x-5');
+            knob.classList.remove('translate-x-0');
+            if (!knob.querySelector('.material-symbols-outlined')) {
+              const icon = document.createElement('span');
+              icon.className = 'material-symbols-outlined text-primary text-[12px]';
+              icon.innerText = 'check';
+              knob.appendChild(icon);
+            }
+          }
+        } else {
+          toggle.classList.remove('bg-primary-container', 'shadow-inner');
+          toggle.classList.add('bg-surface-container-highest');
+          if (knob) {
+            knob.classList.remove('translate-x-5');
+            knob.classList.add('translate-x-0');
+            const icon = knob.querySelector('.material-symbols-outlined');
+            if (icon) icon.remove();
+          }
+        }
+      });
+    }
+
+    setupToggle('toggle-simple-view', true);
+    setupToggle('toggle-reduce-motion', false);
+    setupToggle('toggle-high-contrast', true);
+    setupToggle('toggle-sos', false);
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(13,92,99,0.04)] mt-auto"><div class="max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div class="space-y-space-xs max-w-xl"><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[20px]">health_and_safety</span><span class="font-label-md text-label-md font-bold uppercase tracking-wider">Health Safety Advisory</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Data reflects ambient sensor projections intended for personal family exposure management. Not a substitute for clinical pulmonary counsel.</p><p class="font-label-sm text-label-sm text-outline">Sensor streams integrated via Open-Meteo &amp; Central Pollution Control Board (CPCB) real-time monitors.</p></div><div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md w-full md:w-auto pt-space-sm md:pt-0"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl"><span class="material-symbols-outlined text-secondary text-[22px]">emergency</span><div><div class="font-label-sm text-label-sm text-outline-variant font-bold uppercase">Emergency Helpline</div><div class="font-label-lg text-label-lg text-on-surface font-bold">108 / 112 (NCR Core)</div></div></div><div class="text-left sm:text-right font-label-sm text-label-sm text-outline">© 2025 OpenSky. Safe Air for Families.</div></div></div></footer></body></html>

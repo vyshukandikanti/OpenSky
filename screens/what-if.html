@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>OpenSky</title><link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#8fd1d9", "on-secondary-container": "#742814", "on-background": "#091d2e", "secondary-container": "#fc9174", "surface-container-lowest": "#ffffff", "tertiary-container": "#005e54", "on-tertiary-fixed-variant": "#005048", "inverse-surface": "#203243", "surface-variant": "#d1e4fb", "on-secondary-fixed": "#3c0800", "on-surface": "#091d2e", "surface-container-low": "#edf4ff", "surface-dim": "#c9dcf3", "outline": "#6f797a", "on-primary-fixed": "#002023", "tertiary": "#00443d", "on-secondary-fixed-variant": "#7c2e19", "tertiary-fixed-dim": "#6fd8c8", "error-container": "#ffdad6", "surface": "#f7f9ff", "surface-container-highest": "#d1e4fb", "on-secondary": "#ffffff", "surface-container-high": "#d9eaff", "secondary": "#9a442d", "secondary-fixed-dim": "#ffb4a1", "surface-container": "#e3efff", "on-tertiary": "#ffffff", "surface-tint": "#20686f", "on-error-container": "#93000a", "on-primary-container": "#90d2da", "inverse-on-surface": "#e8f2ff", "on-tertiary-container": "#70d9c9", "inverse-primary": "#8fd1d9", "primary-container": "#0d5c63", "on-tertiary-fixed": "#00201c", "surface-bright": "#f7f9ff", "tertiary-fixed": "#8cf5e4", "background": "#f7f9ff", "on-surface-variant": "#3f484a", "primary": "#004349", "primary-fixed": "abeef6", "outline-variant": "#bfc8c9", "on-error": "#ffffff", "error": "#ba1a1a", "on-primary": "#ffffff", "on-primary-fixed-variant": "#004f55", "secondary-fixed": "#ffdbd2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "2rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "gutter": "1rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": [ "Merriweather" ], "headline-xl": [ "Merriweather" ], "headline-md": [ "Merriweather" ], "label-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-sm": [ "Merriweather" ], "body-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Merriweather" ], "headline-xl-mobile": [ "Merriweather" ], "body-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg": [ "32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-xl": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed-dim selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(13,92,99,0.05)] transition-all"><div class="h-20 max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="OpenSky Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBwQc0V4uCiotMMAlZeCUqYfTb4X2xkOn0-bj_LmnWQ0rhyS9vNNpm9InqK_PYKrMTXQvMOg6kWgWo74wHEeUzeruG_GCmu02SKNee9Hlq9VuZkoENNBctPNWwxc88_iDyTlYYLIxUTKHUI9ecRoeciBo-ZJvZNKL5oOCsI21N12iO7ojlgbBEYNyqYqeqr5OVSvlGjGNxf2bA4CM5TCbLhEHIzYUxYyJlp_6No4Dz5"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">OpenSky</span></a><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low/70 p-space-xs rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm"><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="family-setup" href="#">Family Setup</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="todays-plan" href="#">Today's Plan</a><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm" data-path="what-if" href="#">What If</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="community" href="#">Community</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="celebration" href="#">Celebration (Open Sky)</a></nav></div><div class="flex items-center gap-space-sm sm:gap-space-md"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full shadow-[0_1px_3px_rgba(13,92,99,0.06)]"><span class="material-symbols-outlined text-primary text-[18px]">location_on</span><span class="font-label-md text-label-md text-on-surface font-medium whitespace-nowrap">New Delhi, NCR • 14°C</span></div><div class="flex items-center bg-surface-container-low rounded-full p-space-xs text-on-surface-variant"><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm font-bold text-on-surface hover:text-primary transition-colors" type="button">EN</button><span class="text-outline-variant font-label-sm text-label-sm">|</span><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">HI</button></div><button aria-label="Safety alerts" class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest animate-pulse"></span></button><div class="flex items-center pl-space-xs"><a class="rounded-full p-0.5 ring-2 ring-primary/20 hover:ring-primary transition-all" data-path="family-setup" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANH-TsNQ_OCJrSru8zD3T_FLRuOxyZ0f-Ce-dSOXOiN2ZNCkdjgVwKvD3fGuWXICZKIlTwW43gMggwpDdfRjnLn5LOFZQu6ZjwmBEepTN_PJj5w72OZVvEPXkxzcigvCjO3N-1sEXpgsAvJQ8G7P5wFQuaYXJjeohFN2e0E3g4sM-bRT_pk9JucQe8A9h7j2er9GhKwr_m1hB9UQ6tcO1SmIDWxxX0gZ02-H7e7Xg"/></a></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<div class="max-w-[1200px] w-full mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col gap-space-xl">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>PROGNOSTIC SIMULATION ENGINE</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Smog Exposure Simulator: What If?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Simulate family daily exposure reductions in real-time by toggling mitigation habits and home interventions.</p>
+</div>
+<!-- Quick Summary Status Pill -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-lg py-space-md rounded-xl shadow-sm self-start md:self-auto">
+<span class="w-3 h-3 rounded-full bg-tertiary animate-ping"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Simulation Confidence</span>
+<span class="font-label-lg text-label-lg text-on-surface">94.8% (Sensor Mesh Calibrated)</span>
+</div>
+</div>
+</div>
+<!-- Real-Time Comparison Cards (Side-by-Side Bento) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Baseline Exposure Card (Left) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-secondary-container/10 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">warning</span> Current Baseline Exposure
+            </span>
+<span class="px-space-sm py-space-xs rounded-full bg-secondary-container/30 text-on-secondary-container font-label-sm text-label-sm">Unmitigated Day</span>
+</div>
+<div class="flex items-baseline gap-space-sm mb-space-xs">
+<span class="font-headline-xl text-headline-xl text-secondary">312</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">AQI</span>
+</div>
+<p class="font-label-lg text-label-lg text-secondary font-medium">Severe Inhalation Risk • 185 µg/m³ average</p>
+<p class="mt-space-md font-body-md text-body-md text-on-surface-variant">
+            Standard baseline exposure without portable masks, open window micro-drafts, and routine household culinary emissions.
+          </p>
+</div>
+<div class="mt-space-lg pt-space-md">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline mb-space-xs">
+<span>Alveolar PM2.5 Deposition</span>
+<span class="text-secondary font-bold">14.2 µg/hr per child</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+</div>
+<!-- Projected Exposure Card (Right) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-surface-container-lowest via-surface-container-low/40 to-tertiary-container/10">
+<div class="absolute -right-12 -top-12 w-52 h-52 rounded-full bg-tertiary/10 blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-md">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest font-bold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">verified_user</span> Projected Exposure with Interventions
+            </span>
+<span class="px-space-md py-space-xs rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm shadow-sm transition-all" id="shield-badge">Safe Haven Active</span>
+</div>
+<div class="flex items-baseline gap-space-md mb-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary font-bold" id="projected-aqi">78</span>
+<span class="font-headline-sm text-headline-sm text-primary">AQI</span>
+<span class="px-space-sm py-0.5 rounded-full bg-tertiary-fixed-dim/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold" id="reduction-pill">-75% Inhalation</span>
+</div>
+<p class="font-label-lg text-label-lg text-tertiary font-medium" id="projected-status">Optimal Protective Microclimate • Clean Air Sphere</p>
+<!-- Savings Callout -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">spa</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Net Physiological Gain</p>
+<p class="font-body-md text-body-md text-on-surface-variant" id="time-saved-text">Saved ~14 hours of toxic PM2.5 lung exposure for children and asthmatic members today.</p>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Lung Protection Coverage</span>
+<span class="text-primary font-bold" id="protection-pct">87% Active Shield</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full transition-all duration-500" id="protection-bar" style="width: 87%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Low-Poly Isometric House Cutaway & Dynamic Legend -->
+<div class="bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Interactive Microclimate Cutaway</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Observe cellular particulate flow and dynamic pressure containment across residential zones.</p>
+</div>
+<!-- Live Legend -->
+<div class="flex flex-wrap items-center gap-space-md bg-surface-container-low px-space-md py-space-sm rounded-full">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Outdoor Particulates (312 AQI)</span>
+</div>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Filtered Indoor Microclimate (42 AQI)</span>
+</div>
+</div>
+</div>
+<!-- Isometric 3D Model Rendering Container -->
+<div class="relative w-full h-[360px] md:h-[440px] rounded-xl overflow-hidden bg-surface-container-high/40 flex items-center justify-center">
+<!-- Low-poly isometric house structural simulation graphic via pure SVG -->
+<svg class="w-full h-full max-w-4xl" fill="none" viewbox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Particulate Patterns -->
+<radialgradient cx="50%" cy="50%" id="airSanctuaryGlow" r="50%">
+<stop offset="0%" stop-color="#abeef6" stop-opacity="0.8"></stop>
+<stop offset="60%" stop-color="#8fd1d9" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#0d5c63" stop-opacity="0"></stop>
+</radialgradient>
+<lineargradient id="wallGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#e3efff"></stop>
+<stop offset="100%" stop-color="#c9dcf3"></stop>
+</lineargradient>
+<lineargradient id="roofGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#004349" stop-opacity="0.85"></stop>
+<stop offset="100%" stop-color="#0d5c63" stop-opacity="0.95"></stop>
+</lineargradient>
+</defs>
+<!-- Ambient Smog Grid Background (Outer haze) -->
+<g class="transition-opacity duration-700" id="outer-smog" opacity="0.45">
+<circle cx="120" cy="80" fill="#fc9174" r="4.5"></circle>
+<circle cx="210" cy="140" fill="#fc9174" r="3"></circle>
+<circle cx="80" cy="220" fill="#9a442d" r="5"></circle>
+<circle cx="160" cy="310" fill="#fc9174" r="3.5"></circle>
+<circle cx="760" cy="90" fill="#fc9174" r="4"></circle>
+<circle cx="840" cy="180" fill="#9a442d" r="5"></circle>
+<circle cx="790" cy="300" fill="#fc9174" r="3.5"></circle>
+<circle cx="720" cy="390" fill="#fc9174" r="4"></circle>
+<circle cx="240" cy="420" fill="#9a442d" r="4"></circle>
+<circle cx="100" cy="410" fill="#fc9174" r="3"></circle>
+</g>
+<!-- Ground Plane (Isometric Polygon) -->
+<polygon fill="#d9eaff" opacity="0.6" points="450,470 820,320 450,220 80,320"></polygon>
+<!-- Foundation Base Slab -->
+<polygon fill="#bfc8c9" opacity="0.7" points="450,470 450,480 820,330 820,320"></polygon>
+<polygon fill="#a4b2b3" opacity="0.8" points="450,470 450,480 80,330 80,320"></polygon>
+<!-- House Outer Shell: West Wing Cutaway Floor -->
+<polygon fill="url(#wallGradient)" points="450,390 230,290 320,240 540,340"></polygon>
+<!-- East Wing Floor -->
+<polygon fill="#edf4ff" points="450,390 670,290 580,240 360,340"></polygon>
+<!-- Dynamic Pure Air Sanctuary Bubble (Toggled by interventions) -->
+<ellipse class="transition-all duration-700 opacity-90 scale-100" cx="450" cy="285" fill="url(#airSanctuaryGlow)" id="sanctuary-bubble" rx="260" ry="145"></ellipse>
+<!-- Isometric Room Partitions (Walls) -->
+<!-- Center Dividing Wall -->
+<polygon fill="#0d5c63" opacity="0.35" points="450,390 450,230 460,225 460,385"></polygon>
+<!-- Back Wall (Living Room) -->
+<polygon fill="#ffffff" opacity="0.85" points="230,290 230,170 450,270 450,390"></polygon>
+<!-- Back Wall (Nursery & Bedroom) -->
+<polygon fill="#edf4ff" opacity="0.9" points="450,270 450,390 670,290 670,170"></polygon>
+<!-- Isometric Furniture Hints (Clay minimal aesthetic) -->
+<!-- Living Room Couch -->
+<polygon fill="#90d2da" opacity="0.9" points="280,295 340,265 370,280 310,310"></polygon>
+<!-- Nursery Crib -->
+<polygon fill="#ffb4a1" opacity="0.7" points="560,295 620,265 640,275 580,305"></polygon>
+<!-- Air Purifier Unit in Living Room -->
+<polygon fill="#00443d" points="340,320 360,310 360,285 340,295"></polygon>
+<polygon fill="#005e54" points="360,310 380,320 380,295 360,285"></polygon>
+<polygon fill="#8cf5e4" points="340,295 360,285 380,295 360,305"></polygon>
+<!-- Purifier Radial Vortex Waves -->
+<g class="transition-opacity duration-500 opacity-100" id="purifier-halo">
+<ellipse cx="360" cy="300" fill="none" opacity="0.8" rx="35" ry="18" stroke="#6fd8c8" stroke-dasharray="4 3" stroke-width="2"></ellipse>
+<ellipse cx="360" cy="300" fill="none" opacity="0.5" rx="65" ry="32" stroke="#6fd8c8" stroke-dasharray="6 4" stroke-width="1.5"></ellipse>
+</g>
+<!-- Roof Framing (Asymmetric low-poly pitch) -->
+<polygon fill="url(#roofGradient)" points="450,130 200,210 230,170 450,90"></polygon>
+<polygon fill="#002023" opacity="0.8" points="450,130 700,210 670,170 450,90"></polygon>
+<!-- Chimney / Induction Exhaust Stack -->
+<polygon fill="#3f484a" points="320,130 345,115 345,150 320,165"></polygon>
+<!-- Dynamic Particulates inside house (Controlled via JavaScript based on toggles) -->
+<g class="transition-all duration-700" id="indoor-particulates">
+<!-- Particulates remaining when safe (very sparse) -->
+<circle cx="480" cy="340" fill="#fc9174" opacity="0.6" r="2"></circle>
+<circle cx="510" cy="370" fill="#fc9174" opacity="0.5" r="2.5"></circle>
+<!-- Toggled bad particles -->
+<g class="opacity-0 transition-opacity duration-500" id="extra-indoor-particles">
+<circle cx="390" cy="310" fill="#fc9174" r="3.5"></circle>
+<circle cx="420" cy="270" fill="#9a442d" r="4"></circle>
+<circle cx="580" cy="250" fill="#fc9174" r="3.5"></circle>
+<circle cx="610" cy="320" fill="#fc9174" r="4"></circle>
+<circle cx="300" cy="250" fill="#9a442d" r="3"></circle>
+<circle cx="530" cy="300" fill="#fc9174" r="3.5"></circle>
+<circle cx="340" cy="350" fill="#fc9174" r="4"></circle>
+</g>
+</g>
+<!-- Isometric Room Badges & Microclimate Readings -->
+<g transform="translate(250, 210)">
+<rect fill="#ffffff" filter="drop-shadow(0px 2px 6px rgba(0,0,0,0.06))" height="34" rx="8" width="130"></rect>
+<circle cx="16" cy="17" fill="#20686f" r="5"></circle>
+<text fill="#091d2e" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="30" y="16">Living Haven</text>
+<text fill="#005e54" font-family="Plus Jakarta Sans" font-size="9" font-weight="700" x="30" y="27">38 AQI • HEPA Active</text>
+</g>
+<g transform="translate(530, 200)">
+<rect fill="#ffffff" filter="drop-shadow(0px 2px 6px rgba(0,0,0,0.06))" height="34" rx="8" width="134"></rect>
+<circle cx="16" cy="17" fill="#20686f" r="5"></circle>
+<text fill="#091d2e" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="30" y="16">Nursery &amp; Bed</text>
+<text fill="#005e54" font-family="Plus Jakarta Sans" font-size="9" font-weight="700" x="30" y="27">42 AQI • Sealed Zone</text>
+</g>
+</svg>
+<!-- Dynamic Overlay Alert (Visible when many items turned off) -->
+<div class="absolute bottom-4 left-4 right-4 md:left-auto md:right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-space-sm rounded-xl shadow-sm hidden items-center gap-space-sm" id="risk-warning-overlay">
+<span class="material-symbols-outlined text-secondary text-[20px]">error_outline</span>
+<span class="font-label-md text-label-md text-on-surface">Microclimate compromised. Re-enable HEPA or Sealing.</span>
+</div>
+</div>
+<!-- Action Button & Summary CTA -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[20px]">sync</span>
+<span>Simulation synchronizes with home smart switches and family schedules.</span>
+</div>
+<button class="w-full sm:w-auto px-space-xl py-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-xs" id="apply-plan-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Apply These Settings to Today's Plan</span>
+</button>
+</div>
+</div>
+<!-- Interactive Simulation Toggles Grid -->
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Intervention Parameters</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toggle habits and physical measures to recalculate exposure thresholds instantly.</p>
+</div>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold underline underline-offset-4" id="reset-defaults-btn" type="button">
+          Reset to Recommended
+        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Toggle 1: N95 Commute -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">masks</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Certified N95/KF94 Mask</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">School run &amp; metro transit</p>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">+22%</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Commute Transit</span>
+<button aria-checked="true" class="sim-toggle relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out focus:outline-none bg-primary" data-impact="22" role="switch" type="button">
+<span class="translate-x-6 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow ring-0 transition duration-200 ease-in-out my-0.5 ml-0.5"></span>
+</button>
+</div>
+</div>
+<!-- Toggle 2: HEPA Purifier -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">air_purifier_gen</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">HEPA H13 Air Purifiers</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous in living &amp; beds</p>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">+38%</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Primary Filtration</span>
+<button aria-checked="true" class="sim-toggle relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out focus:outline-none bg-primary" data-impact="38" role="switch" type="button">
+<span class="translate-x-6 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow ring-0 transition duration-200 ease-in-out my-0.5 ml-0.5"></span>
+</button>
+</div>
+</div>
+<!-- Toggle 3: Window Sealing -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">window</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Smart Window Sealing</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Balcony and east-facing seams</p>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">+15%</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Infiltration Lock</span>
+<button aria-checked="true" class="sim-toggle relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out focus:outline-none bg-primary" data-impact="15" role="switch" type="button">
+<span class="translate-x-6 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow ring-0 transition duration-200 ease-in-out my-0.5 ml-0.5"></span>
+</button>
+</div>
+</div>
+<!-- Toggle 4: Wet-Mopping (Default OFF) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">mop</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Wet-Mopping vs Dry Sweeping</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prevents settled PM re-suspension</p>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">+8%</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Surface Protocol</span>
+<button aria-checked="false" class="sim-toggle relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out focus:outline-none bg-outline-variant" data-impact="8" role="switch" type="button">
+<span class="translate-x-1 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow ring-0 transition duration-200 ease-in-out my-0.5 ml-0.5"></span>
+</button>
+</div>
+</div>
+<!-- Toggle 5: Induction Cooking -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">skillet</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Induction / Low-Smoke Shift</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Eliminates oil tadka combustion</p>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">+12%</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Kitchen Source</span>
+<button aria-checked="true" class="sim-toggle relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out focus:outline-none bg-primary" data-impact="12" role="switch" type="button">
+<span class="translate-x-6 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow ring-0 transition duration-200 ease-in-out my-0.5 ml-0.5"></span>
+</button>
+</div>
+</div>
+<!-- Family Vulnerability Profile Callout Card -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md font-bold mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">family_restroom</span>
+<span>Monitored Cohort</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calculated specifically for: <strong>Aarav</strong> (Age 7, Mild Asthmatic) &amp; <strong>Dadi</strong> (Age 71, High Sensitivity).</p>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Target daily safe quota: ≤ 100 AQI eq.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Clinical Evidence Reference Note -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-outline-variant text-[28px]">biotech</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Empirical Deposition Methodology</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Formula uses ICRP (International Commission on Radiological Protection) respiratory tract particulate modeling.</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-sm text-label-sm font-bold text-primary hover:text-primary-container shrink-0" href="#">
+<span>View Scientific Model Whitepaper</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Inline Interactive Simulation Logic -->
+<script>
+    (function initSimulator() {
+      const BASELINE_AQI = 312;
+      const toggles = document.querySelectorAll('.sim-toggle');
+      const projectedAqiEl = document.getElementById('projected-aqi');
+      const reductionPill = document.getElementById('reduction-pill');
+      const projectedStatus = document.getElementById('projected-status');
+      const shieldBadge = document.getElementById('shield-badge');
+      const timeSavedText = document.getElementById('time-saved-text');
+      const protectionPct = document.getElementById('protection-pct');
+      const protectionBar = document.getElementById('protection-bar');
+      const sanctuaryBubble = document.getElementById('sanctuary-bubble');
+      const purifierHalo = document.getElementById('purifier-halo');
+      const extraParticles = document.getElementById('extra-indoor-particles');
+      const riskWarning = document.getElementById('risk-warning-overlay');
+      const resetBtn = document.getElementById('reset-defaults-btn');
+      const applyBtn = document.getElementById('apply-plan-btn');
+
+      function calculateSimulation() {
+        let totalReductionPercent = 0;
+        let hepaActive = false;
+
+        toggles.forEach(toggle => {
+          const isChecked = toggle.getAttribute('aria-checked') === 'true';
+          const impact = parseFloat(toggle.getAttribute('data-impact') || 0);
+          if (isChecked) {
+            totalReductionPercent += impact;
+            if (impact === 38) hepaActive = true;
+          }
+        });
+
+        // Cap maximum combined mitigation physically at 88%
+        totalReductionPercent = Math.min(88, totalReductionPercent);
+        
+        // Calculate new projected AQI
+        const projectedAQI = Math.max(32, Math.round(BASELINE_AQI * (1 - (totalReductionPercent / 100))));
+        
+        // UI Updates
+        projectedAqiEl.textContent = projectedAQI;
+        reductionPill.textContent = `-${totalReductionPercent}% Inhalation`;
+        protectionPct.textContent = `${totalReductionPercent}% Active Shield`;
+        protectionBar.style.width = `${totalReductionPercent}%`;
+
+        // Hours protected estimation
+        const hoursProtected = Math.round((totalReductionPercent / 100) * 16.5);
+        timeSavedText.textContent = `Saved ~${hoursProtected} hours of toxic PM2.5 lung exposure for children and asthmatic members today.`;
+
+        // Visual State adjustments
+        if (totalReductionPercent >= 65) {
+          shieldBadge.className = 'px-space-md py-space-xs rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm shadow-sm transition-all';
+          shieldBadge.textContent = 'Safe Haven Active';
+          projectedStatus.textContent = 'Optimal Protective Microclimate • Clean Air Sphere';
+          projectedStatus.className = 'font-label-lg text-label-lg text-tertiary font-medium';
+          sanctuaryBubble.setAttribute('opacity', '0.9');
+          sanctuaryBubble.setAttribute('transform', 'scale(1)');
+          extraParticles.classList.add('opacity-0');
+          riskWarning.classList.add('hidden');
+          riskWarning.classList.remove('flex');
+        } else if (totalReductionPercent >= 35) {
+          shieldBadge.className = 'px-space-md py-space-xs rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm shadow-sm transition-all';
+          shieldBadge.textContent = 'Moderate Shelter';
+          projectedStatus.textContent = 'Partial Defense • Elevated Infiltration Detected';
+          projectedStatus.className = 'font-label-lg text-label-lg text-primary font-medium';
+          sanctuaryBubble.setAttribute('opacity', '0.5');
+          sanctuaryBubble.setAttribute('transform', 'scale(0.85)');
+          extraParticles.classList.remove('opacity-0');
+          riskWarning.classList.add('hidden');
+          riskWarning.classList.remove('flex');
+        } else {
+          shieldBadge.className = 'px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm transition-all';
+          shieldBadge.textContent = 'High Exposure Zone';
+          projectedStatus.textContent = 'Critical Infiltration • Immediate Sealing Advised';
+          projectedStatus.className = 'font-label-lg text-label-lg text-secondary font-medium';
+          sanctuaryBubble.setAttribute('opacity', '0.15');
+          sanctuaryBubble.setAttribute('transform', 'scale(0.7)');
+          extraParticles.classList.remove('opacity-0');
+          riskWarning.classList.remove('hidden');
+          riskWarning.classList.add('flex');
+        }
+
+        // Purifier graphic state
+        if (hepaActive) {
+          purifierHalo.style.opacity = '1';
+        } else {
+          purifierHalo.style.opacity = '0';
+        }
+      }
+
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const currentState = toggle.getAttribute('aria-checked') === 'true';
+          const newState = !currentState;
+          toggle.setAttribute('aria-checked', newState ? 'true' : 'false');
+
+          const knob = toggle.querySelector('span');
+          if (newState) {
+            toggle.classList.remove('bg-outline-variant');
+            toggle.classList.add('bg-primary');
+            knob.classList.remove('translate-x-1');
+            knob.classList.add('translate-x-6');
+          } else {
+            toggle.classList.remove('bg-primary');
+            toggle.classList.add('bg-outline-variant');
+            knob.classList.remove('translate-x-6');
+            knob.classList.add('translate-x-1');
+          }
+          calculateSimulation();
+        });
+      });
+
+      resetBtn.addEventListener('click', () => {
+        const defaults = [true, true, true, false, true];
+        toggles.forEach((toggle, idx) => {
+          const state = defaults[idx];
+          toggle.setAttribute('aria-checked', state ? 'true' : 'false');
+          const knob = toggle.querySelector('span');
+          if (state) {
+            toggle.classList.remove('bg-outline-variant');
+            toggle.classList.add('bg-primary');
+            knob.classList.remove('translate-x-1');
+            knob.classList.add('translate-x-6');
+          } else {
+            toggle.classList.remove('bg-primary');
+            toggle.classList.add('bg-outline-variant');
+            knob.classList.remove('translate-x-6');
+            knob.classList.add('translate-x-1');
+          }
+        });
+        calculateSimulation();
+      });
+
+      applyBtn.addEventListener('click', () => {
+        const originalText = applyBtn.innerHTML;
+        applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Configuring Daily Schedule...</span>';
+        applyBtn.classList.add('opacity-90');
+        setTimeout(() => {
+          applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Saved to Today\'s Plan!</span>';
+          applyBtn.classList.remove('bg-primary');
+          applyBtn.classList.add('bg-tertiary');
+          setTimeout(() => {
+            applyBtn.innerHTML = originalText;
+            applyBtn.classList.remove('bg-tertiary', 'opacity-90');
+            applyBtn.classList.add('bg-primary');
+          }, 2400);
+        }, 900);
+      });
+
+      // Initial calculation run
+      calculateSimulation();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(13,92,99,0.04)] mt-auto"><div class="max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div class="space-y-space-xs max-w-xl"><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[20px]">health_and_safety</span><span class="font-label-md text-label-md font-bold uppercase tracking-wider">Health Safety Advisory</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Data reflects ambient sensor projections intended for personal family exposure management. Not a substitute for clinical pulmonary counsel.</p><p class="font-label-sm text-label-sm text-outline">Sensor streams integrated via Open-Meteo &amp; Central Pollution Control Board (CPCB) real-time monitors.</p></div><div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md w-full md:w-auto pt-space-sm md:pt-0"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl"><span class="material-symbols-outlined text-secondary text-[22px]">emergency</span><div><div class="font-label-sm text-label-sm text-outline-variant font-bold uppercase">Emergency Helpline</div><div class="font-label-lg text-label-lg text-on-surface font-bold">108 / 112 (NCR Core)</div></div></div><div class="text-left sm:text-right font-label-sm text-label-sm text-outline">© 2025 OpenSky. Safe Air for Families.</div></div></div></footer></body></html>

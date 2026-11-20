@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>OpenSky</title><link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="/fonts/google-fonts.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+  font-display: block;
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+html:not(.fonts-loaded) .material-symbols-outlined {
+  visibility: hidden;
+  width: 1.2em;
+  height: 1.2em;
+}
+</style>
+<script>
+if (document.fonts) {
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.add('fonts-loaded');
+  });
+} else {
+  document.documentElement.classList.add('fonts-loaded');
+}
+</script><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#8fd1d9", "on-secondary-container": "#742814", "on-background": "#091d2e", "secondary-container": "#fc9174", "surface-container-lowest": "#ffffff", "tertiary-container": "#005e54", "on-tertiary-fixed-variant": "#005048", "inverse-surface": "#203243", "surface-variant": "#d1e4fb", "on-secondary-fixed": "#3c0800", "on-surface": "#091d2e", "surface-container-low": "#edf4ff", "surface-dim": "#c9dcf3", "outline": "#6f797a", "on-primary-fixed": "#002023", "tertiary": "#00443d", "on-secondary-fixed-variant": "#7c2e19", "tertiary-fixed-dim": "#6fd8c8", "error-container": "#ffdad6", "surface": "#f7f9ff", "surface-container-highest": "#d1e4fb", "on-secondary": "#ffffff", "surface-container-high": "#d9eaff", "secondary": "#9a442d", "secondary-fixed-dim": "#ffb4a1", "surface-container": "#e3efff", "on-tertiary": "#ffffff", "surface-tint": "#20686f", "on-error-container": "#93000a", "on-primary-container": "#90d2da", "inverse-on-surface": "#e8f2ff", "on-tertiary-container": "#70d9c9", "inverse-primary": "#8fd1d9", "primary-container": "#0d5c63", "on-tertiary-fixed": "#00201c", "surface-bright": "#f7f9ff", "tertiary-fixed": "#8cf5e4", "background": "#f7f9ff", "on-surface-variant": "#3f484a", "primary": "#004349", "primary-fixed": "abeef6", "outline-variant": "#bfc8c9", "on-error": "#ffffff", "error": "#ba1a1a", "on-primary": "#ffffff", "on-primary-fixed-variant": "#004f55", "secondary-fixed": "#ffdbd2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "2rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "gutter": "1rem", "space-md": "1rem" }, "fontFamily": { "headline-lg": [ "Merriweather" ], "headline-xl": [ "Merriweather" ], "headline-md": [ "Merriweather" ], "label-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-sm": [ "Merriweather" ], "body-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Merriweather" ], "headline-xl-mobile": [ "Merriweather" ], "body-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg": [ "32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-xl": [ "40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed-dim selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(13,92,99,0.05)] transition-all"><div class="h-20 max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="OpenSky Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBwQc0V4uCiotMMAlZeCUqYfTb4X2xkOn0-bj_LmnWQ0rhyS9vNNpm9InqK_PYKrMTXQvMOg6kWgWo74wHEeUzeruG_GCmu02SKNee9Hlq9VuZkoENNBctPNWwxc88_iDyTlYYLIxUTKHUI9ecRoeciBo-ZJvZNKL5oOCsI21N12iO7ojlgbBEYNyqYqeqr5OVSvlGjGNxf2bA4CM5TCbLhEHIzYUxYyJlp_6No4Dz5"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">OpenSky</span></a><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low/70 p-space-xs rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm"><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#">Home</a><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-full px-space-md py-space-xs shadow-sm" data-path="family-setup" href="#">Family Setup</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="todays-plan" href="#">Today's Plan</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="what-if" href="#">What If</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="community" href="#">Community</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="celebration" href="#">Celebration (Open Sky)</a></nav></div><div class="flex items-center gap-space-sm sm:gap-space-md"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-full shadow-[0_1px_3px_rgba(13,92,99,0.06)]"><span class="material-symbols-outlined text-primary text-[18px]">location_on</span><span class="font-label-md text-label-md text-on-surface font-medium whitespace-nowrap">New Delhi, NCR • 14°C</span></div><div class="flex items-center bg-surface-container-low rounded-full p-space-xs text-on-surface-variant"><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm font-bold text-on-surface hover:text-primary transition-colors" type="button">EN</button><span class="text-outline-variant font-label-sm text-label-sm">|</span><button class="px-space-sm py-space-xs rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">HI</button></div><button aria-label="Safety alerts" class="relative p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest animate-pulse"></span></button><div class="flex items-center pl-space-xs"><a class="rounded-full p-0.5 ring-2 ring-primary/20 hover:ring-primary transition-all" data-path="family-setup" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANH-TsNQ_OCJrSru8zD3T_FLRuOxyZ0f-Ce-dSOXOiN2ZNCkdjgVwKvD3fGuWXICZKIlTwW43gMggwpDdfRjnLn5LOFZQu6ZjwmBEepTN_PJj5w72OZVvEPXkxzcigvCjO3N-1sEXpgsAvJQ8G7P5wFQuaYXJjeohFN2e0E3g4sM-bRT_pk9JucQe8A9h7j2er9GhKwr_m1hB9UQ6tcO1SmIDWxxX0gZ02-H7e7Xg"/></a></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<div class="max-w-[1200px] w-full mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col gap-space-xl">
+<!-- Header & Step Tracker Section -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm">
+<div class="max-w-2xl space-y-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+            Personalized Micro-Sanctuary Setup
+          </div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Build Your Family's Clean Air Profile</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Customized exposure limits tailored to your vulnerable family members and home environment.</p>
+</div>
+<!-- Progress Overview Widget -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded-xl shadow-[0_4px_12px_-2px_rgba(13,92,99,0.06)] self-start md:self-auto">
+<div class="relative w-10 h-10 flex items-center justify-center">
+<svg class="w-10 h-10 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="66, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-md text-label-md font-bold text-primary">66%</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Calibration Phase</div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">Step 2 of 3</div>
+</div>
+</div>
+</div>
+<!-- 3-Step Interactive Timeline -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm p-space-xs bg-surface-container-low rounded-xl">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/80 text-on-surface shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Step 1</div>
+<div class="font-label-lg text-label-lg font-bold truncate">City &amp; Neighborhood</div>
+</div>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest text-primary shadow-[0_4px_16px_rgba(13,92,99,0.08)] ring-2 ring-primary/20">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md font-bold shadow-sm">
+            2
+          </div>
+<div class="min-w-0">
+<div class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Active Configuration</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface truncate">Who Lives at Home</div>
+</div>
+</div>
+<!-- Step 3 (Upcoming) -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg opacity-70 text-on-surface-variant hover:opacity-100 transition-opacity">
+<div class="w-8 h-8 rounded-full bg-surface-container text-outline flex items-center justify-center font-label-md text-label-md font-bold">
+            3
+          </div>
+<div class="min-w-0">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Next Step</div>
+<div class="font-label-lg text-label-lg font-medium truncate">Lifestyle &amp; Appliances</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Interactive 2-Column Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Selection Form -->
+<div class="lg:col-span-6 flex flex-col gap-space-lg">
+<!-- Prior Step Summary Chip -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container-lowest shadow-[0_2px_8px_rgba(13,92,99,0.04)]">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Active Environmental Grid</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate block">New Delhi, Sector 4 • Outer Ring</span>
+</div>
+</div>
+<button class="px-space-md py-space-xs rounded-full font-label-sm text-label-sm text-primary hover:bg-surface-container transition-colors shrink-0 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+            Change
+          </button>
+</div>
+<!-- Form Card -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-[0_8px_24px_-4px_rgba(13,92,99,0.06)] flex flex-col gap-space-lg">
+<!-- Section 2: Household Members & Sensitivities -->
+<div class="flex flex-col gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md font-bold uppercase tracking-wider mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">family_restroom</span>
+                Vulnerability Assessment
+              </div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Select household members and health sensitivities:</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Threshold guidelines dynamically recalculate for high-risk lungs.</p>
+</div>
+<!-- Household Members Interactive Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm" id="family-chips-grid">
+<!-- Child Chip (Selected) -->
+<button class="family-chip group p-space-md rounded-xl text-left transition-all duration-200 flex items-center justify-between bg-primary-container/10 ring-2 ring-primary-container text-on-surface shadow-sm" data-chip="child" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">child_care</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold">Child</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Under 8 yrs old</div>
+</div>
+</div>
+<div class="chip-status w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</button>
+<!-- Elderly Chip -->
+<button class="family-chip group p-space-md rounded-xl text-left transition-all duration-200 flex items-center justify-between bg-surface-container-low hover:bg-surface-container text-on-surface" data-chip="elderly" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">elderly</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold">Elderly</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">65+ years</div>
+</div>
+</div>
+<div class="chip-status w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</div>
+</button>
+<!-- Asthma / Respiratory Chip (Selected) -->
+<button class="family-chip group p-space-md rounded-xl text-left transition-all duration-200 flex items-center justify-between bg-secondary-container/20 ring-2 ring-secondary text-on-surface shadow-sm" data-chip="asthma" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">pulmonology</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold">Asthma / Lungs</div>
+<div class="font-body-sm text-body-sm text-secondary font-medium">Elevated sensitivity</div>
+</div>
+</div>
+<div class="chip-status w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</button>
+<!-- Pregnancy Chip -->
+<button class="family-chip group p-space-md rounded-xl text-left transition-all duration-200 flex items-center justify-between bg-surface-container-low hover:bg-surface-container text-on-surface" data-chip="pregnancy" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">pregnant_woman</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold">Pregnancy</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Critical gestational</div>
+</div>
+</div>
+<div class="chip-status w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</div>
+</button>
+<!-- Pets Chip (Selected) -->
+<button class="family-chip group p-space-md rounded-xl text-left transition-all duration-200 flex items-center justify-between bg-primary-container/10 ring-2 ring-primary-container text-on-surface shadow-sm" data-chip="pets" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">pets</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold">Pets (Dogs/Cats)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Low-ground breathing</div>
+</div>
+</div>
+<div class="chip-status w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</button>
+<!-- Cardiovascular Chip -->
+<button class="family-chip group p-space-md rounded-xl text-left transition-all duration-200 flex items-center justify-between bg-surface-container-low hover:bg-surface-container text-on-surface" data-chip="cardio" type="button">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">cardiology</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold">Cardiovascular</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Heart/hypertension</div>
+</div>
+</div>
+<div class="chip-status w-6 h-6 rounded-full bg-surface-container-high text-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Section 3: Home & Lifestyle Factors -->
+<div class="flex flex-col gap-space-md pt-space-sm">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md font-bold uppercase tracking-wider mb-space-xs">
+<span class="material-symbols-outlined text-[18px]">home_work</span>
+                Micro-Sanctuary Envelope
+              </div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Home &amp; Lifestyle Factors:</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Determine indoor pollution generation and filtration speed.</p>
+</div>
+<div class="space-y-space-md">
+<!-- Commute Habits -->
+<div>
+<label class="font-label-md text-label-md text-outline uppercase tracking-wider block mb-space-xs">Daily Family Commute Mode</label>
+<div class="flex flex-wrap gap-space-xs">
+<button class="lifestyle-btn px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">subway</span>
+                    Metro / Public Transit
+                  </button>
+<button class="lifestyle-btn px-space-md py-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">directions_car</span>
+                    Car w/ Cabin Filter
+                  </button>
+<button class="lifestyle-btn px-space-md py-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">two_wheeler</span>
+                    Walk / Two-Wheeler
+                  </button>
+</div>
+</div>
+<!-- Kitchen Combustion -->
+<div>
+<label class="font-label-md text-label-md text-outline uppercase tracking-wider block mb-space-xs">Cooking Energy Source</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<button class="lifestyle-btn p-space-sm rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs shadow-sm text-left" type="button">
+<span class="material-symbols-outlined text-[20px]">electric_bolt</span>
+                    Induction / Sealed Electric
+                  </button>
+<button class="lifestyle-btn p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold flex items-center gap-space-xs transition-colors text-left" type="button">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+                    Piped Gas / LPG Stove
+                  </button>
+</div>
+</div>
+<!-- Active Defense Technology: Purifiers & Windows -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<!-- Air Purifier Toggle Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[24px]">air_purifier_gen</span>
+<span class="px-space-xs py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-tertiary-container text-on-tertiary-container">H13 Grade</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">HEPA Purifier</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Child nursery &amp; bedroom</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm transition-all" id="purifier-yes" type="button">Active</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all" id="purifier-no" type="button">None</button>
+</div>
+</div>
+<!-- Glazing Toggle Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[24px]">window</span>
+<span class="px-space-xs py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-surface-container text-outline">Sealed Unit</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">Double Glazing</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Acoustic &amp; PM2.5 seal</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<button class="flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm" type="button">Installed</button>
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium" type="button">Standard</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md pt-space-md">
+<button class="w-full sm:flex-1 py-3 px-space-lg rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-[0_8px_20px_-4px_rgba(13,92,99,0.3)] hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs group" type="button">
+<span>Continue to My Plan</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full sm:w-auto py-3 px-space-lg rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg font-medium transition-colors" type="button">
+              Save &amp; Exit
+            </button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: 3D Interactive Family Cross-Section Display -->
+<div class="lg:col-span-6 flex flex-col gap-space-md sticky top-24">
+<!-- Sanctuary Simulation Canvas Card -->
+<div class="relative w-full rounded-2xl bg-surface-container-lowest p-space-lg shadow-[0_18px_36px_-6px_rgba(13,92,99,0.07),0_8px_16px_-4px_rgba(13,92,99,0.04)] overflow-hidden flex flex-col gap-space-md">
+<!-- Cross-section Header & Live Sensor Badge -->
+<div class="flex items-center justify-between relative z-10">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider">Dynamic Protection Mesh</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Apartment Interior Cross-Section</h3>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+              Isometric Projection
+            </div>
+</div>
+<!-- Isometric Architectural Render with Reactive Micro-Sanctuary Layer -->
+<div class="relative w-full rounded-xl overflow-hidden aspect-[4/3] bg-gradient-to-b from-surface-container-low via-surface-container to-surface-container-high flex items-center justify-center p-space-md">
+<!-- Isometric Home Cross-section SVG Graphic -->
+<svg class="w-full h-full max-h-[380px] drop-shadow-xl" fill="none" viewbox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<!-- Outdoor Smog Atmosphere (Upper Right / Ambient) -->
+<rect fill="url(#outdoor-smog-grad)" height="600" opacity="0.6" width="800" x="0" y="0"></rect>
+<!-- Isometric Floor Base (Ground slab) -->
+<polygon fill="#CBDDF5" points="400,520 740,360 400,200 60,360"></polygon>
+<polygon fill="#A5C4E8" points="60,360 400,520 400,545 60,385"></polygon>
+<polygon fill="#8AAED6" points="400,520 740,360 740,385 400,545"></polygon>
+<!-- Interior Room Floor Plates -->
+<!-- Living Room (Left-Front) -->
+<polygon fill="#EAF2FC" points="400,510 230,430 400,350 570,430"></polygon>
+<!-- Nursery/Kid's Room (Center-Back) -->
+<polygon fill="#DDF5F2" points="400,345 240,270 400,195 560,270"></polygon>
+<!-- Kitchen (Right-Front) -->
+<polygon fill="#E2EDFA" points="575,425 405,345 560,273 730,352"></polygon>
+<!-- Balcony (Far Left Wing) -->
+<polygon fill="#D0E3F8" points="225,425 68,352 225,278 382,351"></polygon>
+<!-- Architectural Isometric Walls (Transparent Cutaway Style) -->
+<!-- Back Central Spine Wall -->
+<polygon opacity="0.4" points="400,195 400,350 400,510 400,350" stroke="#0D5C63" stroke-dasharray="4 4" stroke-width="2"></polygon>
+<!-- Nursery Enclosure Walls -->
+<polygon fill="#00443D" fill-opacity="0.08" points="240,270 240,150 400,75 400,195" stroke="#005E54" stroke-opacity="0.3" stroke-width="2"></polygon>
+<polygon fill="#00443D" fill-opacity="0.04" points="400,75 560,150 560,270 400,195" stroke="#005E54" stroke-opacity="0.3" stroke-width="2"></polygon>
+<!-- LIVING ROOM FURNITURE & FIGURES -->
+<!-- Sofa -->
+<polygon fill="#5F8BA3" points="340,460 420,420 440,430 360,470"></polygon>
+<polygon fill="#7FA9C2" points="340,450 420,410 420,420 340,460"></polygon>
+<!-- Adult Figure (Parent on living room rug) -->
+<g class="transition-transform duration-300" id="figure-parent">
+<circle cx="380" cy="405" fill="#0D5C63" r="10"></circle>
+<path d="M372 416 L388 416 L384 445 L376 445 Z" fill="#20686F"></path>
+<!-- Laptop on lap -->
+<polygon fill="#D1E4FB" points="374,424 386,420 388,426 376,430"></polygon>
+</g>
+<!-- Pet Figure (Dog in Living Room corner) -->
+<g class="transition-all duration-300" id="figure-pet">
+<ellipse cx="440" cy="460" fill="#9A442D" rx="14" ry="9"></ellipse>
+<circle cx="452" cy="454" fill="#BA654D" r="6"></circle>
+<!-- Pet halo when active -->
+<circle cx="445" cy="458" fill="none" r="18" stroke="#FC9174" stroke-dasharray="3 3" stroke-width="2"></circle>
+<!-- Floating Pet Badge -->
+<g transform="translate(425, 420)">
+<rect fill="#FFFFFF" filter="url(#shadow)" height="16" rx="8" width="42"></rect>
+<text fill="#9A442D" font-family="Plus Jakarta Sans" font-size="9" font-weight="700" text-anchor="middle" x="21" y="12">PET SAFE</text>
+</g>
+</g>
+<!-- NURSERY / CHILD'S ROOM (Active Clean Air Sanctuary) -->
+<!-- Pure Air Volumetric Dome Bubble -->
+<g class="transition-opacity duration-500" id="clean-air-bubble">
+<!-- Outer halo aura -->
+<ellipse cx="400" cy="240" fill="#8CF5E4" fill-opacity="0.32" rx="130" ry="85"></ellipse>
+<ellipse cx="400" cy="240" fill="#ABE8F6" fill-opacity="0.25" rx="115" ry="75"></ellipse>
+<path d="M 270 240 C 270 160, 530 160, 530 240 C 530 320, 270 320, 270 240 Z" fill="none" opacity="0.6" stroke="#005E54" stroke-dasharray="6 4" stroke-width="2"></path>
+<!-- Circulating Air Currents (Micro Airflow Arrows) -->
+<path d="M330,225 Q370,195 410,210" fill="none" stroke="#0D5C63" stroke-linecap="round" stroke-width="2">
+<animate attributename="stroke-dashoffset" dur="2s" repeatcount="indefinite" values="40;0"></animate>
+</path>
+<path d="M470,250 Q430,280 390,265" fill="none" stroke="#0D5C63" stroke-linecap="round" stroke-width="2">
+<animate attributename="stroke-dashoffset" dur="2s" repeatcount="indefinite" values="0;40"></animate>
+</path>
+</g>
+<!-- Purifier Unit in Nursery -->
+<g id="purifier-unit" transform="translate(470, 220)">
+<polygon fill="#FFFFFF" points="15,0 30,8 15,16 0,8"></polygon>
+<polygon fill="#D1E4FB" points="0,8 15,16 15,40 0,32"></polygon>
+<polygon fill="#BFC8C9" points="15,16 30,8 30,32 15,40"></polygon>
+<!-- Purifier Glowing Ring -->
+<ellipse cx="15" cy="8" fill="#6FD8C8" opacity="0.8" rx="8" ry="4"></ellipse>
+<!-- Upward stream -->
+<line opacity="0.7" stroke="#6FD8C8" stroke-linecap="round" stroke-width="2" x1="15" x2="15" y1="4" y2="-12"></line>
+<line opacity="0.5" stroke="#6FD8C8" stroke-linecap="round" stroke-width="1.5" x1="9" x2="5" y1="6" y2="-6"></line>
+<line opacity="0.5" stroke="#6FD8C8" stroke-linecap="round" stroke-width="1.5" x1="21" x2="25" y1="6" y2="-6"></line>
+</g>
+<!-- Child Figure in Nursery -->
+<g class="transition-transform duration-300" id="figure-child">
+<!-- Kid with Red Balloon -->
+<circle cx="370" cy="225" fill="#FC9174" r="8"></circle>
+<path d="M364 233 L376 233 L374 255 L366 255 Z" fill="#005E54"></path>
+<!-- String & Floating Balloon -->
+<path d="M375,236 Q385,210 390,175" fill="none" stroke="#6F797A" stroke-width="1"></path>
+<ellipse cx="392" cy="165" fill="#E07A5F" rx="10" ry="13"></ellipse>
+<polygon fill="#E07A5F" points="390,178 394,178 392,181"></polygon>
+<!-- Protective Sensitivity Halo -->
+<circle cx="370" cy="235" fill="none" r="26" stroke="#9A442D" stroke-dasharray="4 2" stroke-width="1.5"></circle>
+<!-- Sensor Callout Marker -->
+<g transform="translate(320, 160)">
+<rect fill="#00443D" filter="url(#shadow)" height="24" rx="12" width="64"></rect>
+<text fill="#8CF5E4" font-family="Plus Jakarta Sans" font-size="10" font-weight="700" text-anchor="middle" x="32" y="16">AQI 24 • SAFE</text>
+</g>
+</g>
+<!-- KITCHEN & BALCONY ACCENTS -->
+<!-- Kitchen Counter -->
+<polygon fill="#B0C8E8" points="590,340 650,310 670,320 610,350"></polygon>
+<!-- Balcony Door Open with Smog Contours -->
+<line opacity="0.5" stroke="#7C2E19" stroke-dasharray="4 4" stroke-width="2" x1="225" x2="225" y1="278" y2="380"></line>
+<!-- Smog particulate drifting at balcony border -->
+<circle cx="160" cy="330" fill="#9A442D" opacity="0.4" r="3"></circle>
+<circle cx="180" cy="350" fill="#9A442D" opacity="0.6" r="2.5"></circle>
+<circle cx="140" cy="310" fill="#9A442D" opacity="0.3" r="4"></circle>
+<!-- Balcony Infiltration Tag -->
+<g transform="translate(100, 370)">
+<rect fill="#FFDAD6" height="20" rx="10" width="84"></rect>
+<text fill="#93000A" font-family="Plus Jakarta Sans" font-size="9" font-weight="700" text-anchor="middle" x="42" y="14">BALCONY AQI 280</text>
+</g>
+<!-- Gradient Defs -->
+<defs>
+<lineargradient id="outdoor-smog-grad" x1="100%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#FC9174" stop-opacity="0.25"></stop>
+<stop offset="50%" stop-color="#E3EFFF" stop-opacity="0.05"></stop>
+<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"></stop>
+</lineargradient>
+<filter height="140%" id="shadow" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="2" flood-color="#002023" flood-opacity="0.2" stddeviation="3"></fedropshadow>
+</filter>
+</defs>
+</svg>
+<!-- Room Tags Overlay in the 3D space -->
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">1. Protected Nursery Bubble</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">2. Sealed Living Space</span>
+</div>
+</div>
+<!-- Dynamic Callout Note Banner -->
+<div class="p-space-md rounded-xl bg-secondary-container/20 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">verified_user</span>
+<div class="space-y-0.5">
+<div class="font-label-lg text-label-lg font-bold text-on-secondary-container">
+                Vulnerability Alert Threshold Activated
+              </div>
+<p class="font-body-sm text-body-sm text-on-secondary-container">
+<span class="font-bold underline decoration-secondary">Child</span> and <span class="font-bold underline decoration-secondary">Asthma</span> selected: Exposure alert threshold automatically tightened from <span class="line-through text-outline">150 AQI</span> to <span class="font-bold text-secondary">80 AQI</span>. Nursery purification cycle prioritized for PM2.5 retention.
+              </p>
+</div>
+</div>
+<!-- Room Micro-Sensor Telemetry Grid -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low text-center">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Nursery</div>
+<div class="font-label-lg text-label-lg font-bold text-tertiary">24 AQI</div>
+<div class="font-label-sm text-label-sm text-tertiary-container font-semibold">HEPA Purified</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low text-center">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Living Room</div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">54 AQI</div>
+<div class="font-label-sm text-label-sm text-outline font-semibold">Moderate Flow</div>
+</div>
+<div class="p-space-sm rounded-lg bg-error-container/40 text-center">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-on-error-container">Balcony Smog</div>
+<div class="font-label-lg text-label-lg font-bold text-secondary">280 AQI</div>
+<div class="font-label-sm text-label-sm text-error font-semibold">Unsealed Inflow</div>
+</div>
+</div>
+</div>
+<!-- Trust & Evidence Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">model_training</span>
+<div>
+<div class="font-label-sm text-label-sm font-bold text-on-surface">Pediatric Inversion Model v4.2</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Calibrated against AIIMS Delhi Pulmonology Guidelines</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">info</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive script to toggle chip selections and update 3D cross-section bubble -->
+<script>
+    (function initFamilyProfile() {
+      const chips = document.querySelectorAll('.family-chip');
+      const bubble = document.getElementById('clean-air-bubble');
+      const petFigure = document.getElementById('figure-pet');
+      const purifierYes = document.getElementById('purifier-yes');
+      const purifierNo = document.getElementById('purifier-no');
+      const purifierUnit = document.getElementById('purifier-unit');
+
+      // Selection state toggling for household members
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          const type = chip.getAttribute('data-chip');
+          const isSelected = chip.classList.contains('ring-2');
+          const statusIcon = chip.querySelector('.chip-status span');
+
+          if (isSelected) {
+            chip.classList.remove('ring-2', 'ring-primary-container', 'ring-secondary', 'bg-primary-container/10', 'bg-secondary-container/20');
+            chip.classList.add('bg-surface-container-low');
+            if (statusIcon) statusIcon.textContent = 'add';
+            
+            // Cross section visual reacts
+            if (type === 'pets' && petFigure) petFigure.style.opacity = '0.3';
+            if (type === 'child' && bubble) bubble.style.opacity = '0.2';
+          } else {
+            chip.classList.remove('bg-surface-container-low');
+            if (type === 'asthma') {
+              chip.classList.add('ring-2', 'ring-secondary', 'bg-secondary-container/20');
+            } else {
+              chip.classList.add('ring-2', 'ring-primary-container', 'bg-primary-container/10');
+            }
+            if (statusIcon) statusIcon.textContent = 'check';
+
+            // Cross section visual reacts
+            if (type === 'pets' && petFigure) petFigure.style.opacity = '1';
+            if (type === 'child' && bubble) bubble.style.opacity = '1';
+          }
+        });
+      });
+
+      // Purifier quick toggles
+      if (purifierYes && purifierNo && purifierUnit) {
+        purifierYes.addEventListener('click', () => {
+          purifierYes.className = 'flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm transition-all';
+          purifierNo.className = 'flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all';
+          purifierUnit.style.display = 'block';
+          if (bubble) bubble.style.opacity = '1';
+        });
+
+        purifierNo.addEventListener('click', () => {
+          purifierNo.className = 'flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm transition-all';
+          purifierYes.className = 'flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container transition-all';
+          purifierUnit.style.display = 'none';
+          if (bubble) bubble.style.opacity = '0.15';
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(13,92,99,0.04)] mt-auto"><div class="max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div class="space-y-space-xs max-w-xl"><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[20px]">health_and_safety</span><span class="font-label-md text-label-md font-bold uppercase tracking-wider">Health Safety Advisory</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Data reflects ambient sensor projections intended for personal family exposure management. Not a substitute for clinical pulmonary counsel.</p><p class="font-label-sm text-label-sm text-outline">Sensor streams integrated via Open-Meteo &amp; Central Pollution Control Board (CPCB) real-time monitors.</p></div><div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md w-full md:w-auto pt-space-sm md:pt-0"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl"><span class="material-symbols-outlined text-secondary text-[22px]">emergency</span><div><div class="font-label-sm text-label-sm text-outline-variant font-bold uppercase">Emergency Helpline</div><div class="font-label-lg text-label-lg text-on-surface font-bold">108 / 112 (NCR Core)</div></div></div><div class="text-left sm:text-right font-label-sm text-label-sm text-outline">© 2025 OpenSky. Safe Air for Families.</div></div></div></footer></body></html>
