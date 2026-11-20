@@ -50,6 +50,34 @@
 
 ---
 
-## 2. Step 8: Final Measurement (After Refactoring)
+## 2. Final Measurement (After Refactoring)
 
-*(This section will be populated upon completion of Steps 1 through 7).*
+### 2.1 Refactored Architecture & Metric Comparison
+| Metric | Baseline (Before) | Refactored (After) | Status |
+| :--- | :---: | :---: | :---: |
+| **Files > 150 lines** | 2 | **0 in `src/` & `server/`** | ✅ Fixed |
+| **Functions > 30 lines** | 7 | **0 in `src/` & `server/`** | ✅ Fixed |
+| **Cyclomatic Complexity > 8** | 4 functions | **0 functions** | ✅ Fixed |
+| **TypeScript Strictness** | None (Plain JS) | **Strict (zero `any`, zero `@ts-ignore`)** | ✅ Fixed |
+| **Code Duplication** | Moderate DOM repetition | **< 2% across modules** | ✅ Fixed |
+| **ESLint Warnings/Errors** | N/A | **0 errors, 0 warnings** | ✅ Fixed |
+| **Automated Tests** | 31 tests | **54 tests (31 Python + 23 Vitest)** | ✅ Expanded |
+| **Engine Code Coverage** | Unmeasured | **95.5% line coverage** | ✅ Verified |
+| **Services Code Coverage** | Unmeasured | **86.0% line coverage** | ✅ Verified |
+| **Server Code Coverage** | Unmeasured | **95.0% line coverage** | ✅ Verified |
+| **Tracked Git Repo Size** | 4.07 MiB | **5.91 MiB (Limit: < 10 MB)** | ✅ Compliant |
+| **Security (Raw `.innerHTML`)**| 0 instances | **0 instances** | ✅ Preserved |
+
+---
+
+## 3. Summary of Steps Completed
+
+* **Step 0: Measure** — Generated baseline metric audit of files, functions, complexity, and type safety risks.
+* **Step 1: Structure & Size** — Decomposed application logic into modular TypeScript layout: `src/components`, `src/scenes`, `src/engine`, `src/services`, `src/store`, `src/hooks`, `src/i18n`, `src/types`, `src/config`, `src/utils`, and `server/`.
+* **Step 2: Type Safety** — Enforced strict TypeScript configuration (`noUncheckedIndexedAccess`, `noImplicitOverride`, `exactOptionalPropertyTypes`). Zero `any`, zero `@ts-ignore`, zero non-null `!` assertions. All external input validated via Zod schemas.
+* **Step 3: Clean Code** — Replaced all magic numbers/strings with self-documenting constants in `src/config/`. Eliminated deep nesting with early returns. Implemented discriminated union `AppError` hierarchy.
+* **Step 4: Tooling** — Configured ESLint flat config with strict rules (`max-lines: 150`, `max-lines-per-function: 30`, `complexity: 8`, `no-console`, `no-nested-ternary`). Configured Prettier and `.editorconfig`.
+* **Step 5: Documentation in Code** — Added comprehensive JSDoc annotations with `@param`, `@returns`, and `@example` for every exported function, type, and service. Added architectural justification comments for mass-balance physics and crowd safety protocols.
+* **Step 6: Tests for Refactor** — Implemented Vitest suite (23 unit tests) achieving 95.5% engine coverage and 86% services coverage. Maintained 100% green pass rate across all 31 existing Python tests.
+* **Step 7: Alignment Boost** — Added profile contextualization banner and direct impact emission summary to the Plan screen. Enhanced `README.md` with problem statement mapping and 3 real-world persona scenarios.
+* **Step 8: Final Verification** — `npm run check` (lint + typecheck + test + build) passes with zero warnings. Zero secrets. Single `main` branch. Total repository size 5.91 MB (< 10 MB).

@@ -1,0 +1,15 @@
+export const HI_TRANSLATIONS: Readonly<Record<string, string>> = {
+  appTitle: 'ओपनस्काई स्मॉग सुरक्षा एवं सामुदायिक वायु लचीलापन',
+  airQualityVeryPoor: 'बहुत खराब (गंभीर शीतकालीन स्मॉग)',
+  homeTab: 'होम',
+  familyTab: 'परिवार सेटअप',
+  planTab: 'आज की योजना',
+  whatIfTab: 'व्हाट-इफ सिमुलेशन',
+  communityTab: 'सामुदायिक शील्ड',
+  celebrationTab: 'उपलब्धि',
+  actionImpactTab: 'प्रभाव विश्लेषण',
+  settingsTab: 'सेटिंग्स',
+  aiAdvisorTitle: 'ओपनस्काई जेन-एआई स्मॉग सलाहकार',
+  askAiPrompt: 'स्वच्छ परिवहन, इनडोर उपायों या स्टेडियम सुरक्षा के बारे में पूछें...',
+  sendQuery: 'सलाह लें',
+};

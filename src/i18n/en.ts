@@ -1,0 +1,15 @@
+export const EN_TRANSLATIONS: Readonly<Record<string, string>> = {
+  appTitle: 'OpenSky Smog Safety & Community Air Resilience',
+  airQualityVeryPoor: 'Very Poor (Severe Winter Smog)',
+  homeTab: 'Home',
+  familyTab: 'Family Setup',
+  planTab: "Today's Plan",
+  whatIfTab: 'What-If Simulation',
+  communityTab: 'Community Shield',
+  celebrationTab: 'Celebration',
+  actionImpactTab: 'Action Impact',
+  settingsTab: 'Settings',
+  aiAdvisorTitle: 'OpenSky GenAI Smog Advisor',
+  askAiPrompt: 'Ask about clean transit, indoor hacks, or stadium safety...',
+  sendQuery: 'Ask Advisor',
+};
