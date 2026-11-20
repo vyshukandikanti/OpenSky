@@ -3,9 +3,32 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>OpenSky Smog Safety App — Tabbed Suite</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://lh3.googleusercontent.com data:; connect-src 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta name="description" content="OpenSky: Maternal-first atmospheric smog defense assistant for families navigating severe winter inversions in Delhi-NCR."/>
+<title>OpenSky Smog Safety App — AI Smog Defense System</title>
 <link href="/fonts/google-fonts.css" rel="stylesheet"/>
 <style>
+/* WCAG 2.2 Accessible Skip Link */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background: #004349;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: top 0.2s ease-in-out;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid #ABEBF6;
+}
+
 /* Local Instant-Loading Font */
 @font-face {
   font-family: 'Material Symbols Outlined';
@@ -67,110 +90,121 @@ html:not(.fonts-loaded) .material-symbols-outlined {
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
 
-<!-- Top Master Bar with Tabs -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_2px_12px_rgba(13,92,99,0.08)] border-b border-primary/10">
+<!-- WCAG 2.2 Keyboard Skip Navigation Link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Top Master Navigation Bar with Accessible Tabs -->
+<header role="banner" class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_2px_12px_rgba(13,92,99,0.08)] border-b border-primary/10">
   
-  <!-- Row 1: Brand & Utilities -->
+  <!-- Row 1: Brand & Status Controls -->
   <div class="h-14 max-w-[1400px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-4 border-b border-primary/5">
     <div class="flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white shadow-sm">
+      <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white shadow-sm" aria-hidden="true">
         <span class="material-symbols-outlined text-[20px]">air</span>
       </div>
       <div class="flex items-baseline gap-2">
-        <span class="font-headline-sm text-primary font-bold text-lg">OpenSky</span>
-        <span class="text-xs text-on-surface-variant hidden sm:inline">• Smog Defense System</span>
+        <span class="font-headline-sm text-primary font-bold text-lg tracking-tight">OpenSky</span>
+        <span class="text-xs text-on-surface-variant hidden sm:inline" id="app-tagline">• Smog Defense System</span>
       </div>
     </div>
 
-    <!-- Right Controls -->
-    <div class="flex items-center gap-2">
-      <!-- Live Status Pill -->
-      <div class="flex items-center gap-1.5 bg-error-container/30 text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold border border-secondary/20">
-        <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
-        <span>NCR • AQI 312 Severe</span>
+    <!-- Right Controls: Status & Interactive Bilingual Switcher -->
+    <div class="flex items-center gap-3">
+      <!-- Live AQI Status Badge -->
+      <div class="flex items-center gap-1.5 bg-error-container/40 text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold border border-secondary/20" role="status" aria-live="polite">
+        <span class="w-2 h-2 rounded-full bg-secondary animate-ping" aria-hidden="true"></span>
+        <span id="live-status-text">NCR • AQI 312 Severe</span>
+      </div>
+
+      <!-- Accessible Language Toggle -->
+      <div class="flex items-center bg-surface-container-low rounded-full p-0.5 border border-primary/10 text-xs font-bold" role="group" aria-label="Language Selector">
+        <button id="lang-btn-en" class="px-2.5 py-1 rounded-full bg-primary text-on-primary transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary" aria-pressed="true">EN</button>
+        <button id="lang-btn-hi" class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary" aria-pressed="false">हिन्दी</button>
       </div>
     </div>
   </div>
 
-  <!-- Row 2: Interactive Tabs Strip (Horizontal Scrollable) -->
-  <div class="max-w-[1400px] mx-auto px-2 sm:px-4 py-2 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-    
-    <button class="tab-button tab-active bg-primary text-white shadow-md font-bold flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="home">
-      <span class="material-symbols-outlined text-[18px]">home</span>
-      <span>Home</span>
+  <!-- Row 2: Accessible W3C Tablist Strip -->
+  <nav aria-label="Application Sections" class="max-w-[1400px] mx-auto px-2 sm:px-4 py-2">
+    <div role="tablist" aria-label="Smog Safety Navigation Screens" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+      
+    <button role="tab" id="tab-btn-home" aria-selected="true" aria-controls="tab-pane-home" aria-label="Home Screen - Real-Time Air Quality Sanctuary Dashboard" tabindex="0" class="tab-button tab-active bg-primary text-white shadow-md font-bold focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="home">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">home</span>
+      <span class="tab-title-text">Home</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">AQI 312</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="family-setup">
-      <span class="material-symbols-outlined text-[18px]">family_restroom</span>
-      <span>Family Setup</span>
+    <button role="tab" id="tab-btn-family-setup" aria-selected="false" aria-controls="tab-pane-family-setup" aria-label="Family Setup Screen - Respiratory Sensitivity Profiles" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="family-setup">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">family_restroom</span>
+      <span class="tab-title-text">Family Setup</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Profile</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="todays-plan">
-      <span class="material-symbols-outlined text-[18px]">checklist</span>
-      <span>Today's Plan</span>
+    <button role="tab" id="tab-btn-todays-plan" aria-selected="false" aria-controls="tab-pane-todays-plan" aria-label="Today's Plan - 4-Step Domestic Defense Actions" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="todays-plan">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">checklist</span>
+      <span class="tab-title-text">Today's Plan</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Playbook</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="what-if">
-      <span class="material-symbols-outlined text-[18px]">tune</span>
-      <span>What If</span>
+    <button role="tab" id="tab-btn-what-if" aria-selected="false" aria-controls="tab-pane-what-if" aria-label="What If Simulator - Indoor Exposure Microclimate Physics" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="what-if">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">tune</span>
+      <span class="tab-title-text">What If</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Simulator</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="community">
-      <span class="material-symbols-outlined text-[18px]">groups</span>
-      <span>Community</span>
+    <button role="tab" id="tab-btn-community" aria-selected="false" aria-controls="tab-pane-community" aria-label="Community Shield - Neighborhood Collective Reduction" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="community">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">groups</span>
+      <span class="tab-title-text">Community</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Network</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="celebration">
-      <span class="material-symbols-outlined text-[18px]">sunny</span>
-      <span>Celebration</span>
+    <button role="tab" id="tab-btn-celebration" aria-selected="false" aria-controls="tab-pane-celebration" aria-label="Celebration Screen - Atmospheric Inversion Dispersal" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="celebration">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">sunny</span>
+      <span class="tab-title-text">Celebration</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Open Sky</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="action-impact">
-      <span class="material-symbols-outlined text-[18px]">analytics</span>
-      <span>Action Impact</span>
+    <button role="tab" id="tab-btn-action-impact" aria-selected="false" aria-controls="tab-pane-action-impact" aria-label="Action Impact Screen - Environmental Modeling & Pulmonary Citations" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="action-impact">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">analytics</span>
+      <span class="tab-title-text">Action Impact</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Science</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="settings">
-      <span class="material-symbols-outlined text-[18px]">settings</span>
-      <span>Settings</span>
+    <button role="tab" id="tab-btn-settings" aria-selected="false" aria-controls="tab-pane-settings" aria-label="Settings Screen - Hardware Calibration & Regional Preferences" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="settings">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">settings</span>
+      <span class="tab-title-text">Settings</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Config</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="air-data-unavailable">
-      <span class="material-symbols-outlined text-[18px]">cloud_off</span>
-      <span>Data Unavailable</span>
+    <button role="tab" id="tab-btn-air-data-unavailable" aria-selected="false" aria-controls="tab-pane-air-data-unavailable" aria-label="Edge Case - Sensor Dropout Fallback Heuristics" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="air-data-unavailable">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">cloud_off</span>
+      <span class="tab-title-text">Data Unavailable</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Fallback</span>
     </button>
     
 
-    <button class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer" data-tab="offline-state">
-      <span class="material-symbols-outlined text-[18px]">smartphone</span>
-      <span>Offline (Mobile)</span>
+    <button role="tab" id="tab-btn-offline-state" aria-selected="false" aria-controls="tab-pane-offline-state" aria-label="Mobile Mode - Low-Bandwidth Commuter Shield" tabindex="-1" class="tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-tab="offline-state">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">smartphone</span>
+      <span class="tab-title-text">Offline (Mobile)</span>
       <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-black/10 dark:bg-white/10 uppercase tracking-wider font-semibold">Mobile</span>
     </button>
     
-  </div>
+    </div>
+  </nav>
 </header>
 
 <!-- Main Workspace: Displays ONLY the active Tab Screen -->
-<main class="w-full pt-[116px] bg-surface flex-1 min-h-[calc(100vh-116px)] flex flex-col">
+<main id="main-content" role="main" class="w-full pt-[116px] bg-surface flex-1 min-h-[calc(100vh-116px)] flex flex-col focus:outline-none" tabindex="-1">
   
-    <div id="tab-pane-home" class="tab-pane  w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-home" aria-labelledby="tab-btn-home" tabindex="0" class="tab-pane  w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <!-- Atmospheric Dawn Sky Underlay & Ambient Glow -->
 <div class="relative w-full overflow-hidden bg-gradient-to-b from-surface via-surface-container-low to-surface">
@@ -522,7 +556,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-family-setup" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-family-setup" aria-labelledby="tab-btn-family-setup" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <div class="max-w-[1200px] w-full mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col gap-space-xl">
 <!-- Header & Step Tracker Section -->
@@ -1053,7 +1087,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-todays-plan" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-todays-plan" aria-labelledby="tab-btn-todays-plan" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <div class="w-full max-w-[1200px] mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-lg space-y-space-lg">
 <!-- Top Strategic Context Banner -->
@@ -1564,7 +1598,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-what-if" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-what-if" aria-labelledby="tab-btn-what-if" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <div class="max-w-[1200px] w-full mx-auto px-margin md:px-margin-tablet lg:px-space-lg py-space-xl flex flex-col gap-space-xl">
 <!-- Header Section -->
@@ -2095,7 +2129,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-community" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-community" aria-labelledby="tab-btn-community" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <!-- Atmospheric Dawn Sky Underlay & Ambient Hero Region -->
 <div class="relative w-full overflow-hidden bg-gradient-to-b from-surface-container-low via-surface to-surface-bright pb-space-xl">
@@ -2749,7 +2783,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-celebration" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-celebration" aria-labelledby="tab-btn-celebration" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <div class="relative w-full overflow-hidden bg-gradient-to-b from-surface-container-low via-surface to-surface-container-lowest">
 <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-primary-fixed-dim/20 rounded-full blur-[120px] pointer-events-none"></div>
@@ -2913,7 +2947,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-action-impact" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-action-impact" aria-labelledby="tab-btn-action-impact" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <!-- Atmospheric Gradient Canvas Wrapper -->
 <div class="w-full bg-gradient-to-b from-surface via-surface-container-low/40 to-surface pb-space-xl">
@@ -3227,7 +3261,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-settings" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-settings" aria-labelledby="tab-btn-settings" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <!-- Atmospheric Canvas Container -->
 <div class="w-full relative overflow-hidden bg-gradient-to-b from-surface via-surface-container-low/40 to-surface">
@@ -3662,7 +3696,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-air-data-unavailable" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-air-data-unavailable" aria-labelledby="tab-btn-air-data-unavailable" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full">
 <div class="w-full relative overflow-hidden bg-gradient-to-b from-surface-container-low via-surface to-background pb-space-xl">
 <!-- Atmospheric Ambient Glows -->
@@ -3939,7 +3973,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     </div>
     
 
-    <div id="tab-pane-offline-state" class="tab-pane hidden w-full min-h-[calc(100vh-140px)]">
+    <div role="tabpanel" id="tab-pane-offline-state" aria-labelledby="tab-btn-offline-state" tabindex="0" class="tab-pane hidden w-full min-h-[calc(100vh-140px)] focus:outline-none">
       <div class="flex flex-col w-full px-margin pb-space-xl gap-space-lg">
 <!-- Realtime Network Status Pill -->
 <div class="flex items-center justify-between w-full px-space-md py-2.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed shadow-sm">
@@ -4192,21 +4226,21 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     
 </main>
 
-<!-- Floating Tab Switcher Helper at Bottom -->
-<div class="fixed bottom-4 right-4 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg border border-primary/15 flex items-center gap-2 text-xs">
+<!-- Accessible Floating Tab Switcher at Bottom -->
+<aside aria-label="Screen Navigation Controls" class="fixed bottom-4 right-4 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg border border-primary/15 flex items-center gap-2 text-xs">
   <span class="text-on-surface-variant font-medium">Tabs:</span>
-  <button id="prev-tab" class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-primary hover:text-white font-bold transition-all">◀ Prev</button>
-  <span id="tab-counter" class="font-bold text-primary">1 / 10</span>
-  <button id="next-tab" class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-primary hover:text-white font-bold transition-all">Next ▶</button>
-</div>
+  <button id="prev-tab" aria-label="Go to previous tab" class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-primary hover:text-white font-bold transition-all focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">◀ Prev</button>
+  <span id="tab-counter" aria-live="polite" class="font-bold text-primary">1 / 10</span>
+  <button id="next-tab" aria-label="Go to next tab" class="px-2 py-0.5 rounded bg-surface-container-low hover:bg-primary hover:text-white font-bold transition-all focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">Next ▶</button>
+</aside>
 
-<!-- Tab Router Script -->
+<!-- Tab Router Script with Full W3C ARIA Keyboard Navigation -->
 <script>
 (function() {
-  const tabs = [{'id': 'home', 'file': 'home.html', 'title': 'Home', 'icon': 'home', 'badge': 'AQI 312'}, {'id': 'family-setup', 'file': 'family-setup.html', 'title': 'Family Setup', 'icon': 'family_restroom', 'badge': 'Profile'}, {'id': 'todays-plan', 'file': 'todays-plan.html', 'title': "Today's Plan", 'icon': 'checklist', 'badge': 'Playbook'}, {'id': 'what-if', 'file': 'what-if.html', 'title': 'What If', 'icon': 'tune', 'badge': 'Simulator'}, {'id': 'community', 'file': 'community.html', 'title': 'Community', 'icon': 'groups', 'badge': 'Network'}, {'id': 'celebration', 'file': 'celebration.html', 'title': 'Celebration', 'icon': 'sunny', 'badge': 'Open Sky'}, {'id': 'action-impact', 'file': 'action-impact.html', 'title': 'Action Impact', 'icon': 'analytics', 'badge': 'Science'}, {'id': 'settings', 'file': 'settings.html', 'title': 'Settings', 'icon': 'settings', 'badge': 'Config'}, {'id': 'air-data-unavailable', 'file': 'air-data-unavailable.html', 'title': 'Data Unavailable', 'icon': 'cloud_off', 'badge': 'Fallback'}, {'id': 'offline-state', 'file': 'offline-state.html', 'title': 'Offline (Mobile)', 'icon': 'smartphone', 'badge': 'Mobile'}];
+  const tabs = [{'id': 'home', 'file': 'home.html', 'title': 'Home', 'icon': 'home', 'badge': 'AQI 312', 'aria_label': 'Home Screen - Real-Time Air Quality Sanctuary Dashboard'}, {'id': 'family-setup', 'file': 'family-setup.html', 'title': 'Family Setup', 'icon': 'family_restroom', 'badge': 'Profile', 'aria_label': 'Family Setup Screen - Respiratory Sensitivity Profiles'}, {'id': 'todays-plan', 'file': 'todays-plan.html', 'title': "Today's Plan", 'icon': 'checklist', 'badge': 'Playbook', 'aria_label': "Today's Plan - 4-Step Domestic Defense Actions"}, {'id': 'what-if', 'file': 'what-if.html', 'title': 'What If', 'icon': 'tune', 'badge': 'Simulator', 'aria_label': 'What If Simulator - Indoor Exposure Microclimate Physics'}, {'id': 'community', 'file': 'community.html', 'title': 'Community', 'icon': 'groups', 'badge': 'Network', 'aria_label': 'Community Shield - Neighborhood Collective Reduction'}, {'id': 'celebration', 'file': 'celebration.html', 'title': 'Celebration', 'icon': 'sunny', 'badge': 'Open Sky', 'aria_label': 'Celebration Screen - Atmospheric Inversion Dispersal'}, {'id': 'action-impact', 'file': 'action-impact.html', 'title': 'Action Impact', 'icon': 'analytics', 'badge': 'Science', 'aria_label': 'Action Impact Screen - Environmental Modeling & Pulmonary Citations'}, {'id': 'settings', 'file': 'settings.html', 'title': 'Settings', 'icon': 'settings', 'badge': 'Config', 'aria_label': 'Settings Screen - Hardware Calibration & Regional Preferences'}, {'id': 'air-data-unavailable', 'file': 'air-data-unavailable.html', 'title': 'Data Unavailable', 'icon': 'cloud_off', 'badge': 'Fallback', 'aria_label': 'Edge Case - Sensor Dropout Fallback Heuristics'}, {'id': 'offline-state', 'file': 'offline-state.html', 'title': 'Offline (Mobile)', 'icon': 'smartphone', 'badge': 'Mobile', 'aria_label': 'Mobile Mode - Low-Bandwidth Commuter Shield'}];
   let activeIndex = 0;
 
-  function activateTab(tabId, updateHash = true) {
+  function activateTab(tabId, updateHash = true, focusTab = false) {
     const idx = tabs.findIndex(t => t.id === tabId);
     if (idx !== -1) {
       activeIndex = idx;
@@ -4224,13 +4258,19 @@ html:not(.fonts-loaded) .material-symbols-outlined {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
-    // Update tab button styles
+    // Update tab button styles and ARIA states
     document.querySelectorAll('.tab-button').forEach(btn => {
-      if (btn.getAttribute('data-tab') === tabId) {
-        btn.className = "tab-button tab-active bg-primary text-white shadow-md font-bold flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer";
+      const bTab = btn.getAttribute('data-tab');
+      if (bTab === tabId) {
+        btn.setAttribute('aria-selected', 'true');
+        btn.setAttribute('tabindex', '0');
+        btn.className = "tab-button tab-active bg-primary text-white shadow-md font-bold flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary";
         btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        if (focusTab) btn.focus();
       } else {
-        btn.className = "tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer";
+        btn.setAttribute('aria-selected', 'false');
+        btn.setAttribute('tabindex', '-1');
+        btn.className = "tab-button bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-medium flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-all duration-200 border border-primary/10 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary";
       }
     });
 
@@ -4245,13 +4285,37 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     }
   }
 
-  // Tab button click handlers
+  // Tab click handlers
   document.querySelectorAll('.tab-button').forEach(btn => {
     btn.addEventListener('click', () => {
       const tabId = btn.getAttribute('data-tab');
-      activateTab(tabId);
+      activateTab(tabId, true, true);
     });
   });
+
+  // W3C ARIA Keyboard Navigation (Left, Right, Home, End)
+  const tablist = document.querySelector('[role="tablist"]');
+  if (tablist) {
+    tablist.addEventListener('keydown', (e) => {
+      let newIndex = activeIndex;
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        newIndex = (activeIndex + 1) % tabs.length;
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        newIndex = (activeIndex - 1 + tabs.length) % tabs.length;
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        newIndex = 0;
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        newIndex = tabs.length - 1;
+      } else {
+        return;
+      }
+      activateTab(tabs[newIndex].id, true, true);
+    });
+  }
 
   // Internal link delegation (data-path clicks inside screens switch tabs!)
   document.addEventListener('click', (e) => {
@@ -4259,7 +4323,7 @@ html:not(.fonts-loaded) .material-symbols-outlined {
     if (trigger) {
       e.preventDefault();
       const path = trigger.getAttribute('data-path');
-      activateTab(path);
+      activateTab(path, true, true);
     }
   });
 
@@ -4270,24 +4334,87 @@ html:not(.fonts-loaded) .material-symbols-outlined {
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       activeIndex = (activeIndex - 1 + tabs.length) % tabs.length;
-      activateTab(tabs[activeIndex].id);
+      activateTab(tabs[activeIndex].id, true, false);
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       activeIndex = (activeIndex + 1) % tabs.length;
-      activateTab(tabs[activeIndex].id);
+      activateTab(tabs[activeIndex].id, true, false);
     });
   }
+
+  // Dynamic Bilingual Engine (EN / HI)
+  const enBtn = document.getElementById('lang-btn-en');
+  const hiBtn = document.getElementById('lang-btn-hi');
+  const translations = {
+    en: {
+      tagline: '• Smog Defense System',
+      status: 'NCR • AQI 312 Severe',
+      hero_h1: 'Clear air starts <br class="hidden sm:inline"/><span class="italic text-primary">at home.</span>',
+      hero_p: 'Personalized winter smog defense and actionable family protection forecasts for your neighborhood, children, and elderly loved ones.',
+      action_h: 'Immediate Action for Families',
+      action_p: 'Keep children indoors until 11 AM. Run HEPA air purifier on medium and seal north-facing balcony doors.',
+      plan_btn: 'Get my plan'
+    },
+    hi: {
+      tagline: '• शीतकालीन स्मॉग सुरक्षा प्रणाली',
+      status: 'दिल्ली NCR • AQI 312 गंभीर स्तर',
+      hero_h1: 'स्वच्छ हवा की शुरुआत <br class="hidden sm:inline"/><span class="italic text-primary">घर से होती है।</span>',
+      hero_p: 'आपके पड़ोस, बच्चों और बुज़ुर्गों के लिए व्यक्तिगत शीतकालीन स्मॉग सुरक्षा और व्यावहारिक पूर्वानुमान।',
+      action_h: 'परिवारों के लिए त्वरित सुरक्षा निर्देश',
+      action_p: 'सुबह 11 बजे तक बच्चों को घर के अंदर रखें। हेपा (HEPA) एयर प्यूरीफायर चलाएं और उत्तर दिशा की बालकनी के दरवाजे बंद रखें।',
+      plan_btn: 'मेरी योजना देखें'
+    }
+  };
+
+  function setLanguage(lang) {
+    const t = translations[lang] || translations.en;
+    if (enBtn && hiBtn) {
+      if (lang === 'hi') {
+        hiBtn.className = 'px-2.5 py-1 rounded-full bg-primary text-on-primary transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
+        hiBtn.setAttribute('aria-pressed', 'true');
+        enBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
+        enBtn.setAttribute('aria-pressed', 'false');
+      } else {
+        enBtn.className = 'px-2.5 py-1 rounded-full bg-primary text-on-primary transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
+        enBtn.setAttribute('aria-pressed', 'true');
+        hiBtn.className = 'px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary';
+        hiBtn.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    const tagEl = document.getElementById('app-tagline');
+    if (tagEl) tagEl.textContent = t.tagline;
+
+    const statEl = document.getElementById('live-status-text');
+    if (statEl) statEl.textContent = t.status;
+
+    // Localize Hero elements on Home tab if present
+    const h1 = document.querySelector('#tab-pane-home h1');
+    if (h1) h1.innerHTML = t.hero_h1;
+
+    const heroP = document.querySelector('#tab-pane-home .font-body-lg');
+    if (heroP) heroP.textContent = t.hero_p;
+
+    const actH = document.querySelector('#tab-pane-home .font-label-sm.text-secondary');
+    if (actH) actH.textContent = t.action_h;
+
+    const actP = document.querySelector('#tab-pane-home p.font-semibold');
+    if (actP) actP.textContent = t.action_p;
+  }
+
+  if (enBtn) enBtn.addEventListener('click', () => setLanguage('en'));
+  if (hiBtn) hiBtn.addEventListener('click', () => setLanguage('hi'));
 
   // Hash-based routing
   function checkHash() {
     const hash = window.location.hash.replace('#', '');
     if (hash && tabs.some(t => t.id === hash)) {
-      activateTab(hash, false);
+      activateTab(hash, false, false);
     } else {
-      activateTab('home', false);
+      activateTab('home', false, false);
     }
   }
 
@@ -4332,7 +4459,7 @@ try {
     chips.forEach(chip => {
       chip.addEventListener('click', () => {
         if (input) {
-          input.value = chip.textContent.trim();
+          if(input && chip) { input.value = chip.textContent.trim(); }
           input.focus();
         }
       });
