@@ -2,6 +2,9 @@
 *.png
 !assets/*.webp
 
+# Firebase cache & deployment metadata
+.firebase/
+
 # Node dependencies & build artifacts
 node_modules/
 dist/
