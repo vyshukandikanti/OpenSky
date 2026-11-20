@@ -3,8 +3,9 @@
 ![OpenSky Banner](assets/banner.webp)
 
 > **Submission for Google Hackathon**  
+> **Live Production URL (Google Firebase):** [https://opensky-smog-safety-app.web.app](https://opensky-smog-safety-app.web.app)  
 > **Demo Video Link:** `[Insert your unlisted YouTube or open Google Drive link here]`  
-> **Live Web Application:** [index.html](index.html) (Launch with `python -m http.server 3000`)
+> **Local Preview:** [index.html](index.html) (or `python -m http.server 3000`)
 
 ---
 
