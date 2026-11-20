@@ -6,7 +6,15 @@
       ".firebaserc",
       "**/.*",
       "scratch/**",
+      "node_modules/**",
+      "dist/**",
+      "server/**",
+      "docs/**",
       "*.png",
+      "*.zip",
+      "package*.json",
+      "tsconfig.json",
+      "eslint.config.js",
       "tests/**"
     ],
     "headers": [
