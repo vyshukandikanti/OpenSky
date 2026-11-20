@@ -31,10 +31,10 @@ class TestHackathonSubmission(unittest.TestCase):
         """Verifies that the git-tracked codebase and assets are strictly under 10 MB."""
         total_tracked_size = 0
         for root, dirs, files in os.walk(BASE_DIR):
-            if ".git" in root or "scratch" in root:
+            if any(x in root for x in [".git", "scratch", "node_modules", ".firebase", "dist", "build"]):
                 continue
             for f in files:
-                if f.endswith(".png"):
+                if f.endswith(".png") or f.endswith(".zip"):
                     continue
                 fp = os.path.join(root, f)
                 total_tracked_size += os.path.getsize(fp)

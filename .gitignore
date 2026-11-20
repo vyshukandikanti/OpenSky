@@ -2,6 +2,14 @@
 *.png
 !assets/*.webp
 
+# Node dependencies & build artifacts
+node_modules/
+dist/
+build/
+coverage/
+.turbo/
+OpenSky_Project_Submission.zip
+
 # Python cache & temporary build files
 __pycache__/
 *.py[cod]

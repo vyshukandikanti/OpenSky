@@ -37,7 +37,7 @@ class TestSecuritySanitization(unittest.TestCase):
             r'(?i)AIza[0-9A-Za-z-_]{35}'
         ]
         for root, dirs, files in os.walk(BASE_DIR):
-            if ".git" in root or "scratch" in root:
+            if any(x in root for x in [".git", "scratch", "node_modules", ".firebase", "dist", "build"]):
                 continue
             for f in files:
                 if f.endswith((".html", ".js", ".json")):
